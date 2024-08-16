@@ -1,0 +1,21 @@
+.modal {
+  visibility: hidden;
+  display: block;
+  &--show {
+    visibility: visible;
+  }
+  &-backdrop {
+    visibility: hidden;
+    &--show {
+      visibility: visible;
+    }
+  }
+  .btn-close {
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+}

@@ -1,0 +1,28 @@
+﻿/*
+Company: Astar Printerlink Co., Ltd.
+Product: Astar Web IME CSS for React
+Version: 3.21.7.010
+*/
+.astar-ime-plugin { width:24px; height:26px; /*position:absolute;*/ display:inline-block; z-index:8888; }
+.astar-ime-plugin-hide { display:none; }
+.astar-ime-plugin img { width:22px; height:24px; position:relative; text-align:center; align:top; display:inline; cursor:hand; vertical-align:sub; left:2px; }
+.astar-ime-panel { display:block; width:135px; z-index:9999; position:absolute; }
+.astar-ime-panel-hide { display:none; }
+.astar-ime-textbox { width:98px; ime-mode:disabled; }
+.astar-ime-textbox-notfound {  width:98px; ime-mode:disabled; background-color:rgb(0,120,215); color: White; }
+.astar-ime-switch { vertical-align:middle; cursor:pointer; }
+.astar-ime-candidate { display:block; border:1px black solid; background-color:White; position:absolute; z-index:8888; }
+.astar-ime-candidate-hide { display:none; }
+.astar-ime-candidate-header { width:100px; text-align:center; }
+.astar-ime-candidate-header img { vertical-align:middle; cursor:pointer; }
+.astar-ime-candidate-table { border-collapse:collapse; width:100px; border:0; }
+.astar-ime-candidate-table tr:hover { background-color:rgb(205,232,255); }
+.astar-ime-candidate-table td:nth-child(odd) { text-align:center; }
+.astar-ime-keyboard { display:block; border:1px black solid; background-color:white; position:absolute; z-index:9999; }
+.astar-ime-keyboard-hide { display:none; }
+.astar-ime-keyboard-table { width:250px; }
+.astar-ime-keyboard-table-key { text-align:center; background-color:rgb(237,237,237); cursor:pointer; width:10px; }
+.astar-ime-keyboard-table-func { text-align:center; background-color:rgb(191,191,191); cursor:pointer; width:33%; }
+
+
+

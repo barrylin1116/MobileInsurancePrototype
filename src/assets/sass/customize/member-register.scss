@@ -1,0 +1,54 @@
+.member-register {
+  .login-btn {
+    background-color: transparent;
+    border: none;
+    color: #348D8F;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .read-box.box {
+    margin: 0 0 24px 0;
+  }
+  .otp-form {
+    .wrapper {
+      width: 45%;
+      input {
+        width: auto;
+        flex-grow: 1;
+      }
+    }
+  }
+  .send-btn {
+    width: 110px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+  .orange-block {
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+  }
+  .progress-bar {
+    .line {
+      width: 69px;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .no-progress-bar {
+      margin: 12px 0 24px 0 !important;
+    }
+    .img-verify {
+      align-items: flex-start !important;
+    }
+    .captcha-canvas {
+      margin-top: 0.5rem;
+    }
+    .otp-form {
+      .wrapper {
+        width: 100%;
+      }
+    }
+  }
+}

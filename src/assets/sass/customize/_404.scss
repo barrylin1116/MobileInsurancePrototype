@@ -1,0 +1,87 @@
+#page_404 {
+  .body {
+    height: calc(var(--vh, 1vh) * 100);
+    color: #565250;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .body .btn-wrapper {
+    margin-top: 110px;
+    width: 188px;
+    border: none;
+  }
+
+  .body .no-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .body .no-found .text-wrapper {
+    margin-left: 350px;
+  }
+
+  .body .no-found h1 {
+    font-weight: 400;
+    font-size: 2.25rem;
+    line-height: 2.6875rem;
+  }
+
+  .body .no-found p {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 350px;
+    margin: 0;
+  }
+
+  .body .no-found .bear-404 {
+    width: 530px;
+    height: 265px;
+    margin-right: 150px;
+    margin-top: -50px;
+  }
+
+  @media (max-width: 991.98px) {
+    .body .no-found {
+      flex-direction: column-reverse;
+    }
+    .body .no-found .text-wrapper {
+      margin: 0;
+      align-items: center;
+    }
+    .body .no-found h1 {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .body .no-found p {
+      text-align: center;
+      padding: 0 30px;
+    }
+    .body .no-found .bear-404 {
+      margin: 0;
+    }
+    .body a.btn-wrapper {
+      margin: 40px 0 0 0;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .body .no-found h1 {
+      font-size: 1.5rem;
+      line-height: 2.375rem;
+    }
+    .body .no-found p {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+    .body .no-found .bear-404 {
+      width: 290px;
+      height: 145px;
+    }
+  }
+}
+/*# sourceMappingURL=404.css.map */

@@ -1,0 +1,35 @@
+.theme-banner {
+  width: 100%;
+  height: 36px;
+  &__container {
+    width: 100%;
+    background-color: #797470;
+    color: #FFFFFF;
+    font-size: 1.125rem;
+    text-align: center;
+    line-height: 1.75rem;
+    padding: 4px 0;
+    position: fixed;
+    top: 63px;
+    left: 0;
+    z-index: 1029;
+  }
+}
+
+@media (max-width: 991px) {
+  .theme-banner {
+    &__container {
+      top: 56px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .theme-banner {
+    &__container {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      top: 48px;
+    }
+  }
+}

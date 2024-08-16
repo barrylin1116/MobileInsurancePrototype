@@ -1,0 +1,42 @@
+.service-apply-certen {
+
+h1 {
+  margin: 64px 0;
+}
+
+.form-row > div {
+  margin: 12px 0;
+}
+
+.form-row:first-child > div {
+  margin-bottom: 0;
+}
+
+.box:nth-of-type(3) {
+  margin-top: 32px;
+}
+
+.bottom-checkbox {
+  margin-top: 32px;
+}
+
+.orange-block {
+  margin-top: 0;
+}
+
+@media (max-width: 991.98px) {
+  h1 {
+    margin: 0 0 20px 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .box:nth-of-type(3) {
+    margin-top: 24px;
+  }
+  .bottom-checkbox {
+    margin-top: 24px;
+  }
+}
+
+}

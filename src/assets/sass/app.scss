@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~/node_modules/swiper/swiper-bundle.min.css";
+@import "../lib/jquery-ui/jquery-ui.min.css";
+@import "../lib/bootstrap-select/bootstrap-select.min.css";
+@import "../vendor/base";
+@import "../vendor/home-main";
+@import "../vendor/home-travel-insurance";
+@import "../vendor/member-register";
+@import "../vendor/member-profile";
+@import "../vendor/insure-travel-insurance-step-1";
+@import "../vendor/insure-travel-insurance-step-2-1";
+@import "../vendor/insure-travel-insurance-step-2-2";
+@import "../vendor/insure-travel-insurance-step-3-1";
+@import "../vendor/insure-travel-insurance-step-3-2";
+@import "../vendor/insure-travel-insurance-step-4-1";
+@import "../vendor/insure-travel-insurance-step-4-2";
+@import "../vendor/insure-travel-insurance-step-5";
+@import "../vendor/service-query-policy";
+@import "../vendor/service-query-policy-detail";
+@import "../vendor/_process";
+@import "../vendor/_loading-spinner";
+@import "../vendor/_menu";
+@import "../vendor/_datepicker";
+@import "../vendor/_idle-modal";
+@import "../vendor/eng-certification";
+@import "../sass/customize/_customize";
+@import "../sass/customize/_sweetalert";
+@import "../sass/customize/_bootstrap-select";
+@import "../sass/customize/_form";
+@import "../sass/customize/_modal";
+@import "../sass/customize/_member-login-modal";
+@import "../sass/customize/_loading-spinner";
+@import "../sass/customize/_passphrase-field";
+@import "../sass/customize/_process";
+@import "../sass/customize/member-register";
+@import "../sass/customize/insure-travel-insurance-step-1";
+@import "../sass/customize/service-query-policy";
+@import "../sass/components/_tabs";
+@import "../sass/components/_reminder";
+@import "../sass/components/_reminder-banner";
+@import "../sass/components/_theme-banner";
+@import "../sass/components/_switch-button";
+@import "../sass/components/_field.scss";
+@import "../sass/customize/modify-data.scss";
+@import "../sass/customize/_404.scss";
+@import "../sass/customize/_500.scss";
+@import "../vendor/life-insurance";
+@import "./customize/datePicker/datePicker";
+@import "./customize/mobileInsurance";
+@import "./customize/relational-people";
+
+
+
+#mobileInsurance {
+  overflow-x: hidden;
+}
+
+// 條款標題粗體樣式
+.read-box .body .title {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+// 手機版 nav
+.mobile-nav {
+  background-color: transparent;
+  .wrapper {
+    z-index: 2;
+  }
+  li.sub-item {
+    span {
+      color: #797470;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.5rem;
+      margin-left: 1rem;
+    }
+  }
+  .mobile-nav-backdrop {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 41, 41, 0.41);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,301 @@
+#insure-life-insurance-step-2-1 {
+
+.info-circle {
+  background-image: url(../../img/icons/info-circle.svg);
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.info-circle:hover {
+  cursor: pointer;
+  background-image: url(../../img/icons/info-circle-yellow.svg);
+}
+
+.ratio-wrapper {
+  display: none;
+}
+
+.phone-inputs {
+  display: flex;
+  align-items: center;
+}
+
+.phone-inputs .area-code {
+  width: 20%;
+}
+
+.phone-inputs .number {
+  width: 40%;
+}
+
+.phone-inputs .extend {
+  width: 20%;
+}
+
+.address .address-row {
+  display: flex;
+}
+
+.address .address-row > *:not(span) {
+  margin: 4px 0;
+}
+
+.address .address-row .zip-code {
+  width: 16%;
+  margin-right: 8px;
+}
+
+.address .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn).district {
+  width: 16%;
+  margin-right: 8px;
+}
+
+.address .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn).county {
+  width: 16%;
+  margin-right: 8px;
+}
+
+.address .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn).street {
+  flex-grow: 1;
+}
+
+.address span:not(.text) {
+  margin: 0 8px;
+  white-space: nowrap;
+}
+
+@media (max-width: 991.98px) {
+  .address .address-row {
+    flex-wrap: wrap;
+  }
+  .address .address-row > *:not(span) {
+    margin: 2px 0;
+  }
+  .address .address-row .zip-code {
+    width: 25%;
+    margin-right: 8px;
+  }
+  .address .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn).district {
+    width: calc((100% - 8px) / 2);
+    margin-right: 0;
+  }
+  .address .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn).county {
+    width: calc((100% - 8px) / 2);
+  }
+  .address span:not(.text) {
+    margin: 0 8px;
+    white-space: nowrap;
+  }
+  .address .comma {
+    display: none;
+  }
+}
+
+form .notes-mobile {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  form .notes-mobile {
+    display: block;
+  }
+  form > .notes:not(.notes-mobile) {
+    display: none;
+  }
+}
+
+.beneficiary button:not(.dropdown-toggle) {
+  margin-top: 12px;
+  width: 290px;
+  margin-right: auto;
+}
+
+.beneficiary-list .head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.beneficiary-list .head .arrow {
+  width: 32px;
+  height: 32px;
+}
+
+.beneficiary-list .head .up {
+  background-image: url(../../img/icons/circle-arrow-up.svg);
+  pointer-events: none;
+}
+
+.beneficiary-list .head .up.active {
+  background-image: url(../../img/icons/circle-arrow-up-green.svg);
+  pointer-events: auto;
+}
+
+.beneficiary-list .head .up.active:hover {
+  cursor: pointer;
+}
+
+.beneficiary-list .head .down {
+  background-image: url(../../img/icons/circle-arrow-down.svg);
+  margin-left: 10px;
+  pointer-events: none;
+}
+
+.beneficiary-list .head .down.active {
+  background-image: url(../../img/icons/circle-arrow-down-green.svg);
+  pointer-events: auto;
+}
+
+.beneficiary-list .head .down.active:hover {
+  cursor: pointer;
+}
+
+.beneficiary-list .head .delete {
+  padding: 4px 12px;
+  border: 1px solid #a9a9a9;
+  border-radius: 16px;
+  color: #a9a9a9;
+  font-size: 1.0625rem;
+  line-height: 1.125rem;
+  margin-left: 12px;
+}
+
+.beneficiary-list .head .delete.active {
+  color: #ac113e;
+  border-color: #ac113e;
+}
+
+.beneficiary-list .head .delete.active:hover {
+  cursor: pointer;
+}
+
+.beneficiary-list .body .form-row:not(.relation-row) {
+  display: none;
+}
+
+.beneficiary-list .relation .dropdown-menu {
+  max-height: 130px;
+}
+
+.kids .kid-insuree-age .notes {
+  display: none;
+}
+
+.kids button:not(.dropdown-toggle) {
+  margin-top: 12px;
+  width: 290px;
+  margin-right: auto;
+}
+
+.evaluation .notes-wrapper {
+  margin: 16px 0;
+}
+
+.evaluation .radios-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.evaluation .radios-wrapper .form-check {
+  width: 15%;
+  margin: 4px 0;
+}
+
+.evaluation .fund-source .form-check:last-child {
+  width: 30%;
+}
+
+.evaluation .notes-mobile {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .evaluation .radios-wrapper {
+    margin-top: -4px;
+  }
+  .evaluation .radios-wrapper .form-check {
+    width: 50%;
+  }
+  .evaluation .fund-source .form-check:last-child {
+    width: 50%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .evaluation .fund-source .form-check:last-child {
+    width: 100%;
+  }
+}
+
+.mobile-format-check.form-control.is-invalid {
+  padding-right: 0.75rem;
+  background-image: none;
+  background-color: #fff5f8;
+  border-color: #dc3545;
+}
+
+.mobile-format-check.form-control.is-invalid:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.counter {
+  position: relative;
+}
+
+.counter input {
+  text-align: center;
+}
+
+.counter .ratio-btn {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+}
+
+.counter .ratio-btn:hover {
+  cursor: pointer;
+}
+
+.counter .ratio-btn.ratio-minus.enabled {
+  background-image: url(../../img/icons/minus-green.svg);
+}
+
+.counter .ratio-btn.ratio-minus.disabled {
+  background-image: url(../../img/icons/minus-grey.svg);
+}
+
+.counter .ratio-btn.ratio-minus.disabled:hover {
+  pointer-events: none;
+}
+
+.counter .ratio-btn.ratio-add.enabled {
+  background-image: url(../../img/icons/plus-green.svg);
+}
+
+.counter .ratio-btn.ratio-add.disabled {
+  background-image: url(../../img/icons/plus-grey.svg);
+}
+
+.counter .ratio-btn.ratio-add.disabled:hover {
+  pointer-events: none;
+}
+
+.counter .ratio-minus {
+  left: 12px;
+}
+
+.counter .ratio-add {
+  right: 12px;
+}
+
+.counter .form-control.is-invalid {
+  padding-right: 0.75rem;
+  background-image: none;
+  background-color: #fff5f8;
+  border-color: #dc3545;
+}
+
+}

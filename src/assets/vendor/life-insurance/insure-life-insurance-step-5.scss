@@ -1,0 +1,151 @@
+#insure-life-insurance-step-5 {
+
+.form-container.hide-avatar::before {
+  display: none;
+}
+
+.result-box {
+  padding: 55px 0 !important;
+  position: relative;
+}
+
+.result-box h2 {
+  color: #04595b;
+  font-size: 2.25rem;
+  line-height: 2.6875rem;
+}
+
+.result-box h2.text-red {
+  color: #ac113e;
+}
+
+.result-box .text {
+  color: #797470;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.result-box .text span {
+  font-weight: 500;
+}
+
+.result-box .text:nth-of-type(1) {
+  margin-top: 8px;
+}
+
+.result-box .text br {
+  display: none;
+}
+
+.result-box img {
+  display: none;
+  width: 118px;
+  height: 114px;
+}
+
+.result-box::after {
+  content: "";
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  bottom: -5px;
+  right: 5%;
+  background-image: url(../../img/pic/bear-avatar-step-complete.png);
+  background-size: contain;
+}
+
+.result-box.no-avatar::after {
+  content: "";
+  width: 0;
+}
+
+.insurance-info h3 {
+  font-weight: 400;
+}
+
+.insurance-info .insurance-num-wrapper {
+  margin: 32px 0 8px;
+  width: 100%;
+}
+
+.insurance-info .title {
+  color: #565250;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  margin-bottom: 8px;
+}
+
+.insurance-info .block {
+  margin-bottom: 16px;
+}
+
+.insurance-info .box {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.insurance-info .box:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.insurance-info .box .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+@media (max-width: 991.98px) {
+  .result-box h2 {
+    font-size: 1.875rem;
+    line-height: 2.375rem;
+  }
+  .result-box img {
+    display: block;
+    margin-bottom: -55px;
+  }
+  .result-box::after {
+    content: "";
+    width: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .result-box {
+    padding: 24px 20px 24px !important;
+  }
+  .result-box h2 {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+  .result-box .text {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  .result-box .text:nth-of-type(1) {
+    margin-top: 0;
+  }
+  .result-box .text:nth-of-type(2) {
+    margin-top: 24px;
+  }
+  .result-box .text br {
+    display: block;
+  }
+  .result-box img {
+    margin-bottom: -24px;
+  }
+  .insurance-info .item {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  .insurance-info .title {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 4px;
+  }
+  .insurance-info .insurance-num-wrapper {
+    margin-top: 24px;
+  }
+}
+
+}

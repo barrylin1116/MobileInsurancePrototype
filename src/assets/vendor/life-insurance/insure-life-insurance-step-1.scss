@@ -1,0 +1,213 @@
+#insure-life-insurance-step-1 {
+
+.look-up {
+  display: flex;
+  height: 55px;
+  align-items: flex-end;
+  color: #348d8f;
+}
+
+.look-up a {
+  display: flex;
+  margin-left: 20px;
+}
+
+.look-up a::after {
+  content: "";
+  background-image: url(../../img/icons/chevron-right.svg);
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.location-block .domestic {
+  width: 33%;
+}
+
+.location-block .wrapper {
+  margin-bottom: 8px;
+}
+
+.location-block .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 290px;
+}
+
+@media (max-width: 991.98px) {
+  .location-block .wrapper {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .location-block .domestic {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .location-block .overseas {
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+  .location-block .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: calc(100% - 67px);
+  }
+  .location-block .look-up {
+    display: none;
+  }
+}
+
+.day-range-block .datepicker {
+  width: 290px;
+}
+
+.day-range-block .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 100px;
+}
+
+.day-range-block .range {
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 991.98px) {
+  .day-range-block .range {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .day-range-block .range input {
+    width: 50%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .day-range-block .range {
+    margin-bottom: 4px;
+  }
+}
+
+.content-block .box {
+  margin-bottom: 12px;
+}
+
+.content-block .head .total-cost {
+  color: #348d8f;
+  white-space: nowrap;
+}
+
+.content-block .head .for-kid {
+  display: flex;
+  align-items: center;
+}
+
+.content-block .head .for-kid .inputs {
+  display: flex;
+  align-items: center;
+}
+
+.content-block .head .for-kid span {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #348d8f;
+  white-space: nowrap;
+  margin-left: 0.25rem;
+  font-weight: 300;
+}
+
+.content-block .body {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  padding-top: 6px;
+}
+
+.content-block .body .smaller-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.content-block .body .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.content-block .body .item > div {
+  width: 33%;
+}
+
+.content-block .body .item .insurance-amount {
+  text-align: center;
+}
+
+.content-block .body .item .cost {
+  text-align: right;
+}
+
+.content-block .body .item.overseas-dicease {
+  display: none;
+}
+
+.content-block .bootstrap-select button {
+  min-width: 170px;
+}
+
+@media (max-width: 991.98px) {
+  .content-block .box {
+    padding-bottom: 4px;
+  }
+  .content-block .head .for-kid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .content-block .head .for-kid span {
+    padding-left: 30px;
+    margin-top: 4px;
+  }
+  .content-block .body {
+    padding-bottom: 0;
+  }
+  .content-block .body .item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0;
+  }
+  .content-block .body .item > div {
+    width: 100%;
+  }
+  .content-block .body .item .smaller-text {
+    margin-bottom: 4px;
+  }
+  .content-block .body .item .insurance-amount {
+    text-align: left;
+    margin-bottom: 4px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .content-block .body .item .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 100%;
+  }
+  .content-block .body .item .cost {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .content-block .bootstrap-select button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .content-block .body {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  .content-block .body .smaller-text {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  .content-block button {
+    width: 100%;
+  }
+}
+
+}

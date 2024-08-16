@@ -1,0 +1,36 @@
+.switch-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  button {
+    width: 48px;
+    height: 28px;
+    background-color: #F4F4F4;
+    border: none;
+    border-radius: 15px;
+    margin-right: 5px;
+    padding: 2px;
+    transition: .5s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &::after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      box-shadow: 2px 1px 4px rgba(215, 215, 215, .25);
+    }
+  }
+}
+
+.switch-button--active {
+  button {
+    background-color: #CDE3E3;
+    padding-left: 22px;
+    &::after {
+      background-color: #0F7B7D;
+    }
+  }
+}

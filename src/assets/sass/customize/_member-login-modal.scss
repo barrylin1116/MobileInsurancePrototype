@@ -1,0 +1,146 @@
+.member-login-modal {
+  .modal-title {
+    color: #492D18;
+  }
+  .modal-body {
+    overflow-y: hidden;
+    padding-right: 0;
+  }
+  .tabs__navs {
+    width: 66%;
+    margin: 0 auto 32px;
+  }
+  .login-inputs-container {
+    height: 313px;
+    overflow-y: auto;
+    padding: 0 20px 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .login-inputs-container::-webkit-scrollbar-thumb {
+    background-color: #348d8f;
+    border-radius: 20px;
+    border: 3px solid #348d8f;
+  }
+  .login-inputs-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  .form-check-input {
+    position: relative;
+  }
+  .item {
+    margin-bottom: 32px;
+    input,
+    input::-webkit-input-placeholder {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-align: left;
+    }
+  }
+  .name {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+  .img-verify {
+    input {
+      width: 45%;
+    }
+  }
+  .recreate {
+    color: #348D8F;
+  }
+  .form-check {
+    display: flex;
+    flex-direction: row;
+  }
+  .clarify {
+    color: #2F2F2F;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    margin-bottom: 8px
+  }
+  .send-verify-code {
+    width: 100%;
+  }
+  .register-btn {
+    background-color: transparent;
+    border: none;
+    color: #348D8F;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .return {
+    background-color: transparent;
+    border: none;
+    color: #348D8F;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    margin-right: auto;
+    margin-bottom: 32px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .orange-block {
+    width: 100%;
+    background-color: #FFEFCF;
+    border-radius: 8px;
+    color: #DF9A17;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0 0 32px 0;
+    padding: 6px 16px;
+  }
+  .form-row {
+    .wrapper {
+      display: block;
+    }
+  }
+  .send-btn {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 110px;
+  }
+
+  @media (max-width: 991px) {
+    .modal-header {
+      margin-bottom: 24px;
+    }
+    .tabs__navs {
+      width: 100%;
+    }
+    .name {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+    .item {
+      input,
+      input::-webkit-input-placeholder {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+      }
+    }
+    .img-verify {
+      display: block !important;
+      input {
+        width: 100%;
+      }
+    }
+    .captcha-canvas,
+    .recreate {
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .login-inputs-container::-webkit-scrollbar {
+      width: 4px;
+    }
+  }
+}

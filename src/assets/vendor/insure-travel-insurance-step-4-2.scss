@@ -1,0 +1,83 @@
+#insure-travel-insurance-step-4-2 {
+
+.total-amount {
+  font-size: 1.5rem;
+  line-height: 2.375rem;
+  margin-right: auto;
+  color: #565250;
+  margin-top: 32px;
+}
+
+.text-red {
+  color: #ac113e;
+}
+
+ol {
+  list-style-type: cjk-ideographic;
+  margin-bottom: 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-footer a {
+  display: block;
+}
+
+.modal-footer a button {
+  width: 100%;
+}
+
+.modal-footer a,
+.modal-footer button {
+  width: calc((100% - 40px) / 2);
+}
+
+.dropdown-menu.show {
+  overflow: visible !important;
+}
+
+// .card-code .notes {
+//   display: none;
+// }
+
+.notes {
+  color: #348d8f;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 300;
+}
+
+.notes.warn {
+  color: #ac113e;
+}
+
+@media (max-width: 991.98px) {
+  .dropdown-menu.show {
+    width: 100%;
+    left: 50vw;
+    margin-left: -50%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .total-amount {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-top: 24px;
+  }
+  .orange-block div {
+    text-align: center;
+  }
+  .read-box.box {
+    margin: 24px 0;
+  }
+  .modal-footer a,
+  .modal-footer button {
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+}

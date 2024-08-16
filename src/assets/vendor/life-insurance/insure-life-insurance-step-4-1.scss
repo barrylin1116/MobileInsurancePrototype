@@ -1,0 +1,89 @@
+#insure-life-insurance-step-4-1 {
+
+.clouds-group-bg::after {
+  bottom: -70px;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  padding: 0 84px;
+  align-items: center;
+  justify-content: space-around;
+  margin: 32px 0 48px;
+}
+
+.item {
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #a9a9a9;
+  border-radius: 32px;
+  width: 345px;
+}
+
+.item .title {
+  margin-top: 32px;
+  color: #0f7b7d;
+  font-size: 1.5rem;
+  line-height: 2.375rem;
+}
+
+.item .text {
+  margin-top: 8px;
+  color: #565250;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.item .btn-margin {
+  width: 100%;
+  margin-top: 32px;
+}
+
+@media (max-width: 1399.98px) {
+  .wrapper {
+    padding: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .wrapper {
+    flex-direction: column;
+    margin: 12px 0 16px;
+  }
+  .item {
+    width: 90%;
+  }
+  .item .img-and-text-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .item .title,
+  .item .text {
+    margin-top: 0;
+  }
+  .item:nth-child(2) {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .item {
+    width: 100%;
+    padding: 24px;
+  }
+  .item img {
+    width: 56px;
+    height: 56px;
+  }
+  .item .btn-margin {
+    margin-top: 24px;
+  }
+}
+
+}

@@ -1,0 +1,13 @@
+.service-query-policy {
+  .no-progress-bar {
+    margin: 64px 0 3rem !important;
+  }
+  @media (max-width: 991.98px) {
+    .form-container {
+      display: none;
+    }
+    .no-progress-bar {
+      margin: 12px 0 24px 0 !important;
+    }
+  }
+}

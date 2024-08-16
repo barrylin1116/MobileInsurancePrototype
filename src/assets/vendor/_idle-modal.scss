@@ -1,0 +1,101 @@
+.idle-modal .modal-content {
+  padding: 64px 24px 48px;
+}
+
+.idle-modal .btn-close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}
+
+.idle-modal .modal-dialog {
+  width: 480px;
+}
+
+.idle-modal .modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+.idle-modal img {
+  width: 300px;
+  height: 300px;
+}
+
+.idle-modal h5 {
+  font-size: 1.5rem;
+  line-height: 2.375rem;
+  color: #348d8f;
+  font-weight: 400;
+  margin: 40px 0 4px;
+}
+
+.idle-modal p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #565250;
+  font-weight: 300;
+  text-align: center;
+  margin: 0;
+}
+
+.idle-modal span {
+  color: #ac113e;
+  font-weight: 400;
+}
+
+.idle-modal .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #4a2e1c;
+  position: absolute;
+  top: 87px;
+  display: none;
+}
+
+.idle-modal .dot.dot0 {
+  right: 76px;
+}
+
+.idle-modal .dot.dot1 {
+  right: 60px;
+}
+
+.idle-modal .dot.dot2 {
+  right: 44px;
+}
+
+@media (max-width: 575.98px) {
+  .idle-modal .modal-dialog {
+    width: 315px;
+    margin: auto;
+  }
+  .idle-modal img {
+    width: 165px;
+    height: 165px;
+  }
+  .idle-modal h5 {
+    margin-top: 24px;
+  }
+  .idle-modal .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background: #4a2e1c;
+    position: absolute;
+    top: 49px;
+    display: none;
+  }
+  .idle-modal .dot.dot0 {
+    right: 40px;
+  }
+  .idle-modal .dot.dot1 {
+    right: 32px;
+  }
+  .idle-modal .dot.dot2 {
+    right: 24px;
+  }
+}

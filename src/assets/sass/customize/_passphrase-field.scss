@@ -1,0 +1,38 @@
+.passphrase-field {
+  .notes.grey-notes {
+    color: #797470;
+    display: flex;
+    align-items: flex-start;
+    font-weight: 400;
+  }
+  .notes.grey-notes .icon {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-image: url(../../img/icons/dash-grey.svg);
+  }
+  .notes.grey-notes.active {
+    color: #4ac281;
+  }
+  .notes.grey-notes.active .icon {
+    background-image: url(../../img/icons/check-green.svg);
+  }
+  .password-hint {
+    margin-bottom: 40px;
+  }
+  .forget-passphrase-link {
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    color: #348D8F;
+    margin-left: auto;
+    display: block;
+  }
+  
+  @media (max-width: 575.98px) {
+    .progress-bar .line {
+      width: 55px;
+    }
+  }
+}

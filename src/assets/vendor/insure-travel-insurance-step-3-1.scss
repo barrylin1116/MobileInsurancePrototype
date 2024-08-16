@@ -1,0 +1,86 @@
+#insure-travel-insurance-step-3-1 {
+width: 100%;
+
+.form {
+  padding-bottom: 32px;
+}
+
+@media (max-width: 575.98px) {
+  .form {
+    padding-bottom: 24px;
+  }
+}
+
+.content-and-cost .block {
+  margin-bottom: 16px;
+}
+
+.content-and-cost .all-cost {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.content-and-cost .all-cost span {
+  color: #348d8f;
+}
+
+.content-and-cost .box {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.content-and-cost .box:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.content-and-cost .box .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+@media (max-width: 575.98px) {
+  .content-and-cost .all-cost {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .content-and-cost .item {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+.beneficiary .body,
+.kids .body,
+.send-method .body,
+.evaluation .body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.beneficiary .item,
+.kids .item,
+.send-method .item,
+.evaluation .item {
+  width: 50%;
+  margin-top: 18px;
+}
+
+@media (max-width: 575.98px) {
+  .beneficiary .item,
+  .kids .item,
+  .send-method .item,
+  .evaluation .item {
+    width: 100%;
+    margin-top: 12px;
+  }
+}
+
+.evaluation .wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+}

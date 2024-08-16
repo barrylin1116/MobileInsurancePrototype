@@ -1,0 +1,280 @@
+.member-profile {
+
+.custom-toggle {
+  width: 48px;
+  height: 28px;
+  background: #f4f4f4;
+  border-radius: 15px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.custom-toggle:hover {
+  cursor: pointer;
+}
+
+.custom-toggle .toggle {
+  background: #ffffff;
+  box-shadow: 2px 1px 4px rgba(215, 215, 215, 0.25);
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.custom-toggle.active {
+  padding-left: 22px;
+  background: #cde3e3;
+}
+
+.custom-toggle.active .toggle {
+  background: #0f7b7d;
+}
+
+.orange-block {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.no-progress-bar {
+  margin: 64px 0;
+}
+
+@media (max-width: 991.98px) {
+  .no-progress-bar {
+    margin: 12px 0 24px 0;
+  }
+}
+
+.title-explanation {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  color: #797470;
+  margin-bottom: 16px;
+}
+
+.title-explanation.desktop div {
+  text-align: center;
+}
+
+.title-explanation.mobile {
+  display: none;
+}
+
+.img-verify {
+  display: flex;
+  align-items: flex-end;
+}
+
+.img-verify input {
+  width: 50%;
+}
+
+.img-verify img:not(.cycle-icon) {
+  width: 120px;
+  height: 44px;
+}
+
+.img-verify .recreate {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #348d8f;
+  display: flex;
+  white-space: nowrap;
+  align-items: flex-end;
+}
+
+.img-verify .recreate:hover {
+  cursor: pointer;
+}
+
+.progress-bar .line {
+  width: 69px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-footer a {
+  display: block;
+}
+
+.modal-footer a button {
+  width: 100%;
+}
+
+.modal-footer a,
+.modal-footer button {
+  width: calc((100% - 40px) / 2);
+}
+
+@media (max-width: 991.98px) {
+  .title-explanation {
+    margin-bottom: 0px;
+  }
+  .title-explanation.desktop {
+    display: none;
+  }
+  .title-explanation.mobile {
+    display: block;
+  }
+  .img-verify {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .img-verify input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .title-explanation {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .progress-bar .line {
+    width: 50px;
+  }
+}
+
+.check-login-record {
+  color: #348d8f;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: -1.5rem;
+  font-weight: 400;
+}
+
+.check-login-record:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 575.98px) {
+  .check-login-record {
+    position: static;
+    margin-left: auto;
+  }
+}
+
+.record-modal .table-mobile {
+  display: none;
+}
+
+.record-modal .table-mobile th:last-child,
+.record-modal .table-mobile td:last-child {
+  text-align: right;
+}
+
+.record-modal h2 {
+  color: #348d8f;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.record-modal table {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.record-modal table th {
+  padding-bottom: 10px;
+}
+
+.record-modal table td {
+  padding: 8px 0;
+}
+
+.record-modal table .time {
+  color: #565250;
+}
+
+.record-modal table .ip,
+.record-modal table .status {
+  color: #a9a9a9;
+}
+
+.record-modal table .status.success {
+  color: #4ac281;
+}
+
+.record-modal table tbody tr:not(:last-child) {
+  border-bottom: 1px solid rgba(74, 46, 25, 0.15);
+}
+
+.record-modal .btn-close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}
+
+@media (max-width: 575.98px) {
+  .record-modal .table-mobile {
+    display: table;
+  }
+  .record-modal .table-pc {
+    display: none;
+  }
+  .record-modal h2 {
+    margin: 25px 16px;
+  }
+  .record-modal table {
+    margin-bottom: 16px;
+  }
+}
+
+.question-verify-modal h2 {
+  color: #492d18;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.question-verify-modal p {
+  color: #2f2f2f;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.question-verify-modal .question {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.question-verify-modal .btn-close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}
+
+@media (max-width: 575.98px) {
+  .question-verify-modal h2 {
+    font-size: 1.5rem;
+    line-height: 2.375rem;
+    margin-bottom: 24px;
+  }
+  .question-verify-modal p,
+  .question-verify-modal input,
+  .question-verify-modal input::placeholder {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  .question-verify-modal p {
+    margin-bottom: 24px;
+  }
+  .question-verify-modal .question {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+}

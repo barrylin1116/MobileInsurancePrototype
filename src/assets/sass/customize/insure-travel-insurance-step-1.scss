@@ -1,0 +1,16 @@
+#insure-travel-insurance-step-1 {
+  .insurance-amount {
+    input[type="text"] {
+      width: 170px;
+      display: inline-block;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .insurance-amount {
+      input[type="text"] {
+        width: 100%;
+      }
+    }
+  }
+}

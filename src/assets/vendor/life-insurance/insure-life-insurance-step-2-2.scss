@@ -1,0 +1,72 @@
+#insure-life-insurance-step-2-2 {
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.body {
+  padding-right: 10px;
+}
+
+.body .wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.body .wrapper > ol {
+  list-style-type: cjk-ideographic;
+  margin-bottom: 0;
+}
+
+.body .title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.send-method .wrapper {
+  width: 100%;
+  display: flex;
+  padding: 0 127px;
+  align-items: center;
+  justify-content: space-around;
+  margin: 32px 0 48px;
+}
+
+.send-method .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.send-method .item img {
+  margin-bottom: 24px;
+}
+
+.send-method .info {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #a9a9a9;
+  margin-right: auto;
+  margin-left: calc(24px + 0.5rem);
+  font-weight: 300;
+}
+
+@media (max-width: 991.98px) {
+  .send-method .wrapper {
+    flex-direction: column;
+    margin: 12px 0 0 0;
+    padding: 0;
+  }
+  .send-method .item {
+    margin: 12px 0;
+  }
+}
+
+.related-doc .confirm-read {
+  margin-bottom: 24px;
+}
+
+}
