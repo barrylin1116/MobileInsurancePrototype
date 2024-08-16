@@ -5,7 +5,7 @@ const InsuredAddress01: React.FC = () => {
     <>
       <div id="applicant-address-fields-group" className="col-12 address dependence-address">
         <div className="address-row">
-          <div className="d-flex align-items-center name">住所地址*</div>
+          <div className="d-flex align-items-center name labelName">住所地址</div>
           <div className="d-flex align-items-center" style={{ marginLeft: 'auto' }}>
             <button
               type="button" className="btn btn-primary btn-sm"
@@ -247,13 +247,13 @@ const InsuredAddress01: React.FC = () => {
               type="text" name="applicant.addr02" data-field-invalid="false" id="applicant-addr02"
               className="form-control lane"
             />
-            <span>巷</span>
+            <span className="labelName">巷</span>
             <label htmlFor="applicant-addr03" />
             <input
               type="text" name="applicant.addr03" data-field-invalid="false" id="applicant-addr03"
               className="form-control alley"
             />
-            <span>弄</span>
+            <span className="labelName">弄</span>
           </div>
           <div className="d-flex align-items-center">
             <label htmlFor="applicant-addr04" />
@@ -261,13 +261,13 @@ const InsuredAddress01: React.FC = () => {
               type="text" name="applicant.addr04" data-field-invalid="true" id="applicant-addr04"
               className="form-control num"
             />
-            <span>之</span>
+            <span className="labelName">之</span>
             <label htmlFor="applicant-addr05" />
             <input
               type="text" name="applicant.addr05" data-field-invalid="false" id="applicant-addr05"
               className="form-control num-dash"
             />
-            <span>號</span>
+            <span className="labelName">號</span>
           </div>
           <div className="d-flex align-items-center">
             <label htmlFor="applicant-addr06" />
@@ -275,7 +275,7 @@ const InsuredAddress01: React.FC = () => {
               type="text" name="applicant.addr06" data-field-invalid="false" id="applicant-addr06"
               className="form-control floor"
             />
-            <span>樓之</span>
+            <span className="labelName">樓之</span>
             <label htmlFor="applicant-addr07" />
             <input
               type="text" name="applicant.addr07" data-field-invalid="false" id="applicant-addr07"
@@ -284,7 +284,6 @@ const InsuredAddress01: React.FC = () => {
           </div>
         </div>
         <div className="value dependence-address-display dependence-address-display--visible mt-3 mb-3" />
-        <div className="notes">*若選擇紙本保單，將寄送至此通訊地址。</div>
       </div>
     </>
   );
