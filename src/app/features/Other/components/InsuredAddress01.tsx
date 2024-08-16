@@ -66,112 +66,112 @@ const InsuredAddress01: React.FC = () => {
                 >
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-0">
-                      <span className="text">基隆市</span>
+                      <span className="labelName">基隆市</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-1">
-                      <span className="text">台北市</span>
+                      <span className="labelName">台北市</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-2">
-                      <span className="text">新北市</span>
+                      <span className="labelName">新北市</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-3">
-                      <span className="text">桃園市</span>
+                      <span className="labelName">桃園市</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-4">
-                      <span className="text">新竹縣</span>
+                      <span className="labelName">新竹縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-5">
-                      <span className="text">新竹市</span>
+                      <span className="labelName">新竹市</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-6">
-                      <span className="text">苗栗縣</span>
+                      <span className="labelName">苗栗縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-7">
-                      <span className="text">台中市</span>
+                      <span className="labelName">台中市</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-8">
-                      <span className="text">彰化縣</span>
+                      <span className="labelName">彰化縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-9">
-                      <span className="text">南投縣</span>
+                      <span className="labelName">南投縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-10">
-                      <span className="text">雲林縣</span>
+                      <span className="labelName">雲林縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-11">
-                      <span className="text">嘉義縣</span>
+                      <span className="labelName">嘉義縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-12">
-                      <span className="text">嘉義市</span>
+                      <span className="labelName">嘉義市</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-13">
-                      <span className="text">台南市</span>
+                      <span className="labelName">台南市</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-14">
-                      <span className="text">高雄市</span>
+                      <span className="labelName">高雄市</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-15">
-                      <span className="text">屏東縣</span>
+                      <span className="labelName">屏東縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-16">
-                      <span className="text">台東縣</span>
+                      <span className="labelName">台東縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-17">
-                      <span className="text">花蓮縣</span>
+                      <span className="labelName">花蓮縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-18">
-                      <span className="text">宜蘭縣</span>
+                      <span className="labelName">宜蘭縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-19">
-                      <span className="text">金門縣</span>
+                      <span className="labelName">金門縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-20">
-                      <span className="text">連江縣</span>
+                      <span className="labelName">連江縣</span>
                     </a>
                   </li>
                   <li>
                     <a role="option" className="dropdown-item" id="bs-select-15-21">
-                      <span className="text">澎湖縣</span>
+                      <span className="labelName">澎湖縣</span>
                     </a>
                   </li>
                 </ul>

@@ -337,10 +337,6 @@
   .modal-pane {
     background: #348d8f !important;
   }
-  .text {
-    font-size: 1.4rem;
-    font-weight: 600;
-  }
   .ant-table-cell {
     font-size: 1.4rem;
     font-weight: 600;
@@ -348,6 +344,11 @@
   .modal-dialog {
     max-width: 100% !important;
   }
+
+  .ant-tabs-ink-bar  {
+   display: none !important;
+  }
+
   .modal-content {
     padding-top: 15px !important;
     padding-left: 0 !important;
@@ -443,15 +444,11 @@
     }
 
     .ant-tabs-nav .ant-tabs-tab-active {
-      background: #056608;
+      background: #348d8f !important;
     }
-
-    .ant-tabs-nav .ant-tabs-tab-active {
-      background: white;
-    }
-
     .ant-tabs-nav .ant-tabs-tab-active .tabText {
       color: #056608;
+      background: white;
       font-size: 1.2rem;
       font-weight: 600;
     }
@@ -460,6 +457,7 @@
       color: white;
       font-size: 1.15rem;
       font-weight: 600;
+      padding: 10px 5px 5px 5px;
     }
 
     .ant-tabs-nav {
@@ -507,9 +505,11 @@
   .tabText {
     width: 90px;
     text-align: center;
+    border-radius: 8px 8px 0 0;
+    border: 1px solid #f0f0f0;
   }
   .ant-tabs-tab {
-    padding: 6px 3px !important;
+    padding: 6px 1px !important;
   }
   :where(.css-dev-only-do-not-override-d2lrxs).ant-select-outlined:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
     border: unset;

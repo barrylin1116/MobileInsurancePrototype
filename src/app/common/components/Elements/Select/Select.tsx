@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { SelectProps, SelectChildComponents } from './types';
 import Option from './Option';
 
-// declare const $: any;
+declare const $: any;
 
 const Select: React.FC<SelectProps> & SelectChildComponents = ({ label, id, isValid, ...props }) => {
   const inputElemRef = useRef<HTMLSelectElement>(null);
@@ -12,15 +12,15 @@ const Select: React.FC<SelectProps> & SelectChildComponents = ({ label, id, isVa
    * @description bootstrap-select 套件初始化
    */
   useEffect(() => {
-    // $(`#${inputElemIdRef.current}`).selectpicker();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    $(`#${inputElemIdRef.current}`).selectpicker();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**
    * @description 針對非同步資料進行同步
    */
   useEffect(() => {
-    // $(`#${inputElemIdRef.current}`).selectpicker('refresh');
+    $(`#${inputElemIdRef.current}`).selectpicker('refresh');
   }, [inputElemIdRef, props.children]);
 
   /**
@@ -39,19 +39,12 @@ const Select: React.FC<SelectProps> & SelectChildComponents = ({ label, id, isVa
   return (
     <>
       {label && (
-        <label htmlFor={inputElemIdRef.current} hidden>{label}</label>
+        <label className="labelName" htmlFor={inputElemIdRef.current} hidden>{label}</label>
       )}
 
-      <select
-        ref={inputElemRef}
-        id={inputElemIdRef.current}
-        className="from-select"
-        {...props}
-        aria-label={props.title}
-      >
+      <select ref={inputElemRef} id={inputElemIdRef.current} {...props} aria-label={props.title}>
         {props.children}
       </select>
-
     </>
   );
 };

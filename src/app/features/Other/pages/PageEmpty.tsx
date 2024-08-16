@@ -14,7 +14,7 @@ const Page1: React.FC<any> = (props) => {
   return (
     <div id="emptyPage">
       <header>
-        <div style={{ width: '100%', height: '83px', position: 'absolute', background: '#348d8f' }} />
+        <div style={{ width: '100%', height: '75px', position: 'absolute', background: '#348d8f' }} />
         <nav className="navbar fixed-top navbar-expand" style={{ height: '63px' }}>
           <div className="d-flex col-2">
             <button
@@ -42,7 +42,10 @@ const Page1: React.FC<any> = (props) => {
         <div style={{ width: '100%', marginLeft: 'auto', marginRight: 'auto' }}>
           <div className="row page1Pane">
             <div className="row">
-              <div className="col-lg-1 d-flex flex-row" style={{ zIndex: 1, margin: 'auto 0px', width: '15%', paddingLeft: '15px' }}>
+              <div
+                className="col-lg-1 d-flex flex-row"
+                style={{ zIndex: 1, margin: 'auto 0px', width: '15%', paddingLeft: '15px' }}
+              >
                 <button
                   type="button"
                   className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
@@ -54,87 +57,84 @@ const Page1: React.FC<any> = (props) => {
                 </button>
               </div>
               <div className="p-1 col-lg-8 d-flex flex-column-reverse" style={{ width: '70%' }}>
-                <Tabs activeKey={activeKey} type="card" centered className="InsuranceActiveTab">
+                <Tabs activeKey={activeKey} centered className="InsuranceActiveTab">
                   <Tabs.TabPane
                     tab={
                       <div onClick={() => setActiveKey('1')}>
                         <div className="tabText">
                           <img
-                            style={{ width: '1.2rem', height: '1.2rem' }}
+                            style={{ width: '1.2rem', height: '1.2rem', position: 'absolute', top: '0', left: '40%' }}
                             src={require('assets/img/icons/check.svg').default}
                           />
-                          <br />
                           商品選擇
                         </div>
                       </div>
-                    } key="1"
+                      } key="1"
                   />
                   <Tabs.TabPane
                     tab={
                       <div onClick={() => setActiveKey('2')}>
                         <div className="tabText">
                           <img
-                            style={{ width: '1.2rem', height: '1.2rem' }}
+                            style={{ width: '1.2rem', height: '1.2rem', position: 'absolute', top: '0', left: '40%' }}
                             src={require('assets/img/icons/check.svg').default}
                           />
-                          <br />
                           關係人
                         </div>
                       </div>
-                    } key="2"
+                      } key="2"
                   />
                   <Tabs.TabPane
                     tab={
                       <div onClick={() => setActiveKey('3')}>
                         <div className="tabText">
                           <img
-                            style={{ width: '1.2rem', height: '1.2rem' }}
+                            style={{ width: '1.2rem', height: '1.2rem', transform: 'rotate(180deg)', position: 'absolute', top: '0', left: '40%' }}
                             src={require('assets/img/icons/warn.svg').default}
                           />
-                          <br />
                           投保内容
                         </div>
                       </div>
-                    } key="3"
+                      } key="3"
                   />
                   <Tabs.TabPane
                     tab={
                       <div onClick={() => setActiveKey('4')}>
                         <div className="tabText">
                           <img
-                            style={{ width: '1.2rem', height: '1.2rem' }}
+                            style={{ width: '1.2rem', height: '1.2rem', transform: 'rotate(180deg)', position: 'absolute', top: '0', left: '40%' }}
                             src={require('assets/img/icons/warn.svg').default}
                           />
-                          <br />
                           繳費方式
                         </div>
                       </div>
-                    } key="4"
+                      } key="4"
                   />
                   <Tabs.TabPane
                     tab={
                       <div onClick={() => setActiveKey('5')}>
                         <div className="tabText">
                           <img
-                            style={{ width: '1.2rem', height: '1.2rem' }}
+                            style={{ width: '1.2rem', height: '1.2rem', transform: 'rotate(180deg)', position: 'absolute', top: '0', left: '40%' }}
                             src={require('assets/img/icons/warn.svg').default}
                           />
-                          <br />
                           應付文件
                         </div>
                       </div>
-                    } key="5"
+                      } key="5"
                   />
                   <Tabs.TabPane
                     tab={
                       <div onClick={() => setActiveKey('6')}>
                         <div className="tabText">
-                          <img style={{ width: '1.2rem', height: '1.2rem' }} src={require('assets/img/icons/warn.svg').default} />
-                          <br />
+                          <img
+                            style={{ width: '1.2rem', height: '1.2rem', transform: 'rotate(180deg)', position: 'absolute', top: '0', left: '40%' }}
+                            src={require('assets/img/icons/warn.svg').default}
+                          />
                           簽名
                         </div>
                       </div>
-                    } key="6"
+                      } key="6"
                   />
                 </Tabs>
               </div>
