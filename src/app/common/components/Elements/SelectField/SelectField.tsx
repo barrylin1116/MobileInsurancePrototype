@@ -6,7 +6,7 @@ import Option from './Option';
 const SelectField: React.FC<SelectFieldProps> & SelectFieldChildComponents = ({ label, wrapClassName, children, ...props }) => (
   label
     ? (
-      <div className={'col-12' + (wrapClassName ? ` ${wrapClassName}` : '')}>
+      <div className={'col-12 w-90-pct ' + (wrapClassName ? ` ${wrapClassName}` : '')}>
         <div className="name labelName">{label}</div>
         <Select
           {...props}

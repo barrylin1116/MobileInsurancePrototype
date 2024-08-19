@@ -5,7 +5,7 @@ const Nation: React.FC = () => {
     <>
       <div className="col-12">
         <div className="name labelName">國籍</div>
-        <div className="d-flex row form-row mt-1">
+        <div className="d-flex form-row mt-1">
           <div className="d-flex col-12 col-lg-5" style={{ alignItems: 'center' }}>
             <input
               type="radio" name="applicantNationType" id="applicantNationType-0"

@@ -8,13 +8,11 @@ const InsuredAddress02: React.FC = () => {
           <div className="d-flex align-items-center name labelName">通訊地址</div>
           <div className="d-flex align-items-center" style={{ marginLeft: 'auto' }}>
             <button
-              type="button" className="btn btn-primary btn-sm"
-              style={{ height: '50px', marginLeft: '5px', marginRight: '5px', width: '100%', padding: '0px 5px' }}
+              type="button" className="btn btn-primary btn-sm relationBtn"
             >同被保人住所
             </button>
             <button
-              type="button" className="btn btn-primary btn-sm"
-              style={{ height: '50px', marginLeft: '5px', marginRight: '5px', width: '100%', padding: '0px 5px' }}
+              type="button" className="btn btn-primary btn-sm relationBtn"
             >同要保人住所
             </button>
           </div>

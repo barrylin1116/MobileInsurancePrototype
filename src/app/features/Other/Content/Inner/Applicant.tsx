@@ -8,11 +8,11 @@ const Applicant: React.FC<any> = (props) => {
   return (
     <div>
       <div className="row m-0">
-        <div className="col-6">
+        <div className="col-5">
           <div className="name labelName">身份證字號</div>
           <input type="labelName" name="rocId" className="form-control" />
         </div>
-        <div className="col-6">
+        <div className="col-5">
           <div className="name labelName">性別</div>
           <div className="d-flex mb-3 mt-1">
             <span className="form-check-label me-2 text-nowrap labelName">男</span>
@@ -20,23 +20,23 @@ const Applicant: React.FC<any> = (props) => {
         </div>
       </div>
       <div className="row m-0">
-        <div className="col-6">
+        <div className="col-5">
           <div className="name labelName">姓名</div>
           <input type="text" name="name" className="form-control" />
         </div>
-        <div className="col-6">
+        <div className="col-5">
           <Nation />
         </div>
       </div>
       <div className="row m-0">
-        <div className="col-6">
+        <div className="col-5">
           <div className="name labelName">出生日期</div>
           <DatePickerTW
             name="birthday" className="form-control" onChange={() => {
             }}
           />
         </div>
-        <div className="col-6" style={{ margin: 'auto 0' }}>
+        <div className="col-5" style={{ margin: 'auto 0' }}>
           <label className="form-check-label me-2 text-nowrap labelName">法定年齡</label>
           <span className="labelName">50嵗</span>
           <br />
@@ -48,7 +48,7 @@ const Applicant: React.FC<any> = (props) => {
         <ApplicantAddress />
       </div>
       <div className="row m-0">
-        <div className="col-6">
+        <div className="col-5">
           <label className="form-check-label me-2 text-nowrap labelName">住宅電話</label>
           <div className="phone-inputs" style={{ margin: '4px 0' }}>
             <input type="text" name="address" className="form-control area-code" />
@@ -57,7 +57,7 @@ const Applicant: React.FC<any> = (props) => {
             <input type="text" name="address" className="form-control extend" />
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-5">
           <label className="form-check-label me-2 text-nowrap labelName">公司電話</label>
           <div className="phone-inputs" style={{ margin: '4px 0' }}>
             <input type="text" name="address" className="form-control area-code" />
@@ -68,7 +68,7 @@ const Applicant: React.FC<any> = (props) => {
         </div>
       </div>
       <div className="row m-0">
-        <div className="col-6">
+        <div className="col-5">
           <label className="form-check-label me-2 text-nowrap labelName">行動電話</label>
           <div className="phone-inputs" style={{ margin: '4px 0' }}>
             <input type="text" name="address" className="form-control area-code" />
@@ -79,7 +79,7 @@ const Applicant: React.FC<any> = (props) => {
         </div>
       </div>
       <div className="row m-0">
-        <div className="col-6">
+        <div className="col-5">
           <div className="name labelName">是否領有身心障礙手冊或身心障礙證明</div>
           <div className="d-flex">
             <input type="radio" name="nation" className="form-check-input me-2 mb-1" />
@@ -88,7 +88,7 @@ const Applicant: React.FC<any> = (props) => {
             <label className="form-check-label me-2 text-nowrap labelName">有</label>
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-5">
           <div className="name labelName">是否有監護宣告</div>
           <div className="d-flex">
             <input
@@ -107,11 +107,11 @@ const Applicant: React.FC<any> = (props) => {
         </div>
       </div>
       <div className="row m-0">
-        <div className="col-6">
+        <div className="col-5">
           <div className="name labelName">服務單位/職位</div>
           <input type="text" name="name" className="form-control" />
         </div>
-        <div className="col-6">
+        <div className="col-5">
           <div className="name labelName">工作内容（含兼職）</div>
           <input type="text" name="name" className="form-control" />
         </div>

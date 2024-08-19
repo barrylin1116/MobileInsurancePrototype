@@ -5,11 +5,10 @@ const BeneficiaryAddress: React.FC = () => {
     <>
       <div id="applicant-address-fields-group" className="col-12 address dependence-address">
         <div className="address-row">
-          <div className="d-flex align-items-center name labelName">通訊地址</div>
+          <div className="d-flex align-items-center name labelName ">通訊地址</div>
           <div className="d-flex align-items-center" style={{ marginLeft: 'auto' }}>
             <button
-              type="button" className="btn btn-primary btn-sm"
-              style={{ height: '50px', marginLeft: '5px', marginRight: '5px', width: '100%', padding: '0px 5px' }}
+              type="button" className="btn btn-primary btn-sm relationBtn"
             >同要保人通訊地址
             </button>
           </div>

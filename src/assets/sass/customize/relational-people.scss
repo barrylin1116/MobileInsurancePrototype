@@ -1,4 +1,21 @@
 #relationalPeople {
+
+  //.form-control {
+  //  width: 90% !important;
+  //  text-align: unset !important;
+  //}
+  //.w-90-pct {
+  //  width: 90% !important;
+  //}
+
+  .relationBtn {
+    font-size: unset !important;
+    padding: 0 5px 0 5px !important;
+    height: 50px !important;
+    margin-left: 5px; margin-right: 5px !important;
+    width: 100% !important;
+  }
+
   .ant-card-head {
     padding: 0;
     color: #565250;
@@ -8,6 +25,12 @@
     font-weight: 600 !important;
   }
 
+  .row {
+    margin-top: 1rem !important;
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
+    justify-content: space-between !important;
+  }
   padding: 0;
 
   .ant-tabs-nav-list {
@@ -22,24 +45,6 @@
     border: 1px solid rgba(74, 46, 25, 0.15);
     border-radius: 16px;
     padding: 16px;
-  }
-
-  .labelName {
-    color: #565250;
-    font-size: 1.25rem;
-    line-height: 2rem;
-    margin-bottom: 8px;
-    font-weight: 400 !important;
-  }
-
-  .bootstrap-select {
-    .text {
-      color: #565250;
-      font-size: 1.25rem;
-      line-height: 2rem;
-      margin-bottom: 8px;
-      font-weight: 400 !important;
-    }
   }
 
   .ant-tabs-tab {

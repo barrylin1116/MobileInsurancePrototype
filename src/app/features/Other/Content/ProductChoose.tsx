@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Card, Select } from 'antd';
+import { Card } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import _ from 'lodash';
+import SelectField from '../../../common/components/Elements/SelectField';
 
 const ProductChoose: React.FC<any> = (props) => {
   const [additionalProduct, setAdditionalProduct] = useState<any>([]);
@@ -10,66 +11,83 @@ const ProductChoose: React.FC<any> = (props) => {
       <Card style={{ minHeight: '450px', width: '95%' }}>
         <div className="row">
           <div className="col-2">
-            <label className="text">主約商品</label>
+            <label className="text labelName">主約商品</label>
           </div>
           <div className="col-8">
-            <Select
-              className="productSelect"
-              showSearch
-              placeholder="主約商品"
-              filterOption={(input, option) =>
-                (option?.label ?? '').toLowerCase().includes(input.toLowerCase())}
-              options={[
-                { value: '1', label: 'E好保旅行平安保險' },
-                { value: '2', label: '小額終身險' },
-                { value: '3', label: '重大疾病險' }
-              ]}
-            />
+            <SelectField
+              label=""
+              className="selectpicker w-100 relation"
+              placeholder="請選擇主約商品"
+              title="請選擇主約商品"
+              name="product"
+            >
+              <>
+                <SelectField.Option value="1" key="1">
+                  E好保旅行平安保險
+                </SelectField.Option>
+                <SelectField.Option value="2" key="2">
+                  小額終身險
+                </SelectField.Option>
+                <SelectField.Option value="3" key="3">
+                  重大疾病險
+                </SelectField.Option>
+              </>
+            </SelectField>
           </div>
           <div className="col-2" />
         </div>
         {
-              additionalProduct.map((a: any, index: number) => (
-                <div key={index} className="row pt-1">
-                  <div className="col-2">
-                    <label className="text">附約商品</label>
-                  </div>
-                  <div className="col-8">
-                    <Select
-                      value={a.selectKey}
-                      onChange={(e) => {
-                        const _clone = _.clone(additionalProduct);
-                        _clone[index].selectKey = e;
-                        setAdditionalProduct(_clone);
-                      }}
-                      className="productSelect"
-                      showSearch
-                      placeholder="附約商品"
-                      filterOption={(input, option) =>
-                        (option?.label ?? '').toLowerCase().includes(input.toLowerCase())}
-                      options={[
-                        { value: '1', label: '身故保險金或喪葬費用保險金' },
-                        { value: '2', label: '完全失能保險金' },
-                        { value: '3', label: '祝壽保險金' },
-                        { value: '4', label: '意外失能保險金' }
-                      ]}
-                    />
-                  </div>
-                  <div className="col-2  pt-1">
-                    <button
-                      type="button"
-                      className="btn btn-danger me-lg-0 cus-outline-transparent InsuranceEndButton"
-                      onClick={() => {
-                        const _clone = _.clone(additionalProduct);
-                        _clone.splice(index, 1);
-                        setAdditionalProduct(_clone);
-                      }}
-                    >刪除
-                    </button>
-                  </div>
-                </div>
-              ))
-          }
+                    additionalProduct.map((a: any, index: number) => (
+                      <div key={index} className="row pt-1">
+                        <div className="col-2">
+                          <label className="text labelName">附約商品</label>
+                        </div>
+                        <div className="col-8">
+                          <SelectField
+                            label=""
+                            className="selectpicker w-100 relation"
+                            placeholder="請選擇主約商品"
+                            title="請選擇主約商品"
+                            id={`additionalProduct-${index}`}
+                            name="additionalProduct"
+                            value={a.selectKey}
+                            onChange={(e) => {
+                              const _clone = _.clone(additionalProduct);
+                              _clone[index].selectKey = e.target.value;
+                              setAdditionalProduct(_clone);
+                            }}
+                          >
+                            <>
+                              <SelectField.Option value="1" key="1">
+                                身故保險金或喪葬費用保險金
+                              </SelectField.Option>
+                              <SelectField.Option value="2" key="2">
+                                完全失能保險金
+                              </SelectField.Option>
+                              <SelectField.Option value="3" key="3">
+                                祝壽保險金
+                              </SelectField.Option>
+                              <SelectField.Option value="4" key="4">
+                                意外失能保險金
+                              </SelectField.Option>
+                            </>
+                          </SelectField>
+                        </div>
+                        <div className="col-2  pt-1">
+                          <button
+                            type="button"
+                            className="btn btn-danger me-lg-0 cus-outline-transparent InsuranceEndButton"
+                            onClick={() => {
+                              const _clone = _.clone(additionalProduct);
+                              _clone.splice(index, 1);
+                              setAdditionalProduct(_clone);
+                            }}
+                          >刪除
+                          </button>
+                        </div>
+                      </div>
+                    ))
+                }
         <div className="row mt-3 justify-center">
           <div className="col-4" style={{ textAlign: 'center' }}>
             <button

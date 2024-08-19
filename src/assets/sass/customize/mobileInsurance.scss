@@ -7,6 +7,25 @@
 }
 
 #mobileInsurance {
+
+  .bootstrap-select {
+    .text {
+      color: #565250;
+      font-size: 1.25rem;
+      line-height: 2rem;
+      margin-bottom: 8px;
+      font-weight: 400 !important;
+    }
+  }
+
+  .labelName {
+    color: #565250;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin-bottom: 8px;
+    font-weight: 400 !important;
+  }
+
   .page1Pane {
     .InsuranceTabPanel {
       display: flex;
@@ -83,7 +102,7 @@
     }
 
     .row {
-      margin: 0px !important;
+      margin: 0px;
 
       .col-lg-4 {
         padding-top: 6px !important;
