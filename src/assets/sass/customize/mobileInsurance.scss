@@ -18,6 +18,26 @@
     }
   }
 
+  .topBtn{
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    color: #FFF;
+    background-color: #348d8f;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 9999;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+
+  .topBtn:active {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(52, 141, 143, 0.25);
+  }
+
   .labelName {
     color: #565250;
     font-size: 1.25rem;
