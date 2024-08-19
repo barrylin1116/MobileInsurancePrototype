@@ -3,6 +3,7 @@ import { Card } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import _ from 'lodash';
 import SelectField from '../../../common/components/Elements/SelectField';
+import TopButton from '../components/TopButton';
 
 const ProductChoose: React.FC<any> = (props) => {
   const [additionalProduct, setAdditionalProduct] = useState<any>([]);
@@ -103,6 +104,7 @@ const ProductChoose: React.FC<any> = (props) => {
           </div>
         </div>
       </Card>
+      <TopButton />
     </>
   );
 };

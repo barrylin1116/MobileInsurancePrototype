@@ -140,7 +140,6 @@ const Applicant: React.FC<any> = (props) => {
           </div>
           )
         : null}
-
     </div>
   );
 };
