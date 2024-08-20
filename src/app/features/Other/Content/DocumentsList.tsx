@@ -1,8 +1,8 @@
 import { Card, Tabs } from 'antd';
 import React, { useState } from 'react';
-import RecommendedDocuments from './DocumentInner/RecommendedDocuments';
 import RequiredDocuments from './DocumentInner/RequiredDocuments';
 import { RequiredDocumentsList } from './DocumentInner/types';
+import SupplementaryDocuments from './DocumentInner/SupplementaryDocuments';
 
 const DocumentsList: React.FC<any> = (props) => {
   const [activeKey, setActiveKey] = useState('1');
@@ -41,7 +41,7 @@ const DocumentsList: React.FC<any> = (props) => {
                 className="help-icon"
                 src={require('assets/img/icons/help.svg').default}
               />
-              建議文件
+              補充文件上傳
             </div>
                     } key="2"
         />
@@ -51,7 +51,7 @@ const DocumentsList: React.FC<any> = (props) => {
                     activeKey === '1' ? <RequiredDocuments requiredDocumentsList={requiredDocumentsList} /> : null
                 }
         {
-                    activeKey === '2' ? <RecommendedDocuments /> : null
+                    activeKey === '2' ? <SupplementaryDocuments /> : null
 
                 }
       </div>
