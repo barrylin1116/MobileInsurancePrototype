@@ -1,0 +1,610 @@
+#DocumentsList {
+  #CustomModal {
+    &.modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &.modal-overlay.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-container {
+      background: white;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 20px;
+      background: #348d8f;
+      color: white;
+    }
+
+    .header-title {
+      flex-grow: 1;
+      text-align: center;
+      font-weight: 400;
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+
+    .header-button {
+      position: absolute;
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    .header-button:first-child {
+      left: 0;
+    }
+
+    .header-button:last-child {
+      right: 2rem;
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
+
+    .modal-footer {
+      text-align: right;
+      padding: 20px;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+
+  #HealthDeclarationFormVisible {
+    ///* Change the background color of the Modal header */
+    //.ant-modal-header {
+    //    background-color: #348d8f;
+    //}
+    &.modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    &.modal-overlay.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .HealthDeclarationFormModalContent {
+      background: white;
+      width: 100vw;
+      height: 100vh;
+      max-width: 100vw;
+      max-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      justify-content: space-between;
+
+      .HealthDeclarationFormModalHeader {
+        display: flex;
+        justify-content: center; /* 水平方向居中 */
+        align-items: center; /* 垂直方向居中 */
+        position: relative;
+        height: 5rem;
+        width: 100vw;
+        background: #348d8f;
+        color: white;
+        padding: .25rem;
+
+        h5 {
+          margin: 0;
+          position: absolute; /* 使标题在上下左右居中 */
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%); /* 调整位置到正中央 */
+          font-weight: 400;
+          font-size: 1.875rem;
+          line-height: 2.25rem;
+        }
+      }
+
+      //.modal-body {
+      //  border: 1px solid #348d8f;
+      //  border-radius: .25rem;
+      //  padding: .25rem;
+      //  margin: .25rem;
+      //}
+      .modal-body {
+        margin-top: 10px;
+        padding: .25rem;
+      }
+
+      .modal-footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .close-button {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  padding: 0;
+
+  .custom-modal .ant-modal-header {
+    display: none;
+  }
+
+  .custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #5a9698; /* Replace with your desired background color */
+    color: white;
+    border-radius: 8px 8px 0 0; /* For rounded corners at the top */
+  }
+
+  .custom-header .modal-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .modal-content {
+    padding: 24px; /* Adjust padding as necessary */
+  }
+
+  .content {
+    .rules-box {
+      padding: 0 32px;
+      width: 100%;
+
+      img {
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    .item {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      color: #565250;
+      padding-left: 1rem;
+      position: relative;
+      margin: 2rem 0;
+    }
+
+    //.item:before {
+    //  content: "";
+    //  height: 100%;
+    //  width: 4px;
+    //  border-radius: 10px;
+    //  background: #266264;
+    //  display: block;
+    //  position: absolute;
+    //  left: 0;
+    //}
+
+  }
+
+  .requiredDocumentsCount {
+    background-color: red;
+    color: white;
+    padding: 0.2em 0.5em; // Adjust padding to your preference
+    border-radius: 50%; // Makes the span a perfect circle if it's square
+    display: inline-block; // Ensures the span behaves correctly as an inline element
+    text-align: center;
+    line-height: 1; // Centers the text vertically
+    margin-inline: .5rem;
+  }
+
+  .exclamation-icon {
+    border-radius: 50%; // 將圖片設為圓形
+    background-color: #348d8f; // 設置背景顏色
+    box-sizing: border-box; // 確保 padding 不影響圖片大小
+    margin-inline: .5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .help-icon {
+    border-radius: 50%; // 將圖片設為圓形
+    background-color: #348d8f; // 設置背景顏色
+    box-sizing: border-box; // 確保 padding 不影響圖片大小
+    margin-inline: .5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .ant-tabs-nav-list {
+    display: flex; // 確保 tab 可以在一行內排列
+    flex-wrap: nowrap; // 避免 tab 換行
+    * {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  }
+
+  .labelName {
+    color: #565250;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin-bottom: 8px;
+    font-weight: 400 !important;
+  }
+
+  .ant-tabs-tab {
+    color: #348d8f;
+    width: auto; // 讓寬度自動調整
+    justify-content: center;
+    padding: 10px 100px !important; // 增加左右的padding確保內容不會緊貼邊界
+    display: inline-flex; // 讓容器隨內容調整寬度
+  }
+
+  .ant-tabs-tab-active {
+    color: white !important;
+    background: #348d8f;
+
+    .ant-tabs-tab-btn {
+      color: white !important;
+    }
+  }
+
+  .ant-card-body {
+    padding: 0;
+  }
+
+  .phone-inputs {
+    display: flex;
+    align-items: center;
+  }
+
+  .phone-inputs .area-code {
+    width: 20%;
+  }
+
+  .phone-inputs .number {
+    width: 50%;
+  }
+
+  .phone-inputs .extend {
+    width: 30%;
+  }
+
+  .zip-code::placeholder {
+    font-size: 1.4rem;
+  }
+
+  .info-circle {
+    background-image: url(../../img/icons/info-circle.svg);
+    width: 24px;
+    height: 24px;
+    position: relative;
+  }
+
+  .info-circle:hover {
+    cursor: pointer;
+    background-image: url(../../img/icons/info-circle-yellow.svg);
+  }
+
+  .ratio-wrapper {
+    display: none;
+  }
+
+  .phone-inputs {
+    display: flex;
+    align-items: center;
+  }
+
+  .address .address-row {
+    display: flex;
+  }
+
+  .address .address-row > *:not(span) {
+    margin: 4px 0;
+  }
+
+  .address .address-row .zip-code {
+    width: 16%;
+    margin-right: 8px;
+  }
+
+  .address .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn).district {
+    width: 16%;
+    margin-right: 8px;
+  }
+
+  .address .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn).county {
+    width: 16%;
+    margin-right: 8px;
+  }
+
+  .address .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn).street {
+    flex-grow: 1;
+  }
+
+  .address span:not(.text) {
+    margin: 0 8px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 991.98px) {
+    .address .address-row {
+      flex-wrap: wrap;
+    }
+    .address .address-row > *:not(span) {
+      margin: 2px 0;
+    }
+    .address .address-row .zip-code {
+      width: 25%;
+      margin-right: 8px;
+    }
+    .address .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn).district {
+      width: calc((100% - 8px) / 2);
+      margin-right: 0;
+    }
+    .address .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn).county {
+      width: calc((100% - 8px) / 2);
+    }
+    .address span:not(.text) {
+      margin: 0 8px;
+      white-space: nowrap;
+    }
+    .address .comma {
+      display: none;
+    }
+  }
+
+  form .notes-mobile {
+    display: none;
+  }
+
+  @media (max-width: 991.98px) {
+    form .notes-mobile {
+      display: block;
+    }
+    form > .notes:not(.notes-mobile) {
+      display: none;
+    }
+  }
+
+  .beneficiary button:not(.dropdown-toggle) {
+    margin-top: 12px;
+    width: 290px;
+    margin-right: auto;
+  }
+
+  .beneficiary-list .head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .beneficiary-list .head .arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .beneficiary-list .head .up {
+    background-image: url(../../img/icons/circle-arrow-up.svg);
+    pointer-events: none;
+  }
+
+  .beneficiary-list .head .up.active {
+    background-image: url(../../img/icons/circle-arrow-up-green.svg);
+    pointer-events: auto;
+  }
+
+  .beneficiary-list .head .up.active:hover {
+    cursor: pointer;
+  }
+
+  .beneficiary-list .head .down {
+    background-image: url(../../img/icons/circle-arrow-down.svg);
+    margin-left: 10px;
+    pointer-events: none;
+  }
+
+  .beneficiary-list .head .down.active {
+    background-image: url(../../img/icons/circle-arrow-down-green.svg);
+    pointer-events: auto;
+  }
+
+  .beneficiary-list .head .down.active:hover {
+    cursor: pointer;
+  }
+
+  .beneficiary-list .head .delete {
+    padding: 4px 12px;
+    border: 1px solid #a9a9a9;
+    border-radius: 16px;
+    color: #a9a9a9;
+    font-size: 1.0625rem;
+    line-height: 1.125rem;
+    margin-left: 12px;
+  }
+
+  .beneficiary-list .head .delete.active {
+    color: #ac113e;
+    border-color: #ac113e;
+  }
+
+  .beneficiary-list .head .delete.active:hover {
+    cursor: pointer;
+  }
+
+  .beneficiary-list .body .form-row:not(.relation-row) {
+    display: none;
+  }
+
+  .beneficiary-list .relation .dropdown-menu {
+    max-height: 130px;
+  }
+
+  .kids .kid-insuree-age .notes {
+    display: none;
+  }
+
+  .kids button:not(.dropdown-toggle) {
+    margin-top: 12px;
+    width: 290px;
+    margin-right: auto;
+  }
+
+  .evaluation .notes-wrapper {
+    margin: 16px 0;
+  }
+
+  .evaluation .radios-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .evaluation .radios-wrapper .form-check {
+    width: 15%;
+    margin: 4px 0;
+  }
+
+  .evaluation .fund-source .form-check:last-child {
+    width: 30%;
+  }
+
+  .evaluation .notes-mobile {
+    display: none;
+  }
+
+  @media (max-width: 991.98px) {
+    .evaluation .radios-wrapper {
+      margin-top: -4px;
+    }
+    .evaluation .radios-wrapper .form-check {
+      width: 50%;
+    }
+    .evaluation .fund-source .form-check:last-child {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .evaluation .fund-source .form-check:last-child {
+      width: 100%;
+    }
+  }
+
+  .mobile-format-check.form-control.is-invalid {
+    padding-right: 0.75rem;
+    background-image: none;
+    background-color: #fff5f8;
+    border-color: #dc3545;
+  }
+
+  .mobile-format-check.form-control.is-invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+  }
+
+  .counter {
+    position: relative;
+  }
+
+  .counter input {
+    text-align: center;
+  }
+
+  .counter .ratio-btn {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+  }
+
+  .counter .ratio-btn:hover {
+    cursor: pointer;
+  }
+
+  .counter .ratio-btn.ratio-minus.enabled {
+    background-image: url(../../img/icons/minus-green.svg);
+  }
+
+  .counter .ratio-btn.ratio-minus.disabled {
+    background-image: url(../../img/icons/minus-grey.svg);
+  }
+
+  .counter .ratio-btn.ratio-minus.disabled:hover {
+    pointer-events: none;
+  }
+
+  .counter .ratio-btn.ratio-add.enabled {
+    background-image: url(../../img/icons/plus-green.svg);
+  }
+
+  .counter .ratio-btn.ratio-add.disabled {
+    background-image: url(../../img/icons/plus-grey.svg);
+  }
+
+  .counter .ratio-btn.ratio-add.disabled:hover {
+    pointer-events: none;
+  }
+
+  .counter .ratio-minus {
+    left: 12px;
+  }
+
+  .counter .ratio-add {
+    right: 12px;
+  }
+
+  .counter .form-control.is-invalid {
+    padding-right: 0.75rem;
+    background-image: none;
+    background-color: #fff5f8;
+    border-color: #dc3545;
+  }
+
+}

@@ -4,6 +4,7 @@ import ProductChoose from '../Content/ProductChoose';
 import { routerHistory } from '../../../core/router/service';
 import { ROUTES } from '../../../core/router/paths';
 import Relation from '../Content/Relation';
+import DocumentsList from '../Content/DocumentsList';
 import InsuredContent from '../Content/InsuredContent';
 import PaymentMethod from '../Content/PaymentMethod';
 
@@ -166,6 +167,7 @@ const Page1: React.FC<any> = (props) => {
         <div className="row pb-3 pt-3 m-1 justify-center">
           {activeKey === '1' ? <ProductChoose /> : null}
           {activeKey === '2' ? <Relation /> : null}
+          {activeKey === '5' ? <DocumentsList /> : null}
           {activeKey === '3' ? <InsuredContent /> : null}
           {activeKey === '4' ? <PaymentMethod /> : null}
         </div>
