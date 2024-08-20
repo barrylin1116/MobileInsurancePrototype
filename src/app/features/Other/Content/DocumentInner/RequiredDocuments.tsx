@@ -3,20 +3,19 @@ import { RequiredDocumentsProps } from './types';
 import CustomModal from '../../../Insurance/pages/Modals/CustomModal';
 
 const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
-  const [HealthDeclarationFormVisible, setHealthDeclarationForm] = useState(false);
-  const [MedicalQuestionnaireVisible, setMedicalQuestionnaire] = useState(false);
-  // const [ReviewPeriodConfirmationStatementVisible, setReviewPeriodConfirmationStatement] = useState(false);
-  // const [ChecklistOfComplianceRequirementsVisible, setChecklistOfComplianceRequirements] = useState(false);
-  // const [ElectronicInsuranceApplicationConfirmationVisible, setElectronicInsuranceApplicationConfirmation] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [formName, setFormName] = useState('');
   const [modalTitle, setModalTitle] = useState<string>('');
   const openModal = (key: string, index: number) => {
     setModalTitle(props.requiredDocumentsList[index].title);
-    if (key === 'HealthDeclarationForm') {
-      setHealthDeclarationForm(true);
-    }
-    if (key === 'MedicalQuestionnaire') {
-      setMedicalQuestionnaire(true);
-    }
+    setModalVisible(true);
+    setFormName(key);
+    // if (key === 'HealthDeclarationForm') {
+    //   setHealthDeclarationForm(true);
+    // }
+    // if (key === 'MedicalQuestionnaire') {
+    //   setMedicalQuestionnaire(true);
+    // }
     // if (key === 'ReviewPeriodConfirmationStatement') setReviewPeriodConfirmationStatement(true);
     // if (key === 'ChecklistOfComplianceRequirements') setChecklistOfComplianceRequirements(true);
     // if (key === 'ElectronicInsuranceApplicationConfirmation') setElectronicInsuranceApplicationConfirmation(true);
@@ -176,6 +175,15 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     ;
   };
 
+  const getFormContent = () => {
+    switch (formName) {
+      case 'HealthDeclarationForm':
+        return getHealthDeclarationFormContent();
+      default:
+        return '';
+    }
+  };
+
   const handleCheckboxChange = (index: number, value: string) => {
     setCheckboxesState(prevState => {
       const newState = [...prevState];
@@ -201,26 +209,43 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
           </>
         ))}
       </div>
-      <CustomModal
-        isOpen={HealthDeclarationFormVisible}
-        onClose={setHealthDeclarationForm}
-        headerTitle={modalTitle}
-        headerButton={<div className="p-4">完成</div>}
-        buttonPosition="right"
-        footerContent={<div>完成</div>}
-      >
-        {getHealthDeclarationFormContent()}
-      </CustomModal>
-      <CustomModal
-        isOpen={MedicalQuestionnaireVisible}
-        onClose={setMedicalQuestionnaire}
-        headerTitle={modalTitle}
-        headerButton={<div className="p-4">完成</div>}
-        buttonPosition="right"
-        footerContent={<div>完成</div>}
-      >
-        {getHealthDeclarationFormContent()}
-      </CustomModal>
+      {
+        modalVisible && (
+          <CustomModal
+            isOpen={modalVisible}
+            onClose={setModalVisible}
+            headerTitle={modalTitle}
+            headerButton={
+              <>
+                <button
+                  type="button"
+                  className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                >
+                  <div className="row">
+                    <div className="col-lg-12">完成</div>
+                  </div>
+                </button>
+              </>
+      }
+            buttonPosition="right"
+            footerContent={
+              <>
+                <button
+                  type="button"
+                  className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                  onClick={() => setModalVisible(false)}
+                >
+                  <div className="row">
+                    <div className="col-lg-12">完成</div>
+                  </div>
+                </button>
+              </>
+        }
+          >
+            {getFormContent()}
+          </CustomModal>
+        )
+      }
 
     </>
   )
