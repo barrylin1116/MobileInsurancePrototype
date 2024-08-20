@@ -5,6 +5,7 @@ import { routerHistory } from '../../../core/router/service';
 import { ROUTES } from '../../../core/router/paths';
 import Relation from '../Content/Relation';
 import InsuredContent from '../Content/InsuredContent';
+import PaymentMethod from '../Content/PaymentMethod';
 
 const Page1: React.FC<any> = (props) => {
   const [updateTime, setUpdateTime] = useState('');
@@ -166,6 +167,7 @@ const Page1: React.FC<any> = (props) => {
           {activeKey === '1' ? <ProductChoose /> : null}
           {activeKey === '2' ? <Relation /> : null}
           {activeKey === '3' ? <InsuredContent /> : null}
+          {activeKey === '4' ? <PaymentMethod /> : null}
         </div>
       </main>
     </div>

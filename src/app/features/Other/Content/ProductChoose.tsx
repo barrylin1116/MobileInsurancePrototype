@@ -47,8 +47,8 @@ const ProductChoose: React.FC<any> = (props) => {
                           <SelectField
                             label=""
                             className="selectpicker w-100 relation"
-                            placeholder="請選擇主約商品"
-                            title="請選擇主約商品"
+                            placeholder="請選擇附約商品"
+                            title="請選擇附約商品"
                             id={`additionalProduct-${index}`}
                             name="additionalProduct"
                             value={a.selectKey}

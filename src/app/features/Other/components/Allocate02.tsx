@@ -2,7 +2,7 @@ import React from 'react';
 
 const Allocate02: React.FC = () => {
   return (
-    <div className="col-12 col-lg-6">
+    <div className="col-12 col-lg-5">
       <div className="name labelName">受益人保險金分配方式</div>
       <div className="d-flex mb-3 mt-1">
         <div className="form-check col-lg-4">

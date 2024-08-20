@@ -2,7 +2,7 @@ import React from 'react';
 
 const Relationship02: React.FC = () => {
   return (
-    <div className="col-12 col-lg-6">
+    <div className="col-12 col-lg-5">
       <div className="name labelName">關係</div>
       <div className="dropdown bootstrap-select w-100 relation">
         <select

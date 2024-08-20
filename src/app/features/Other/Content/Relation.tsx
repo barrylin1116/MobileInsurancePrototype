@@ -14,6 +14,7 @@ const Relation: React.FC<any> = (props) => {
         <Tabs.TabPane tab="被保險人" key="1" />
         <Tabs.TabPane tab="要保人" key="2" />
         <Tabs.TabPane tab="受益人" key="3" />
+        <Tabs.TabPane tab="眷屬" key="4" />
       </Tabs>
       <div className="content">
         {

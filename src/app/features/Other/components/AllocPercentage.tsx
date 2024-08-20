@@ -2,7 +2,7 @@ import React from 'react';
 
 const AllocPercentage: React.FC = () => {
   return (
-    <div className="col-12 col-lg-6 applicant-alloc-percentage">
+    <div className="col-12 col-lg-5 applicant-alloc-percentage">
       <div className="name labelName">分配比例</div>
       <div className="counter">
         <div className="ratio-btn ratio-minus disabled" title="遞減" />

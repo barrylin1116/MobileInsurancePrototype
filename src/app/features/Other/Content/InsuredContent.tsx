@@ -61,6 +61,31 @@ const InsuredContent: React.FC<any> = (props) => {
               </SelectField>
             </div>
           </div>
+          <div className="row justify-between d-flex">
+            <div className="col-5">
+              <div className="name labelName">集彙件</div>
+              <div className="d-flex">
+                <input type="radio" name="relationship" className="form-check-input me-2 mb-1" />
+                <label className="form-check-label me-2 text-nowrap labelName">否</label>
+                <input type="radio" name="relationship" className="form-check-input me-2 mb-1" />
+                <label className="form-check-label me-2 text-nowrap labelName">是</label>
+              </div>
+            </div>
+            <div className="col-5">
+              <div className="name labelName">繳費單位</div>
+              <SelectField
+                label=""
+                className="selectpicker w-100 relation"
+                name="payUnit"
+              >
+                <>
+                  <SelectField.Option value="1" key="1">
+                    臺銀人壽
+                  </SelectField.Option>
+                </>
+              </SelectField>
+            </div>
+          </div>
           <div className="row justify-between">
             <div className="col-5">
               <div className="name labelName">主約商品保險金額</div>
@@ -137,35 +162,10 @@ const InsuredContent: React.FC<any> = (props) => {
             </div>
           </div>
           <div className="row justify-center d-flex">
-            <div className="col-4">
+            <div className="col-4" style={{ margin: 'auto' }}>
               <button className="btn btn-outline-danger button-with-add-icon mt-3 mb-3">
                 總保費 共 580 元
               </button>
-            </div>
-          </div>
-          <div className="row justify-between d-flex">
-            <div className="col-5">
-              <div className="name labelName">集窠件</div>
-              <div className="d-flex">
-                <input type="radio" name="relationship" className="form-check-input me-2 mb-1" />
-                <label className="form-check-label me-2 text-nowrap labelName">否</label>
-                <input type="radio" name="relationship" className="form-check-input me-2 mb-1" />
-                <label className="form-check-label me-2 text-nowrap labelName">是</label>
-              </div>
-            </div>
-            <div className="col-5">
-              <div className="name labelName">繳費單位</div>
-              <SelectField
-                label=""
-                className="selectpicker w-100 relation"
-                name="payUnit"
-              >
-                <>
-                  <SelectField.Option value="1" key="1">
-                    台銀人壽
-                  </SelectField.Option>
-                </>
-              </SelectField>
             </div>
           </div>
         </div>

@@ -47,7 +47,7 @@ const Page1: React.FC = () => {
               <Tabs.TabPane tab={<div><div className="tabText">未提交 <span className="noticeText">3</span></div></div>} key="1" />
               <Tabs.TabPane tab={<div><div className="tabText">未簽署 <span className="noticeText">1</span></div></div>} key="2" />
               <Tabs.TabPane tab={<div><div className="tabText">已受理 <span className="noticeText">0</span></div></div>} key="3" />
-              <Tabs.TabPane tab={<div><div className="tabText">已結束 <span className="noticeText">1</span></div></div>} key="4" />
+              <Tabs.TabPane tab={<div><div className="tabText">已結案 <span className="noticeText">1</span></div></div>} key="4" />
               <Tabs.TabPane tab={<div><div className="tabText">已取消 <span className="noticeText">2</span></div></div>} key="5" />
             </Tabs>
           </div>
