@@ -142,49 +142,51 @@ const DatePickerTW: React.FC<ReactDatePickerProps> = ({
         onChange(moment(date).add(-1911, 'years').toDate(), event);
       }}
       onYearChange={handleChangeYear}
-      renderCustomHeader={({
-        date,
-        changeYear,
-        changeMonth
-      }) => {
-        changeMotherRef.current = changeMonth;
-
-        return (
-          <div className="ui-datepicker-title  bg-[#f5f5f5] mx-2 py-3">
-
-            <select
-              className="ui-datepicker-month mr-3 focus:border-[#9ac6c7]
-              focus:shadow-[0_0_0_0.25rem_rgba(52,141,143,0.25)]"
-              value={months[moment(date).get('month')]}
-              onChange={({ target: { value } }) =>
-                changeMonth(months.indexOf(value))}
-            >
-              {monthsOption.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-
-            <select
-              className="ui-datepicker-year focus:border-[#9ac6c7]
-              focus:shadow-[0_0_0_0.25rem_rgba(52,141,143,0.25)]"
-              value={moment(date).get('year')}
-              onChange={({ target: { value } }) => {
-                changeYear(Number(value));
-              }}
-            >
-              {yearOption.map((option) => (
-                <option key={option} value={option + 1911}>
-                  {option}
-                </option>
-              ))}
-            </select>
-
-          </div>
-        );
+      popperProps={{
+        modifiers: [
+          {
+            name: 'zIndex',
+            options: {
+              zIndex: 9999 // 你需要設置的 z-index 值
+            }
+          }
+        ]
       }}
+      renderCustomHeader={({ date, changeYear, changeMonth }) => (
+        <div className="ui-datepicker-title bg-[#f5f5f5] mx-2 py-3">
+          <select
+            className="ui-datepicker-month mr-3 focus:border-[#9ac6c7]
+        focus:shadow-[0_0_0_0.25rem_rgba(52,141,143,0.25)]"
+            value={months[moment(date).get('month')]}
+            onChange={({ target: { value } }) =>
+              changeMonth(months.indexOf(value))}
+          >
+            {monthsOption.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+
+          <select
+            className="ui-datepicker-year focus:border-[#9ac6c7]
+        focus:shadow-[0_0_0_0.25rem_rgba(52,141,143,0.25)]"
+            value={moment(date).get('year')}
+            onChange={({ target: { value } }) => {
+              changeYear(Number(value));
+            }}
+          >
+            {yearOption.map((option) => (
+              <option key={option} value={option + 1911}>
+                {option}
+              </option>
+            ))}
+          </select>
+
+        </div>
+      )}
     />
+
   );
 };
 

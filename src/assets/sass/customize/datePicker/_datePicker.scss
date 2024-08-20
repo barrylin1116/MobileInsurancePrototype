@@ -42,7 +42,7 @@
 }
 
 .react-datepicker-popper {
-  z-index: 100 !important;
+  z-index: 9999 !important;
 
   &[data-placement^="bottom"] {
     padding-top: $datepicker__triangle-size + 2px;
