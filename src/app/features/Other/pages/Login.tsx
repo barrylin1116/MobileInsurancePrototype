@@ -26,7 +26,7 @@ const Login: React.FC<any> = (props) => {
           <div className="">
             <div className="col-sm-5 col-lg-5 hid1 pRelative" id="slogan">
               <h2 className="bg-hero1">
-                隨時了解您的客戶
+                隨時服務您的客戶
               </h2>
               <h2 className="bg-hero2">
                 掌握您的案件進度

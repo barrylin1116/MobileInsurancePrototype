@@ -28,7 +28,7 @@ const Header: React.FC = () => {
             </div>
             <div className="sub-items">
               <div className="item" title="重置密碼" role="button">重置密碼</div>
-              <div className="item" title="登入記錄" role="登入記錄">系統登出</div>
+              <div className="item" title="登入記錄" role="登入記錄">登入記錄</div>
               <div className="item" title="系統登出" role="button">系統登出</div>
             </div>
           </div>

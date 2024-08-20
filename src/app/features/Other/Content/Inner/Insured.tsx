@@ -8,7 +8,7 @@ const Insured: React.FC<any> = (props) => {
   return (
     <div>
       <div className="row m-0">
-        <div className="col-5">
+        <div className="col-7">
           <div className="name labelName">與被保人關係</div>
           <div className="d-flex">
             <input type="radio" name="relationship" className="form-check-input me-2 mb-1" />
