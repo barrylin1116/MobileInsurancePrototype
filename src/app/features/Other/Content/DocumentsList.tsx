@@ -8,10 +8,16 @@ const DocumentsList: React.FC<any> = (props) => {
   const [activeKey, setActiveKey] = useState('1');
   const requiredDocumentsList: RequiredDocumentsList[] = [
     { title: '健康告知書（被保人）', key: 'HealthDeclarationForm' },
-    { title: '生調表', key: 'MedicalQuestionnaire' },
-    { title: '審閱期確認聲明書', key: 'ReviewPeriodConfirmationStatement' },
-    { title: '應遵循事項檢核表', key: 'ChecklistOfComplianceRequirements' },
-    { title: '電子投保確認', key: 'ElectronicInsuranceApplicationConfirmation' }
+    { title: '投保權益確認書', key: 'InsuranceRightsConfirmation' },
+    { title: '審閱期間確認聲明書', key: 'ReviewPeriodConfirmation' },
+    { title: '財務狀況告知書', key: 'FinancialDisclosure' },
+    { title: '個人資料蒐集、處理、利用告知事項', key: 'DataUsageNotice' },
+    { title: '要保書填寫說明', key: 'ApplicationInstructions' },
+    { title: '人壽保險投保人須知', key: 'PolicyholderInfo' },
+    { title: '電子保單申請書', key: 'E-PolicyApplication' },
+    { title: '疾病問券', key: 'HealthQuestionnaire' },
+    { title: 'CRS自我證明表', key: 'CRSForm' },
+    { title: '業告書', key: 'AgentDisclosure' }
   ];
   return (
     <Card id="DocumentsList" style={{ minHeight: '450px', width: '95%' }}>
