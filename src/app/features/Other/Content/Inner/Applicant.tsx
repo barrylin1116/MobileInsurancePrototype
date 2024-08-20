@@ -37,10 +37,10 @@ const Applicant: React.FC<any> = (props) => {
         </div>
         <div className="col-5" style={{ margin: 'auto 0' }}>
           <label className="form-check-label me-2 text-nowrap labelName">法定年齡</label>
-          <span className="labelName">50嵗</span>
+          <span className="labelName">50歲</span>
           <br />
           <label className="form-check-label me-2 text-nowrap labelName">保險年齡</label>
-          <span className="labelName">50嵗</span>
+          <span className="labelName">50歲</span>
         </div>
       </div>
       <div className="row m-0">

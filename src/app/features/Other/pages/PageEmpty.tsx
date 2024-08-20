@@ -18,8 +18,8 @@ const Page1: React.FC<any> = (props) => {
     <div id="emptyPage">
       <header>
         <div style={{ width: '100%', height: '75px', position: 'absolute', background: '#348d8f' }} />
-        <nav className="navbar fixed-top navbar-expand" style={{ height: '63px' }}>
-          <div className="d-flex col-2">
+        <nav className="navbar fixed-top navbar-expand" style={{ height: '40px', paddingBottom: '5px' }}>
+          <div className="d-flex col-3 h-100">
             <button
               type="button" className="btn-close" data-bs-dismiss="modal"
               aria-label="close" value="回首頁"
@@ -27,21 +27,21 @@ const Page1: React.FC<any> = (props) => {
             />
             <span onClick={() => routerHistory.push(ROUTES.PAGE_1)} className="btn-close-text">回首頁</span>
           </div>
-          <div className="collapse navbar-collapse justify-center col-8">
-            <div className="d-flex">
-              <h2 className="section-title" style={{ fontSize: '1rem', color: ' white' }}>
+          <div className="collapse navbar-collapse justify-center col-6 h-100">
+            <div className="d-flex d-flex flex-column-reverse h-100">
+              <h2 className="section-title" style={{ fontSize: '1rem', color: ' white', marginBottom: '0' }}>
                 M123456789(OA12345678)
               </h2>
             </div>
           </div>
-          <div className="d-flex col-2">
-            <span className="updateTime">
-              {updateTime ? (<>最近更新時間<br />{updateTime}</>) : <></>}
+          <div className="d-flex col-3 h-100 justify-end pr-1">
+            <span className="updateTime d-flex flex-column-reverse">
+              {updateTime ? (<>最近更新時間：{updateTime}</>) : <></>}
             </span>
           </div>
         </nav>
       </header>
-      <main style={{ marginTop: '63px' }}>
+      <main style={{ marginTop: '40px' }}>
         <div style={{ width: '100%', marginLeft: 'auto', marginRight: 'auto' }}>
           <div className="row page1Pane">
             <div className="row">
@@ -121,7 +121,7 @@ const Page1: React.FC<any> = (props) => {
                             style={{ width: '1.2rem', height: '1.2rem', transform: 'rotate(180deg)', position: 'absolute', top: '0', left: '40%' }}
                             src={require('assets/img/icons/warn.svg').default}
                           />
-                          應付文件
+                          應附文件
                         </div>
                       </div>
                       } key="5"

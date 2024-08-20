@@ -411,10 +411,6 @@
     opacity: 1;
   }
 
-  .btn-close:active {
-    background: #FFFFFF !important;
-  }
-
   .btn-close:focus {
     outline: 0;
     box-shadow: unset;
@@ -446,9 +442,6 @@
 
   .updateTime {
     font-size: 0.8rem;
-    position: absolute;
-    right: 20px;
-    top: 10px;
     color: white;
     cursor: pointer;
   }

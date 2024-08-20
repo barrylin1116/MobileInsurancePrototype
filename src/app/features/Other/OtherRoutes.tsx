@@ -11,6 +11,10 @@ const OtherRoutes: React.FC = () => (
         path={ROUTES.PAGE_EMPTY}
         component={React.lazy(() => import('../Other/pages/PageEmpty'))}
       />
+      <RouterRoute
+        path={ROUTES.PAGE_LOGIN}
+        component={React.lazy(() => import('../Other/pages/Login'))}
+      />
     </Switch>
   </React.Suspense>
 );

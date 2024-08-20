@@ -13,6 +13,8 @@ export enum ROUTES {
 
     PAGE_EMPTY = '/Page/pageEmpty',
 
+    PAGE_LOGIN = '/Page/Login',
+
     /** 404頁面 */
     PAGE_ERROR_404 = '/404',
     /** 404頁面 */

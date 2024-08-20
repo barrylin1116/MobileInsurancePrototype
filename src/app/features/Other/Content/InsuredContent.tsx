@@ -9,7 +9,7 @@ const InsuredContent: React.FC<any> = (props) => {
       <Card id="insuredContent" style={{ minHeight: '450px', width: '95%' }}>
         <div className="row contentHeader justify-between">
           <div className="col-5">
-            <span className="labelName">被保險人： TangX（30嵗）</span>
+            <span className="labelName">被保險人： TangX（30歲）</span>
           </div>
           <div className="col-5">
             <span className="labelName">主約商品： 定期壽險（5年期）</span>
@@ -32,7 +32,7 @@ const InsuredContent: React.FC<any> = (props) => {
                     20年期
                   </SelectField.Option>
                   <SelectField.Option value="3" key="3">
-                    70嵗滿期
+                    70歲滿期
                   </SelectField.Option>
                 </>
               </SelectField>
