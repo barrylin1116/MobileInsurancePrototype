@@ -41,10 +41,11 @@ const CustomModal: React.FC<any> = ({ isOpen, onClose, headerTitle, headerButton
           <div ref={divRefs} className="modal-body">
             {children}
           </div>
-          <div className="modal-footer justify-content-center">
-            {footerContent}
-          </div>
-          {/* <button className="close-button" onClick={onClose}>Close</button> */}
+          {footerContent && (
+            <div className="modal-footer justify-content-center">
+              {footerContent}
+            </div>
+          )}
         </div>
         {divRefs && (<TopButton isModal containerRef={divRefs} />)}
       </div>

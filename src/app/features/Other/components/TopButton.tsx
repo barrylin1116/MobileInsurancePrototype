@@ -5,9 +5,6 @@ const TopButton: React.FC<any> = ({ isModal = false, containerRef, ...props }) =
   useEffect(() => {
     if (!isModal) {
       const handleScroll = (e: any) => {
-        console.log(`document.documentElement.scrollHeight: ${document.documentElement.scrollHeight}`);
-        console.log(`window.innerHeight: ${window.innerHeight}`);
-        console.log(`isModal: ${isModal}`);
         setShowTop((document.documentElement.scrollHeight - window.innerHeight) <= (window.scrollY + 50));
       };
       window.addEventListener('scroll', handleScroll);
@@ -15,9 +12,11 @@ const TopButton: React.FC<any> = ({ isModal = false, containerRef, ...props }) =
         window.removeEventListener('scroll', handleScroll);
       };
     } else {
-      console.log(containerRef);
       const handleModalScroll = (e: any) => {
         const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
+        console.log(`scrollTop: ${scrollTop}`);
+        console.log(`scrollHeight: ${scrollHeight}`);
+        console.log(`clientHeight: ${clientHeight}`);
         // Check if scrolled to the bottom
         if (scrollTop + clientHeight >= scrollHeight) {
           setShowTop(true);

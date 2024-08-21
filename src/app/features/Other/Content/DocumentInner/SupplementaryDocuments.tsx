@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, message, Modal, Table, TableColumnsType, Upload, UploadProps } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
+import TipsModal from '../../../Insurance/pages/Modals/TipsModal';
 
 declare const $: any;
 
@@ -10,9 +11,11 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
   const [fileName, setFileName] = useState<string>('未選擇任何檔案');
   const [fileList, setFileList] = useState<any[]>([]); // Store the selected files
   const [fileUploadSuccessList, setFileUploadSuccessList] = useState<any[]>([]); // Store the selected files
+  const [removeIndex, setRemoveIndex] = useState<number>(0); // Store the selected files
   const [previewContent, setPreviewContent] = useState<string>(''); // Store preview content
   const [previewFileType, setPreviewFileType] = useState<string>(''); // Store file type for preview
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false); // Control modal visibility
+  const tipsModalRef = useRef<any>(null);
 
   useEffect(() => {
     $(inputElemRef.current).selectpicker();
@@ -55,11 +58,21 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
   };
 
   const handleRemove = (index: number) => {
+    tipsModalRef.current.open();
+    setRemoveIndex(index);
+  };
+
+  const handleTipsModalSubmit = () => {
     setFileUploadSuccessList((prevList) => {
       const newList = [...prevList];
-      newList.splice(index, 1);
+      newList.splice(removeIndex, 1);
       return newList;
     });
+    tipsModalRef.current.close();
+  };
+
+  const handleTipsModalCancel = () => {
+    tipsModalRef.current.close();
   };
 
   const handleUpload = () => {
@@ -107,11 +120,13 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
   const columns: TableColumnsType = [
     {
       title: '序號',
-      dataIndex: 'no'
+      dataIndex: 'no',
+      width: 80
     },
     {
       title: '文件類型',
-      dataIndex: 'documentType'
+      dataIndex: 'documentType',
+      width: 200
     },
     {
       title: '文件說明',
@@ -120,14 +135,19 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
     {
       title: '檔案操作',
       dataIndex: 'fileOperations',
+      width: 200,
       render: (text, record, index) => (
         <>
-          <button type="button" className="btn btn-outline-primary" onClick={() => handlePreview(record.file)}>
-            查看
-          </button>
-          <button type="button" className="btn btn-outline-primary" onClick={() => handleRemove(index)}>
-            移除
-          </button>
+          <div className="p-2">
+            <button type="button" className="btn btn-outline-primary" onClick={() => handlePreview(record.file)}>
+              查看
+            </button>
+          </div>
+          <div className="p-2">
+            <button type="button" className="btn btn-outline-primary" onClick={() => handleRemove(index)}>
+              移除
+            </button>
+          </div>
         </>
       )
     }
@@ -158,9 +178,6 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
                 );
               })
             }
-            {/* <option key="identityDocument" value="identityDocument" title="身分證明文件" aria-label="身分證明文件">身分證明文件</option> */}
-            {/* <option key="paymentVoucher" value="paymentVoucher" title="繳費憑證" aria-label="繳費憑證">繳費憑證</option> */}
-            {/* <option key="other" value="other" title="其他" aria-label="其他">其他</option> */}
           </select>
         </div>
         <div className="col-5">
@@ -200,7 +217,7 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
           </div>
         </div>
         <div className="col-5 align-content-end">
-          <button type="button" className="btn btn-outline-primary" onClick={handleUpload}>
+          <button type="button" className="btn btn-primary" onClick={handleUpload}>
             確認上傳
             <div className="add-icon" />
           </button>
@@ -234,6 +251,21 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
           <p>{previewContent}</p>
         )}
       </Modal>
+      <TipsModal ref={tipsModalRef} title="" headerVisible={false}>
+        <div className="row labelName justify-content-center">
+          是否確認移除
+        </div>
+        <div className="row labelName row-cols-auto justify-content-center">
+          {/* <div className="col-6"> */}
+          <button type="button" className="p-2 m-2 btn btn-outline-primary" onClick={() => handleTipsModalSubmit()}>
+            確認
+          </button>
+          <button type="button" className="p-2 m-2 btn btn-outline-primary" onClick={() => handleTipsModalCancel()}>
+            取消
+          </button>
+          {/* </div> */}
+        </div>
+      </TipsModal>
     </div>
   );
 };
