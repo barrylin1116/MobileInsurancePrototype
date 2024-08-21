@@ -18,7 +18,7 @@ const TopButton: React.FC<any> = ({ isModal = false, containerRef, ...props }) =
         console.log(`scrollHeight: ${scrollHeight}`);
         console.log(`clientHeight: ${clientHeight}`);
         // Check if scrolled to the bottom
-        if (scrollTop + clientHeight >= scrollHeight) {
+        if (scrollTop + clientHeight >= (scrollHeight - scrollHeight * 0.2)) {
           setShowTop(true);
         } else {
           setShowTop(false);
