@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { routerHistory } from '../../../core/router/service';
+import { ROUTES } from '../../../core/router/paths';
+import Page1RecordModal from 'app/features/Insurance/pages/Modals/Page1RecordModal';
 
 const Header: React.FC = () => {
+  const [recordModalVisible, setRecordModalVisible] = useState(false);
   return (
     <header>
+      <Page1RecordModal modalVisible={recordModalVisible} setModalVisible={setRecordModalVisible} />
       <div style={{ width: '100%', height: '137px', position: 'absolute', background: '#348d8f' }} />
       <nav className="navbar fixed-top navbar-expand">
         <div className="d-flex col-2" />
@@ -27,9 +32,9 @@ const Header: React.FC = () => {
               </div>
             </div>
             <div className="sub-items">
-              <div className="item" title="重置密碼" role="button">重置密碼</div>
-              <div className="item" title="登入記錄" role="登入記錄">登入記錄</div>
-              <div className="item" title="系統登出" role="button">系統登出</div>
+              <div className="item" title="重置密碼" role="button" onClick={() => routerHistory.push(ROUTES.PAGE_SETTINGS_PASS_PHRASE_AUTH)}>重置密碼</div>
+              <div className="item" title="登入記錄" role="登入記錄" onClick={() => setRecordModalVisible(true)}>登入記錄</div>
+              <div className="item" title="系統登出" role="button" onClick={() => routerHistory.push(ROUTES.PAGE_LOGIN)}>系統登出</div>
             </div>
           </div>
         </div>

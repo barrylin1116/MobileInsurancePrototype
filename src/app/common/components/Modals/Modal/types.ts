@@ -6,5 +6,6 @@ export interface ModalProps {
     visible: boolean,
     onConfirm?: () => void,
     onClose?: () => void,
-    role?: string
+    role?: string,
+    id?: string
 }

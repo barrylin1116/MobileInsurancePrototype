@@ -20,12 +20,16 @@ const Page1: React.FC<any> = (props) => {
         <div style={{ width: '100%', height: '75px', position: 'absolute', background: '#348d8f' }} />
         <nav className="navbar fixed-top navbar-expand" style={{ height: '40px', paddingBottom: '5px' }}>
           <div className="d-flex col-3 h-100">
-            <button
-              type="button" className="btn-close" data-bs-dismiss="modal"
-              aria-label="close" value="回首頁"
-              onClick={() => routerHistory.push(ROUTES.PAGE_1)}
-            />
-            <span onClick={() => routerHistory.push(ROUTES.PAGE_1)} className="btn-close-text">回首頁</span>
+            <div className="h-100 d-flex flex-column-reverse">
+              <button
+                type="button" className="btn-close p-0" data-bs-dismiss="modal"
+                aria-label="close" value="回首頁"
+                onClick={() => routerHistory.push(ROUTES.PAGE_1)}
+              />
+            </div>
+            <div className="h-100 d-flex flex-column-reverse" style={{ lineHeight: '1.2' }}>
+              <span onClick={() => routerHistory.push(ROUTES.PAGE_1)} className="btn-close-text">回首頁</span>
+            </div>
           </div>
           <div className="collapse navbar-collapse justify-center col-6 h-100">
             <div className="d-flex d-flex flex-column-reverse h-100">

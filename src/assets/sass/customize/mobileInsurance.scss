@@ -361,6 +361,18 @@
   .ant-select-selector {
     height: 50px !important;
   }
+
+  #recordModal {
+    .status.success {
+      color: #4ac281 !important;
+    }
+    .ip {
+      color: #a9a9a9 !important;
+    }
+    .time {
+      color: #565250;
+    }
+  }
 }
 
 #emptyPage {
@@ -402,12 +414,9 @@
   }
 
   .btn-close {
-    top: 12px !important;
-    left: 10px !important;
-    right: unset !important;
+    width: 44px;
+    height: 22px;
     background: #348d8f url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
-    width: 35px;
-    height: 25px;
     opacity: 1;
   }
 

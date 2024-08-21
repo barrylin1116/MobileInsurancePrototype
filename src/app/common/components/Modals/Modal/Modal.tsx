@@ -30,7 +30,7 @@ const Modal: React.FC<ModalProps> = (props) => {
 
   return (
     <>
-      <div className={'modal fade' + (props.className ? ` ${props.className}` : '') + (props.visible ? ' modal--show show' : '')} ref={modalElemRef} onClick={handleBackdropClick}>
+      <div id={props.id} className={'modal fade' + (props.className ? ` ${props.className}` : '') + (props.visible ? ' modal--show show' : '')} ref={modalElemRef} onClick={handleBackdropClick}>
         <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div className="modal-content">
             <div className="modal-header">

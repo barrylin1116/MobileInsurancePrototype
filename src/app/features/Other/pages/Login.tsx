@@ -1,4 +1,6 @@
 import React from 'react';
+import { routerHistory } from '../../../core/router/service';
+import { ROUTES } from '../../../core/router/paths';
 
 const Login: React.FC<any> = (props) => {
   return (
@@ -79,11 +81,11 @@ const Login: React.FC<any> = (props) => {
                   </div>
                 </div>
                 <div className="logActionBtn" style={{ margin: '12px 4px 0 0' }}>
-                  <a className="pull-left log1" href="password1">忘記密碼</a>
+                  <a className="pull-left log1" href="#" onClick={() => routerHistory.push(ROUTES.PAGE_FORGET_AUTH)}>忘記密碼</a>
                   <a className="pull-right log1" href="#">登入問題</a>
                 </div>
                 <h5><span id="login-status" /></h5>
-                <button className="col-xs-12 btn-login" id="loginBtn">登 入</button>
+                <button className="col-xs-12 btn-login" id="loginBtn" onClick={() => routerHistory.push(ROUTES.PAGE_1)}>登 入</button>
                 <br />
                 <span style={{ color: 'red', fontSize: '5px' }}>請使用Microsoft Edge或Google Chrome瀏覽器登入。</span>
                 <input id="fbId" name="fbId" type="hidden" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Redirect, Switch } from 'react-router-dom';
 import { ROUTES } from 'app/core/router/paths';
 import RouterScrollToTop from 'app/common/components/Router/RouterScrollToTop';
 import RouterRoute from 'app/common/components/Router/RouterRoute';
@@ -25,6 +25,7 @@ const AppRoutes: React.FC = () => (
         path={ROUTES.PAGE}
         component={React.lazy(() => import('app/features/Other'))}
       />
+      <Redirect to={ROUTES.PAGE_LOGIN} />
     </Switch>
   </React.Suspense>
 );
