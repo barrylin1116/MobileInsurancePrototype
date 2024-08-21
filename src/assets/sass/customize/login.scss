@@ -1,5 +1,5 @@
 #login {
-
+  height: 100vh;
   .headerBorder {
     border-bottom: 1px solid #eee;
     border-bottom-width: 1px;
@@ -10,7 +10,7 @@
 
   #top1 {
     height: 20px;
-    background-color: #006030;
+    background-color: #348d8f;
   }
 
   @media (min-width: 992px) {
@@ -83,7 +83,7 @@
 
   .index-bg {
     width: 1020px;
-    height: 599px;
+    height: calc(100vh  - 99px);
     position: absolute;
     margin-right: auto;
     background-size: 100% 100%;
@@ -92,7 +92,7 @@
 
   .bg-hero1 {
     color: #fff;
-    background-color: rgba(0, 88, 0, 0.85);
+    background-color: #348d8f;
     padding: 20px 46px 20px;
     margin-top: 200px;
     margin-bottom: 0;
@@ -102,7 +102,7 @@
   .bg-hero2 {
     font-size: 27px;
     color: #fff;
-    background-color: rgba(0, 128, 0, 0.85);
+    background-color: #00aaaa;
     padding: 20px 46px 20px;
     margin-top: 0;
     margin-bottom: 0;
@@ -126,7 +126,7 @@
     background-color: #f2f1f1;
     padding-right: 55px;
     padding-left: 45px;
-    height: 599px;
+    height: calc(100vh  - 99px);
     position: relative;
   }
 
@@ -204,7 +204,7 @@
   }
   .btn-login {
     border-radius: 0 3px 3px 0;
-    background-color: #CC7A00;
+    background-color: #348d8f;
     color: #fff;
     border: transparent;
     height: 38px;

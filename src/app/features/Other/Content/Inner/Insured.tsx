@@ -3,6 +3,7 @@ import DatePickerTW from 'app/common/components/Elements/DatePickerTW';
 import InsuredAddress01 from '../../components/InsuredAddress01';
 import Nation from '../../components/Nation';
 import InsuredAddress02 from '../../components/InsuredAddress02';
+import Job from '../../components/Job';
 
 const Insured: React.FC<any> = (props) => {
   return (
@@ -105,16 +106,7 @@ const Insured: React.FC<any> = (props) => {
       <div className="row m-0  form-row">
         <InsuredAddress02 />
       </div>
-      <div className="row m-0">
-        <div className="col-5">
-          <div className="name labelName">服務單位/職位</div>
-          <input type="text" name="name" className="form-control" />
-        </div>
-        <div className="col-5">
-          <div className="name labelName">工作内容（含兼職）</div>
-          <input type="text" name="name" className="form-control" />
-        </div>
-      </div>
+      <Job />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import DatePickerTW from 'app/common/components/Elements/DatePickerTW';
 import ApplicantAddress from '../../components/ApplicantAddress';
 import Nation from '../../components/Nation';
+import Job from '../../components/Job';
 
 const Applicant: React.FC<any> = (props) => {
   return (
@@ -77,16 +78,7 @@ const Applicant: React.FC<any> = (props) => {
       <div className="row m-0  form-row">
         <ApplicantAddress />
       </div>
-      <div className="row m-0">
-        <div className="col-5">
-          <div className="name labelName">服務單位/職位</div>
-          <input type="text" name="name" className="form-control" />
-        </div>
-        <div className="col-5">
-          <div className="name labelName">工作内容（含兼職）</div>
-          <input type="text" name="name" className="form-control" />
-        </div>
-      </div>
+      <Job />
       <div className="row m-0">
         <div className="col-5">
           <div className="name labelName">是否領有身心障礙手冊或身心障礙證明</div>

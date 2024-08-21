@@ -25,6 +25,7 @@ const Login: React.FC<any> = (props) => {
       <div className="container-fluid c1 fullContent">
         <div className="bg1">
           <div className="index-bg" />
+          <div className="row" style={{ background: '#000' }} />
           <div className="">
             <div className="col-sm-5 col-lg-5 hid1 pRelative" id="slogan">
               <h2 className="bg-hero1">
@@ -39,7 +40,7 @@ const Login: React.FC<any> = (props) => {
               id="login_section"
             >
               <form id="loginForm" method="POST" action="#">
-                <h2>使用者登入</h2>
+                <h2 style={{ color: '#348d8f' }}>使用者登入</h2>
                 <p style={{ alignItems: 'center', textAlign: 'center' }}>
                   <img className="login1" src={require('assets/img/pic/icon_friends-green.png')} />
                 </p>
@@ -87,7 +88,7 @@ const Login: React.FC<any> = (props) => {
                 <h5><span id="login-status" /></h5>
                 <button className="col-xs-12 btn-login" id="loginBtn" onClick={() => routerHistory.push(ROUTES.PAGE_1)}>登 入</button>
                 <br />
-                <span style={{ color: 'red', fontSize: '5px' }}>請使用Microsoft Edge或Google Chrome瀏覽器登入。</span>
+                <span style={{ color: 'red', fontSize: '8px' }}>請使用Microsoft Edge或Google Chrome瀏覽器登入。</span>
                 <input id="fbId" name="fbId" type="hidden" />
                 <input id="email" name="email" type="hidden" />
                 <input id="fbAccessToken" name="fbAccessToken" type="hidden" />

@@ -113,7 +113,7 @@ const InsuredContent: React.FC<any> = (props) => {
           </div>
           <div className="row justify-between">
             <div className="col-5">
-              <div className="name labelName">附約商品（一）完全失能保險金額</div>
+              <div className="name labelName">附約商品（一）健康人生附約保險金額</div>
               <SelectField
                 label=""
                 className="selectpicker w-100 relation"
@@ -138,7 +138,7 @@ const InsuredContent: React.FC<any> = (props) => {
           </div>
           <div className="row justify-between">
             <div className="col-5">
-              <div className="name labelName">附約商品（二）祝壽保保險金額</div>
+              <div className="name labelName">附約商品（二）金安心附約保險金額</div>
               <SelectField
                 label=""
                 className="selectpicker w-100 relation"
