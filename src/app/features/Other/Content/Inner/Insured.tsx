@@ -107,6 +107,16 @@ const Insured: React.FC<any> = (props) => {
         <InsuredAddress02 />
       </div>
       <Job />
+      <div className="row m-0">
+        <div className="col-5">
+          <div className="name labelName">服務單位/職位</div>
+          <input type="text" name="name" className="form-control" />
+        </div>
+        <div className="col-5">
+          <div className="name labelName">工作内容（含兼職）</div>
+          <input type="text" name="name" className="form-control" />
+        </div>
+      </div>
     </div>
   );
 };

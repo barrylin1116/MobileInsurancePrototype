@@ -81,6 +81,16 @@ const Applicant: React.FC<any> = (props) => {
       <Job />
       <div className="row m-0">
         <div className="col-5">
+          <div className="name labelName">服務單位/職位</div>
+          <input type="text" name="name" className="form-control" />
+        </div>
+        <div className="col-5">
+          <div className="name labelName">工作内容（含兼職）</div>
+          <input type="text" name="name" className="form-control" />
+        </div>
+      </div>
+      <div className="row m-0">
+        <div className="col-5">
           <div className="name labelName">是否領有身心障礙手冊或身心障礙證明</div>
           <div className="d-flex">
             <input type="radio" name="nation" className="form-check-input me-2 mb-1" />
