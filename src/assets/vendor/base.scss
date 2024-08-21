@@ -11559,6 +11559,28 @@ a {
   color: #ac113e;
 }
 
+.button-spacing {
+  margin-left: 0.5rem !important;
+}
+
+.label-styling {
+  font-weight: bold !important; /* 字體加粗，強制應用 */
+  font-size: 1.75rem !important; /* 調整字體大小，強制應用 */
+  margin-top: 1rem !important; /* 調整上方間距，強制應用 */
+  margin-bottom: 1rem !important; /* 調整下方間距，強制應用 */
+}
+
+.custom-box {
+  margin: 0;
+  padding: 1rem; /* 4 * 0.25rem = 1rem */
+  border: 1px solid #a6d0d1;
+}
+
+.date-picker-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .labelName {
   color: #565250;
   font-size: 1.25rem;
@@ -11566,3 +11588,10 @@ a {
   margin-bottom: 8px;
   font-weight: 400 !important;
 }
+
+
+
+
+
+
+
