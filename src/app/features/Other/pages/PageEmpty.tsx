@@ -14,6 +14,12 @@ const Page1: React.FC<any> = (props) => {
     setUpdateTime('109/8/1 12:00:21');
   }, []);
   const [activeKey, setActiveKey] = useState('1');
+  useEffect(() => {
+    const state: any = routerHistory.location.state;
+    if (state?.activeTab) {
+      setActiveKey(state.activeTab);
+    }
+  }, [routerHistory.location.pathname]);
   return (
     <div id="emptyPage">
       <header>

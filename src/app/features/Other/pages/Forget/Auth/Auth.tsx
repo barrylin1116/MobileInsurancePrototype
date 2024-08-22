@@ -1,5 +1,4 @@
 import React from 'react';
-import DatePickerTW from '../../../../../common/components/Elements/DatePickerTW';
 import { routerHistory } from '../../../../../core/router/service';
 import { ROUTES } from '../../../../../core/router/paths';
 
@@ -12,22 +11,9 @@ const Information: React.FC = () => {
         <div className="form-content w-100">
           <div className="row form-row">
             <div className="col-5">
-              <div className="name labelName">身分證字號</div>
-              <input type="labelName" placeholder="請輸入身份證字號" name="rocId" className="form-control" />
+              <div className="name labelName">帳號</div>
+              <input type="labelName" placeholder="請輸入帳號" name="rocId" className="form-control" />
             </div>
-            <div className="col-5">
-              <div className="name labelName">出生年月日</div>
-              <div className="d-flex align-items-center">
-                <div className="text-nowrap me-2">民國</div>
-                <DatePickerTW
-                  name="birthday" className="form-control" placeholderText="年 / 月 / 日" onChange={() => {
-                  }}
-                />
-              </div>
-            </div>
-
-          </div>
-          <div className="row form-row">
             <div className="col-12 col-lg-5">
               <div className="name">圖形驗證碼</div>
               <div className="img-verify d-flex align-items-center">
@@ -38,7 +24,10 @@ const Information: React.FC = () => {
                     alt="captcha" width="135" height="50"
                   />
                   <div className="recreate ms-2 d-flex align-items-center" role="button">
-                    <span>重新產生</span><img src={require('assets/img/icons/cycle.svg').default} className="cycle-icon" alt="refresh-icon" />
+                    <span>重新產生</span><img
+                      src={require('assets/img/icons/cycle.svg').default} className="cycle-icon"
+                      alt="refresh-icon"
+                                     />
                   </div>
                 </div>
               </div>
@@ -46,7 +35,11 @@ const Information: React.FC = () => {
           </div>
         </div>
       </div>
-      <button type="submit" className="btn btn-primary next-step" onClick={() => routerHistory.push(ROUTES.PAGE_FORGET_AUTH_OTP_AUTH)}>發送驗證碼</button>
+      <button
+        type="submit" className="btn btn-primary next-step"
+        onClick={() => routerHistory.push(ROUTES.PAGE_FORGET_AUTH_OTP_AUTH)}
+      >發送驗證碼
+      </button>
       <button type="button" className="last-step" onClick={() => routerHistory.push(ROUTES.PAGE_LOGIN)}>回首頁</button>
     </form>
   );

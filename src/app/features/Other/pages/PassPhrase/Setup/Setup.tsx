@@ -2,6 +2,7 @@ import React from 'react';
 import Input from 'app/common/components/Elements/Input';
 import { routerHistory } from 'app/core/router/service';
 import { ROUTES } from 'app/core/router/paths';
+import Swal from 'sweetalert2';
 
 const Setup: React.FC = () => {
   return (
@@ -52,7 +53,20 @@ const Setup: React.FC = () => {
           </div>
         </div>
       </div>
-      <button type="submit" className="btn btn-primary next-step" onClick={() => routerHistory.push(ROUTES.PAGE_LOGIN)}>確認</button>
+      <button
+        type="button" className="btn btn-primary next-step" onClick={() =>
+          Swal.fire({
+            title: '提示',
+            text: '密碼修改成功！',
+            confirmButtonText: '確認',
+            showCancelButton: false
+          }).then((isConfirm) => {
+            if (isConfirm) {
+              routerHistory.push(ROUTES.PAGE_1);
+            }
+          })}
+      >確認
+      </button>
     </form>
   );
 };

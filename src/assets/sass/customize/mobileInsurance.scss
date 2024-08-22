@@ -8,6 +8,36 @@
 
 #mobileInsurance {
 
+  #page1 {
+    .searchTag {
+      box-sizing: border-box;
+      margin: 0;
+      font-variant: tabular-nums;
+      list-style: none;
+      -webkit-font-feature-settings: 'tnum';
+      display: inline-block;
+      height: auto;
+      margin-right: 8px;
+      padding: 8px 8px;
+      line-height: 20px;
+      white-space: nowrap;
+      background: #fafafa;
+      border: 1px solid #CCCCCC;
+      border-radius: 6px;
+      cursor: default;
+      opacity: 1;
+      transition: all .3s cubic-bezier(.78,.14,.15,.86);
+    }
+    .searchTagClose {
+      display: inline-block;
+      -ms-transform: scale(.83333333) rotate(0deg);
+      transform: scale(.83333333) rotate(0deg);
+      color: rgba(0, 0, 0, .45);
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .3s cubic-bezier(.78,.14,.15,.86);
+    }
+  }
   .clouds-group-bg {
     margin-top: 20px !important;
   }
@@ -251,14 +281,12 @@
       height: 25px;
       opacity: 1;
     }
-    .btn-close:active {
-      background: #FFFFFF !important;
-    }
 
     .btn-close:focus {
       outline: 0;
       box-shadow: unset;
-      opacity: 0;
+      color: #FFFFFF;
+      opacity: 1;
     }
 
     .btn-close-text {
@@ -328,14 +356,11 @@
       height: 25px;
       opacity: 1;
     }
-    .btn-close:active {
-      background: #FFFFFF !important;
-    }
-
     .btn-close:focus {
       outline: 0;
       box-shadow: unset;
-      opacity: 0;
+      color: #FFFFFF;
+      opacity: 1;
     }
 
     .btn-close-text {
@@ -426,7 +451,8 @@
   .btn-close:focus {
     outline: 0;
     box-shadow: unset;
-    opacity: 0;
+    color: #FFFFFF;
+    opacity: 1;
   }
 
   .btn-close-text {

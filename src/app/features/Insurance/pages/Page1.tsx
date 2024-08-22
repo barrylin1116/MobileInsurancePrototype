@@ -3,12 +3,27 @@ import { Button, Card, Tabs } from 'antd';
 import { PlusOutlined, ProductOutlined, SearchOutlined } from '@ant-design/icons';
 import Page1SearchModal from './Modals/Page1SearchModal';
 import Page1AddModal from './Modals/Page1AddModal';
+import _ from 'lodash';
 
 const Page1: React.FC = () => {
   const functionRef = useRef<any>(null);
   const [searchModalVisible, setSearchModalVisible] = useState(false);
   const [functionModalVisible, setFunctionModalVisible] = useState(false);
   const [addModalVisible, setAddModalVisible] = useState(false);
+  const [searchTag, setSearchTag] = useState([
+    {
+      key: 1,
+      name: 'Tangx',
+      rocId: 'A123456789',
+      type: '1'
+    },
+    {
+      key: 2,
+      name: 'Jenny',
+      rocId: 'A987654321',
+      type: '2'
+    }
+  ]);
 
   useEffect(() => {
     const handleOutsideClick = (event: any) => {
@@ -26,7 +41,7 @@ const Page1: React.FC = () => {
     <>
       <Page1SearchModal modalVisible={searchModalVisible} setModalVisible={setSearchModalVisible} />
       <Page1AddModal modalVisible={addModalVisible} setModalVisible={setAddModalVisible} />
-      <div style={{ width: '95%', marginLeft: 'auto', marginRight: 'auto' }}>
+      <div id="page1" style={{ width: '95%', marginLeft: 'auto', marginRight: 'auto' }}>
         <div className="row page1Pane">
           <div className="mobileHidden p-1 col-lg-2 d-flex flex-row-reverse" style={{ zIndex: 1 }}>
             <button
@@ -95,7 +110,40 @@ const Page1: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="row pb-3 pt-3">
+        <div className="row pt-2">
+          <div className="col-12 p-0 pb-1">
+            {
+              searchTag.map(s => {
+                return (
+                  <span className="searchTag labelName" key={s.key}>
+                    <i
+                      aria-label="图标: close" className="searchTagClose" onClick={() => {
+                        const _clone = _.clone(searchTag);
+                        const result = _clone.filter(c => c.key !== s.key);
+                        setSearchTag(result);
+                      }}
+                    >
+                      <svg
+                        viewBox="64 64 896 896"
+                        focusable="false"
+                        className=""
+                        data-icon="close"
+                        width="1em"
+                        height="1em"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z" />
+                      </svg>
+                    </i>
+                    {s.type === '1' ? '被保人' : '要保人'}： {s.name} / {s.rocId}
+                  </span>
+                );
+              })
+            }
+          </div>
+        </div>
+        <div className="row pb-2 pt-1">
           <Card className="itemCard">
             <div className="row">
               <div className="col-lg-4">

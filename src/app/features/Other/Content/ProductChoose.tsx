@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Card } from 'antd';
+import { Card, Select } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import _ from 'lodash';
-import SelectField from '../../../common/components/Elements/SelectField';
 import TopButton from '../components/TopButton';
 
 const ProductChoose: React.FC<any> = (props) => {
@@ -15,25 +14,18 @@ const ProductChoose: React.FC<any> = (props) => {
             <label className="text labelName">主約商品</label>
           </div>
           <div className="col-8">
-            <SelectField
-              label=""
-              className="selectpicker w-100 relation"
-              placeholder="請選擇主約商品"
-              title="請選擇主約商品"
-              name="product"
-            >
-              <>
-                <SelectField.Option value="1" key="1">
-                  E好保旅行平安保險
-                </SelectField.Option>
-                <SelectField.Option value="2" key="2">
-                  小額終身險
-                </SelectField.Option>
-                <SelectField.Option value="3" key="3">
-                  重大疾病險
-                </SelectField.Option>
-              </>
-            </SelectField>
+            <Select
+              className="productSelect"
+              showSearch
+              placeholder="主約商品"
+              filterOption={(input, option) =>
+                (option?.label ?? '').toLowerCase().includes(input.toLowerCase())}
+              options={[
+                { value: '1', label: 'E好保旅行平安保險' },
+                { value: '2', label: '小額終身險' },
+                { value: '3', label: '重大疾病險' }
+              ]}
+            />
           </div>
           <div className="col-2" />
         </div>
@@ -44,35 +36,25 @@ const ProductChoose: React.FC<any> = (props) => {
                           <label className="text labelName">附約商品</label>
                         </div>
                         <div className="col-8">
-                          <SelectField
-                            label=""
-                            className="selectpicker w-100 relation"
-                            placeholder="請選擇附約商品"
-                            title="請選擇附約商品"
-                            id={`additionalProduct-${index}`}
-                            name="additionalProduct"
+                          <Select
                             value={a.selectKey}
                             onChange={(e) => {
                               const _clone = _.clone(additionalProduct);
-                              _clone[index].selectKey = e.target.value;
+                              _clone[index].selectKey = e;
                               setAdditionalProduct(_clone);
                             }}
-                          >
-                            <>
-                              <SelectField.Option value="1" key="1">
-                                身故保險金或喪葬費用保險金
-                              </SelectField.Option>
-                              <SelectField.Option value="2" key="2">
-                                完全失能保險金
-                              </SelectField.Option>
-                              <SelectField.Option value="3" key="3">
-                                祝壽保險金
-                              </SelectField.Option>
-                              <SelectField.Option value="4" key="4">
-                                意外失能保險金
-                              </SelectField.Option>
-                            </>
-                          </SelectField>
+                            className="productSelect"
+                            showSearch
+                            placeholder="附約商品"
+                            filterOption={(input, option) =>
+                              (option?.label ?? '').toLowerCase().includes(input.toLowerCase())}
+                            options={[
+                              { value: '1', label: '身故保險金或喪葬費用保險金' },
+                              { value: '2', label: '完全失能保險金' },
+                              { value: '3', label: '祝壽保險金' },
+                              { value: '4', label: '意外失能保險金' }
+                            ]}
+                          />
                         </div>
                         <div className="col-2  pt-1">
                           <button
