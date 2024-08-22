@@ -1,87 +1,88 @@
-#DocumentsList {
-  #CustomModal {
-    &.modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    &.modal-overlay.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .modal-container {
-      background: white;
-      width: 100vw;
-      height: 100vh;
-      padding: 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: relative;
-      max-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      padding: 20px;
-      background: #348d8f;
-      color: white;
-    }
-
-    .header-title {
-      flex-grow: 1;
-      text-align: center;
-      font-weight: 400;
-      font-size: 1.875rem;
-      line-height: 2.25rem;
-    }
-
-    .header-button {
-      position: absolute;
-      font-weight: 400;
-      font-size: 1.2rem;
-    }
-
-    .header-button:first-child {
-      left: 0;
-    }
-
-    .header-button:last-child {
-      right: 2rem;
-    }
-
-    .modal-body {
-      padding: 20px;
-    }
-
-    .modal-footer {
-      text-align: right;
-      padding: 20px;
-    }
-
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-    }
+#CustomModal {
+  &.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
   }
+
+  &.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-container {
+    background: white;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    background: #348d8f;
+    color: white;
+  }
+
+  .header-title {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .header-button {
+    position: absolute;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+
+  .header-button:first-child {
+    left: 0;
+  }
+
+  .header-button:last-child {
+    right: 2rem;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .modal-footer {
+    text-align: right;
+    padding: 20px;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+#DocumentsList {
 
   #SupplementaryDocuments{
     .row {
@@ -89,6 +90,12 @@
       margin-right: 1rem !important;
       margin-left: 1rem !important;
       justify-content: space-between !important;
+    }
+  }
+
+  #requiredDocumentsList {
+    .row:hover{
+      background-color: #cde3e3;
     }
   }
 

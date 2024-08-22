@@ -4,7 +4,6 @@ import Card from 'antd/es/card/Card';
 import Insured from './Inner/Insured';
 import Applicant from './Inner/Applicant';
 import Beneficiary from './Inner/Beneficiary';
-import TopButton from '../components/TopButton';
 
 const Relation: React.FC<any> = (props) => {
   const [activeKey, setActiveKey] = useState('1');
@@ -29,7 +28,6 @@ const Relation: React.FC<any> = (props) => {
 
         }
       </div>
-      <TopButton />
     </Card>
   );
 };

@@ -1,8 +1,16 @@
 import React, { useRef } from 'react';
 import TopButton from '../../../Other/components/TopButton';
 
-const CustomModal: React.FC<any> = ({ isOpen, onClose, headerTitle, headerButton, buttonPosition, children, footerContent }) => {
-  // if (!isOpen) return null;
+const CustomModal: React.FC<{
+  isOpen: boolean,
+  onClose: React.Dispatch<React.SetStateAction<boolean>>,
+  headerTitle: string,
+  headerButton: any,
+  buttonPosition: string,
+  children: any,
+  footerContent?: any,
+  customHeaderButtonOnclick?: () => void
+}> = ({ isOpen, onClose, headerTitle, headerButton, buttonPosition, children, footerContent, customHeaderButtonOnclick }) => {
   const divRefs = useRef<(HTMLDivElement)>(null);
 
   const getMaxZIndex = (): number => {
@@ -21,7 +29,8 @@ const CustomModal: React.FC<any> = ({ isOpen, onClose, headerTitle, headerButton
     return maxZ;
   };
 
-  const handleClose = () => {
+  const headerButtonOnclick = () => {
+    if (customHeaderButtonOnclick) customHeaderButtonOnclick();
     onClose(false);
   };
 
@@ -34,9 +43,9 @@ const CustomModal: React.FC<any> = ({ isOpen, onClose, headerTitle, headerButton
       >
         <div className="modal-container">
           <div className="modal-header">
-            {buttonPosition === 'left' && <div className="header-button" onClick={handleClose}>{headerButton}</div>}
+            {buttonPosition === 'left' && <div className="header-button" onClick={headerButtonOnclick}>{headerButton}</div>}
             <div className="header-title">{headerTitle}</div>
-            {buttonPosition === 'right' && <div className="header-button" onClick={handleClose}>{headerButton}</div>}
+            {buttonPosition === 'right' && <div className="header-button" onClick={headerButtonOnclick}>{headerButton}</div>}
           </div>
           <div ref={divRefs} className="modal-body">
             {children}

@@ -4,5 +4,5 @@ export interface RequiredDocumentsList {
 }
 
 export interface RequiredDocumentsProps {
-    requiredDocumentsList: RequiredDocumentsList[];
+    requiredDocumentsList?: RequiredDocumentsList[];
 }

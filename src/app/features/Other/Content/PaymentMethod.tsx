@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card } from 'antd';
 import SelectField from '../../../common/components/Elements/SelectField';
-import TopButton from '../components/TopButton';
 import Checkbox from 'app/common/components/Checkbox';
 import { routerHistory } from '../../../core/router/service';
 import { ROUTES } from 'app/core/router/paths';
@@ -109,7 +108,6 @@ const PaymentMethod: React.FC<any> = (props) => {
           </div>
         </div>
       </Card>
-      <TopButton />
     </>
   );
 };

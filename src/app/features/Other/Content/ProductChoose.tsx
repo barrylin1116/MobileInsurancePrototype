@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Card, Select } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import _ from 'lodash';
-import TopButton from '../components/TopButton';
 
 const ProductChoose: React.FC<any> = (props) => {
   const [additionalProduct, setAdditionalProduct] = useState<any>([]);
@@ -86,7 +85,6 @@ const ProductChoose: React.FC<any> = (props) => {
           </div>
         </div>
       </Card>
-      <TopButton />
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card } from 'antd';
 import SelectField from '../../../common/components/Elements/SelectField';
-import TopButton from '../components/TopButton';
 
 const InsuredContent: React.FC<any> = (props) => {
   return (
@@ -170,7 +169,6 @@ const InsuredContent: React.FC<any> = (props) => {
           </div>
         </div>
       </Card>
-      <TopButton />
     </>
   );
 };

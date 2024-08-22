@@ -1,0 +1,39 @@
+#CustomTab {
+  .ant-card-body {
+    padding: 0;
+  }
+
+  .content {
+    padding-bottom: 55px;
+  }
+
+  .ant-table-thead {
+
+    tr > th {
+      background: #cde3e3;;
+    }
+  }
+
+  .ant-tabs-tab-active {
+    color: white !important;
+    background: #348d8f;
+
+    .ant-tabs-tab-btn {
+      color: white !important;
+    }
+  }
+
+  .ant-tabs-nav-list {
+    * {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .ant-tabs-tab {
+      color: #348d8f;
+      width: 100px;
+      justify-content: center;
+      padding: 10px 100px !important;
+    }
+  }
+}

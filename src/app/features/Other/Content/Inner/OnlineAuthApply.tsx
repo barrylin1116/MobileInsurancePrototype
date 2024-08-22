@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card } from 'antd';
-import TopButton from '../../components/TopButton';
 import SelectField from '../../../../common/components/Elements/SelectField';
 import DatePickerTW from '../../../../common/components/Elements/DatePickerTW';
 import { routerHistory } from '../../../../core/router/service';
@@ -112,7 +111,6 @@ const OnlineAuthApply: React.FC<any> = (props) => {
           </div>
         </div>
       </Card>
-      <TopButton />
     </div>
   );
 };

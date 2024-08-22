@@ -52,7 +52,7 @@ const HealthDeclarationForm = React.forwardRef<any, any>((props, ref) => {
     } else {
       setCheckedDiseaseQuestionnaire((prevState) => {
         const newList = [...prevState];
-        newList.splice(index, 1);
+        newList.splice(newList.indexOf(diseaseQuestionnaireList[index]), 1);
         return newList;
       });
     }
@@ -92,7 +92,7 @@ const HealthDeclarationForm = React.forwardRef<any, any>((props, ref) => {
                                             className="form-check-input me-2 mb-1"
                                             value="Y"
                                             style={{ marginTop: '0px' }}
-                                            onChange={(event) => handleCheckboxChange(event, index)}
+                                            onChange={(event) => handleCheckboxChange(event, index + 1)}
                                           />
                                           <label
                                             className="form-check-label me-2 text-nowrap labelName"

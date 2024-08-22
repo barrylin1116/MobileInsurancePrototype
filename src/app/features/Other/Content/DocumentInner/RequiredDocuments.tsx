@@ -28,7 +28,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
   };
 
   const openModal = (key: string, index: number) => {
-    setModalTitle(props.requiredDocumentsList[index].title);
+    setModalTitle(props.requiredDocumentsList ? props.requiredDocumentsList[index].title : '');
     setModalVisible(true);
     setFormName(key);
   };
@@ -1324,44 +1324,68 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
 
   return (
     <>
-      <div className="rules-box">
-        {props.requiredDocumentsList?.map((data, index) => (
+      <div id="requiredDocumentsList" className="container mw-100 mx-0 px-0">
+        {
+          props.requiredDocumentsList?.map((data, index) => (
           // eslint-disable-next-line react/jsx-key
-          <>
-            {
-            index % 3 !== 0 && (
-              <img
-                key={`img-${index}`}
-                className="exclamation-icon"
-                src={require('assets/img/icons/exclamation.svg').default}
-              />
-
-            )
-            }
-            <div key={`title-${index}`} className={'item' + ` ${index === 0 ? 'mt-0' : ''}`} onClick={() => openModal(data.key, index)}>
-              {data.title}
-            </div>
-          </>
-        ))}
+            <>
+              <div className={'row align-items-center border-bottom mx-0 ' + `${index === 0 ? 'mt-0' : ''}`}>
+                {
+                index % 3 !== 0
+                  ? (
+                    <img
+                      key={`img-${index}`}
+                      className="p-0 col-1 exclamation-icon"
+                      src={require('assets/img/icons/exclamation.svg').default}
+                    />
+                    )
+                  : (
+                    <div
+                      key={`img-${index}`}
+                      style={{ marginInline: '0.5rem', width: '2rem' }}
+                      className="p-0 col-1"
+                    />
+                    )
+                }
+                <div
+                  key={`title-${index}`} className="item col"
+                  onClick={() => openModal(data.key, index)}
+                >
+                  {data.title}
+                </div>
+              </div>
+            </>
+          ))
+        }
         {
           HealthDeclarationFormRef.current?.getCheckedDiseaseQuestionnaire().map((data: any, index: number) => (
             // eslint-disable-next-line react/jsx-key
             <>
-              {
-                    index % 3 !== 0 && (
+              <div className={'row align-items-center border-bottom mx-0 ' + `${index === 0 ? 'mt-0' : ''}`}>
+                {
+                  index % 3 !== 0
+                    ? (
                       <img
                         key={`img-${index}`}
-                        className="exclamation-icon"
+                        className="p-0 col-1 exclamation-icon"
                         src={require('assets/img/icons/exclamation.svg').default}
                       />
 
-                    )
+                      )
+                    : (
+                      <div
+                        key={`img-${index}`}
+                        style={{ marginInline: '0.5rem', width: '2rem' }}
+                        className="p-0 col-1"
+                      />
+                      )
                 }
-              <div
-                key={`title-${index}`} className={'item' + ` ${index === 0 ? 'mt-0' : ''}`}
-                onClick={() => openModal(data.key, index)}
-              >
-                {data.title}
+                <div
+                  key={`title-${index}`} className="item col"
+                  onClick={() => openModal(data.key, index)}
+                >
+                  {data.title}
+                </div>
               </div>
             </>
           ))
