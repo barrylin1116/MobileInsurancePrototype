@@ -16,7 +16,6 @@ const DocumentsList: React.FC<any> = (props) => {
     { title: '人壽保險投保人須知', key: 'PolicyholderInfo' },
     { title: '電子保單申請書', key: 'E-PolicyApplication' },
     { title: '疾病問券', key: 'HealthQuestionnaire' },
-    { title: 'FATCA暨CRS告知事項', key: 'FatcaCrsNotice' },
     { title: 'CRS自我證明表', key: 'CRSForm' },
     { title: '業告書', key: 'AgentDisclosure' }
   ];

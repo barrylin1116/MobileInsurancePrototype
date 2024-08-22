@@ -74,7 +74,17 @@ const Applicant: React.FC<any> = (props) => {
             <input type="text" name="address" className="form-control extend" />
           </div>
         </div>
+        <div className="col-5">
+          <div className="name labelName">是否有監護宣告</div>
+          <div className="d-flex">
+            <input type="radio" name="declare" value="N" className="form-check-input me-2 mb-1" />
+            <label className="form-check-label me-2 text-nowrap labelName">否</label>
+            <input type="radio" name="declare" value="Y" className="form-check-input me-2 mb-1" />
+            <label className="form-check-label me-2 text-nowrap labelName">是</label>
+          </div>
+        </div>
       </div>
+
       <div className="row m-0  form-row">
         <ApplicantAddress />
       </div>
@@ -87,46 +97,6 @@ const Applicant: React.FC<any> = (props) => {
         <div className="col-5">
           <div className="name labelName">工作内容（含兼職）</div>
           <input type="text" name="name" className="form-control" />
-        </div>
-      </div>
-      <div className="row m-0">
-        <div className="col-5">
-          <div className="name labelName">是否領有身心障礙手冊或身心障礙證明</div>
-          <div className="d-flex">
-            <input type="radio" name="nation" className="form-check-input me-2 mb-1" />
-            <label className="form-check-label me-2 text-nowrap labelName">無</label>
-            <input type="radio" name="nation" className="form-check-input me-2 mb-1" />
-            <label className="form-check-label me-2 text-nowrap labelName">有</label>
-          </div>
-        </div>
-        <div className="col-5">
-          <div className="name labelName">是否有監護宣告</div>
-          <div className="d-flex">
-            <input type="radio" name="declare" value="N" className="form-check-input me-2 mb-1" />
-            <label className="form-check-label me-2 text-nowrap labelName">否</label>
-            <input type="radio" name="declare" value="Y" className="form-check-input me-2 mb-1" />
-            <label className="form-check-label me-2 text-nowrap labelName">是</label>
-          </div>
-        </div>
-      </div>
-      <div className="row m-0">
-        <div className="col-12">
-          <div className="name labelName">被保險人有無投保其他商業實支實付型傷害醫療保險？</div>
-          <div className="d-flex">
-            <input type="radio" name="nation" className="form-check-input me-2 mb-1" />
-            <label className="form-check-label me-2 text-nowrap labelName">有</label>
-            <input type="radio" name="nation" className="form-check-input me-2 mb-1" />
-            <label className="form-check-label me-2 text-nowrap labelName">無</label>
-          </div>
-        </div>
-        <div className="col-12">
-          <div className="name labelName">被保險人有無投保其他商業實支實付型醫療保險？</div>
-          <div className="d-flex">
-            <input type="radio" name="nation" className="form-check-input me-2 mb-1" />
-            <label className="form-check-label me-2 text-nowrap labelName">有</label>
-            <input type="radio" name="nation" className="form-check-input me-2 mb-1" />
-            <label className="form-check-label me-2 text-nowrap labelName">無</label>
-          </div>
         </div>
       </div>
     </div>

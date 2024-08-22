@@ -43,6 +43,229 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     setIsMinorOrStudent2(value === '是');
   };
 
+  const getInsuranceRightsConfirmationContent = () => {
+    return (
+
+      <>
+        <div className="row custom-box">
+          <div className="row custom-box">
+            <div className="col-12">
+              <div className="name labelName">
+                (1) 業務員已向您出示登錄證，並向您說明本保險之保障內容，而您也認為投保內容(含保險種類、保障項目、給付條
+                件、保險金額及應繳保險費等)皆符合您的需要。<br />
+                (2) 業務員已確認您的基本資料(包括姓名、性別、出生年月日、身分證字號、要保人出生地是否為美國等)及聯絡方式
+                (若以公司行號投保，則包合格登記證照、代表人之合法證明文件、地址及聯絡電話)，要保人與被保險人及被保險
+                人與指定受益人關係，且與要保書填載一致。<br />
+                (3) 您已了解對於客戶個人資料的蒐集、利用、處理、傳遞及保密與內部控制等，本公司悉依政府相關法令及作業規
+                範辦理。另本公司保有本保險最後承保與否之一切權利，詳細投保規定及保障範圍仍依本保險的作業規定及保單
+                條款為準。<br />
+                (4)業務員已向您說明本保險之保險單條款與相關文件之各項權利(例如：契約撤銷權可於收到保險單翌日起算十日
+                內，得以書面檢同保險單向本公司撤銷本契約…)、義務(例如：告知義務…)及責任(例如：保險費的交付、變更
+                住所通知…)，並了解相關權利行使、變更、解除及終止之方式及限制。<br />
+                (5) 您已了解本保險各項費用（例如：保費費用計算方式、收取時點、保險成本、解約費用…等）及費用收取方式。<br />
+                (6) 您已了解所繳交保險費係用以購買保險商品而非存款商品，不受「存款保險」之保障，但依保險相關法令受「保險安定基金」之保障。<br />
+                (7)業務員已向您說明本保險DM、保險單條款與相關文件中有關保障內容、投保規則、注意事項、客戶服務及申訴電
+                話(0800-011-966)，您也了解了以上的內容。<br />
+                (8) 您已了解本保險繳交之保費或未來分期繳交之保費，是在您經濟能力範圍內所能負擔的。<br />
+                (9) 您已了解投保本保險後，若未來發生提前解約時，依商品精算原則計算可領回之解約金有可能小於已繳之
+                保險費，甚至可能為零。<br />
+                (10) 您已確認要保書所載聯絡資料(如地址、E-mail 等)皆正確無誤，俾利寄發之各項通知文件(例如：保單帳戶價值
+                通知書、繳費通知單、催告通知書…)能順利送達給您。<br />
+                (11) 您已確認各項要保文件皆為您及被保險人親自簽名(未成年者尚須經其法定代理人/監護人/輔助人簽名)。<br />
+                (12) 您已確認業務員並無勸誘您以辦理保險單解約、貸款或保險單借款獲得資金購買本保險。<br />
+                (13) 您已確認業務員推介與您風險屬性相符之保險商品。
+
+              </div>
+              <div className="form-check d-flex align-items-center">
+                <input
+                  type="radio" className="form-check-input" name="qa"
+                  value="是"
+                />
+                <label className="form-check-label button-spacing me-2">是</label>
+                <input type="radio" className="form-check-input ms-3" name="policyRightsQA" value="否" />
+                <label className="form-check-label button-spacing">否</label>
+              </div>
+            </div>
+          </div>
+          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+            <div className="labelName m-0 label-styling">
+              利率變動型保險商品時，請填寫本問項。
+            </div>
+          </div>
+          <div className="row custom-box">
+            <div className="col-12">
+              <div className="name labelName">14:您已了解本保險之保單帳戶價值依「宣告利率」變動，「宣告利率」會隨著保險公司定期宣告而改變，保險公司
+                不負最低宣告利率保證的責任。
+              </div>
+              <div className="form-check d-flex align-items-center">
+                <input
+                  type="radio" className="form-check-input" name="policyRightsQA14"
+                  value="是"
+                />
+                <label className="form-check-label button-spacing me-2">是</label>
+                <input type="radio" className="form-check-input ms-3" name="policyRightsQA14" value="否" />
+                <label className="form-check-label button-spacing">否</label>
+              </div>
+            </div>
+          </div>
+          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+            <div className="labelName m-0 label-styling">
+              外幣收付之非投資型保險商品時，請填寫本問項。
+            </div>
+          </div>
+          <div className="row custom-box">
+            <div className="col-12">
+              <div className="name labelName">15:您已了解保險費收取方式、匯款相關費用之負擔及商品所涉匯率風險及商品幣別所屬國家之政治、經濟變動風險
+                並願意承受匯率變動風險。
+              </div>
+              <div className="form-check d-flex align-items-center">
+                <input
+                  type="radio" className="form-check-input" name="policyRightsQA15"
+                  value="是"
+                />
+                <label className="form-check-label button-spacing me-2">是</label>
+                <input type="radio" className="form-check-input ms-3" name="policyRightsQA15" value="否" />
+                <label className="form-check-label button-spacing">否</label>
+              </div>
+            </div>
+          </div>
+          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+            <div className="labelName m-0 label-styling">
+              投資型保險商品時，請填寫以下問項。
+            </div>
+          </div>
+          <div className="row custom-box">
+            <div className="col-12">
+              <div className="name labelName">16:您您已了解本保險不保證本金及最低收益。<br />
+                17:您已了解本保險所連結之標的係符合您的投資屬性與風險承受能力，並也了解投資損益、投資風險及匯率變動風
+                險（以外幣計價時），是由您自行承擔。
+              </div>
+              <div className="form-check d-flex align-items-center">
+                <input
+                  type="radio" className="form-check-input" name="policyRightsQA1617"
+                  value="是"
+                />
+                <label className="form-check-label button-spacing me-2">是</label>
+                <input type="radio" className="form-check-input ms-3" name="policyRightsQA1617" value="否" />
+                <label className="form-check-label button-spacing">否</label>
+              </div>
+            </div>
+          </div>
+          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+            <div className="labelName m-0 label-styling">
+              分紅保險商品時，請填寫本問項。
+            </div>
+          </div>
+          <div className="row custom-box">
+            <div className="col-12">
+              <div className="name labelName">18:您已了解保單紅利為非保證給付項目，可能變動為較高或較低之數字，本公司不保證給付金額。
+              </div>
+              <div className="form-check d-flex align-items-center">
+                <input
+                  type="radio" className="form-check-input" name="policyRightsQA18"
+                  value="是"
+                />
+                <label className="form-check-label button-spacing me-2">是</label>
+                <input type="radio" className="form-check-input ms-3" name="policyRightsQA18" value="否" />
+                <label className="form-check-label button-spacing">否</label>
+              </div>
+            </div>
+          </div>
+          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+            <div className="labelName m-0 label-styling">
+              要保人、被保險人或實際繳費人購買本商品時保險年齡為65歲(含)以上者，請填寫以下問項以再次確認。
+            </div>
+          </div>
+          <div className="row custom-box">
+            <div className="col-12">
+              <div className="name labelName">19:您已充分理解保險契約內容，符合您的保險需求且未超出負擔能力。
+              </div>
+              <div className="form-check d-flex align-items-center">
+                <input
+                  type="radio" className="form-check-input" name="policyRightsQA19"
+                  value="是"
+                />
+                <label className="form-check-label button-spacing me-2">是</label>
+                <input type="radio" className="form-check-input ms-3" name="policyRightsQA19" value="否" />
+                <label className="form-check-label button-spacing">否</label>
+              </div>
+            </div>
+          </div>
+          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+            <div className="labelName m-0 label-styling">
+              要保人、被保險人或實際繳費人購買本商品時年齡為18足歲以上惟未滿20足歲者，請填寫以下問項以再次確認。
+            </div>
+          </div>
+          <div className="row custom-box">
+            <div className="col-12">
+              <div className="name labelName">20:您已充分理解保險契約內容，符合您的保險需求且未超出負擔能力。
+              </div>
+              <div className="form-check d-flex align-items-center">
+                <input
+                  type="radio" className="form-check-input" name="policyRightsQA20"
+                  value="是"
+                />
+                <label className="form-check-label button-spacing me-2">是</label>
+                <input type="radio" className="form-check-input ms-3" name="policyRightsQA20" value="否" />
+                <label className="form-check-label button-spacing">否</label>
+              </div>
+            </div>
+          </div>
+          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+            <div className="labelName m-0 label-styling">
+              FATCA問項
+            </div>
+          </div>
+          <div className="row custom-box">
+            <label className="labelName me-2">
+              要保人聲明國外稅務居民身分(以下(1)(2)(3)由要保人擇一勾選)：
+            </label>
+            <div className="d-flex flex-column">
+              <div className="form-check mb-3">
+                <input type="radio" className="form-check-input" name="foreignTaxDeclaration" value="option1" />
+                <label className="form-check-label button-spacing">
+                  本人不具有國外稅務居民身分（1.美國公民或稅務居民身分，且沒有美國指標。2.美國以外其他國家公民或稅務居民身分）
+                </label>
+              </div>
+              <div className="form-check mb-3">
+                <input type="radio" className="form-check-input" name="foreignTaxDeclaration" value="option2" />
+                <label className="form-check-label button-spacing">
+                  <div>本人具有國外公民或稅務居民身分</div>
+                  <div>1. 具有美國公民或稅務居民身分</div>
+                  <div className="details">
+                    【美國公民或稅務居民係指具有美國國籍者(持有美國護照)、持有綠卡者，或當年度入境美國並停留超過183天，
+                    或者當年度入境並在美國待超過31天，同時滿足所謂的『前3年審核期』的計算超過183天。『前3年審核期』
+                    係以報稅年度及前二年在美居留天數「加權」計算，當年度在美國實際居留天數 x 1 + 前一年度在美國實際居留
+                    天數 x 1/2 + 前二年度在美國實際居留天數 x 1/3，若總天數大於（或等於）183天，該客戶即為美國稅務居民。】
+                  </div>
+                  <div>2. 具有美國以外其他國家公民或稅務居民身分</div>
+                </label>
+              </div>
+
+              <div className="form-check mb-3">
+                <input type="radio" className="form-check-input" name="foreignTaxDeclaration" value="option3" />
+                <label className="form-check-label button-spacing">
+                  <div>本人不具有美國公民或稅務居民身分，但具備以下任一美國指標：(綠卡)</div>
+                  <div>1. 曾被註記具美國公民身分或擁有永久居留權(綠卡)</div>
+                  <div>2. 出生地為美國</div>
+                  <div>3. 擁有美國住址或郵寄地址</div>
+                  <div>4. 擁有美國電話號碼</div>
+                  <div>5. 經常將資金轉入位於美國的帳戶</div>
+                  <div>6. 曾指定住址設於美國的人士為代理人以處理本件要保相關事宜</div>
+                  <div>7. 留存於本公司之地址並非要保人之地址，而是以「郵局暫時代替保管郵件」(如郵政信箱)或「交由某人代轉信件」為唯一地址
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </>
+    )
+    ;
+  };
+
   const getReviewPeriodConfirmationContent = () => {
     return (
 
@@ -98,7 +321,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
                 </div>
               </div>
               <div className="form-check d-flex align-items-center me-3">
-                <input type="radio" className="form-check-input me-2" name="contractEarly" value="銀行/證券客戶" />
+                <input type="radio" className="form-check-input me-2" name="termsReviewed" value="本人以了解本契約內容，自願提前簽訂本契約" />
                 <label className="form-check-label">本人以了解本契約內容，自願提前簽訂本契約</label>
               </div>
             </div>
@@ -123,22 +346,22 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
           </div>
           <div className="row custom-box">
             <div className="col-6">
-              <div className="name labelName">個人工作年收入約</div>
-              <input type="labelName" name="annualEmploymentIncome" className="form-control" />萬元
+              <div className="name labelName">個人工作年收入約(萬元)</div>
+              <input type="labelName" name="annualEmploymentIncome" className="form-control" />
             </div>
             <div className="col-6">
-              <div className="name labelName">個人其他年收入(如利息、投資等)</div>
-              <input type="labelName" name="otherYearlyIncome" className="form-control" />萬元
+              <div className="name labelName">個人其他年收入(如利息、投資等)(萬元)</div>
+              <input type="labelName" name="otherYearlyIncome" className="form-control" />
             </div>
           </div>
           <div className="row custom-box">
             <div className="col-6">
-              <div className="name labelName">家庭年收入</div>
-              <input type="labelName" name="householdYearlyIncome" className="form-control" />萬元
+              <div className="name labelName">家庭年收入(萬元)</div>
+              <input type="labelName" name="householdYearlyIncome" className="form-control" />
             </div>
             <div className="col-6">
-              <div className="name labelName">個人淨資產(資產扣除負債)</div>
-              <input type="labelName" name="netWorth" className="form-control" />萬元
+              <div className="name labelName">個人淨資產(資產扣除負債)(萬元)</div>
+              <input type="labelName" name="netWorth" className="form-control" />
             </div>
           </div>
           <div className="row custom-box">
@@ -181,22 +404,22 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
           </div>
           <div className="row custom-box">
             <div className="col-6">
-              <div className="name labelName">個人工作年收入約</div>
-              <input type="labelName" name="policyholderAnnualEmploymentIncome" className="form-control" />萬元
+              <div className="name labelName">個人工作年收入約(萬元)</div>
+              <input type="labelName" name="policyholderAnnualEmploymentIncome" className="form-control" />
             </div>
             <div className="col-6">
-              <div className="name labelName">個人其他年收入(如利息、投資等)</div>
-              <input type="labelName" name="policyholderOtherYearlyIncome" className="form-control" />萬元
+              <div className="name labelName">個人其他年收入(如利息、投資等)(萬元)</div>
+              <input type="labelName" name="policyholderOtherYearlyIncome" className="form-control" />
             </div>
           </div>
           <div className="row custom-box">
             <div className="col-6">
-              <div className="name labelName">家庭年收入</div>
-              <input type="labelName" name="policyholderHouseholdYearlyIncome" className="form-control" />萬元
+              <div className="name labelName">家庭年收入(萬元)</div>
+              <input type="labelName" name="policyholderHouseholdYearlyIncome" className="form-control" />
             </div>
             <div className="col-6">
-              <div className="name labelName">個人淨資產(資產扣除負債)</div>
-              <input type="labelName" name="policyholderNetWorth" className="form-control" />萬元
+              <div className="name labelName">個人淨資產(資產扣除負債)(萬元)</div>
+              <input type="labelName" name="policyholderNetWorth" className="form-control" />
             </div>
           </div>
           <div className="row custom-box">
@@ -239,22 +462,22 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
           </div>
           <div className="row custom-box">
             <div className="col-6">
-              <div className="name labelName">個人工作年收入約</div>
-              <input type="labelName" name="dependentAnnualEmploymentIncome" className="form-control" />萬元
+              <div className="name labelName">個人工作年收入約(萬元)</div>
+              <input type="labelName" name="dependentAnnualEmploymentIncome" className="form-control" />
             </div>
             <div className="col-6">
-              <div className="name labelName">個人其他年收入(如利息、投資等)</div>
-              <input type="labelName" name="dependentOtherYearlyIncome" className="form-control" />萬元
+              <div className="name labelName">個人其他年收入(如利息、投資等)(萬元)</div>
+              <input type="labelName" name="dependentOtherYearlyIncome" className="form-control" />
             </div>
           </div>
           <div className="row custom-box">
             <div className="col-6">
-              <div className="name labelName">家庭年收入</div>
-              <input type="labelName" name="dependentHouseholdYearlyIncome" className="form-control" />萬元
+              <div className="name labelName">家庭年收入(萬元)</div>
+              <input type="labelName" name="dependentHouseholdYearlyIncome" className="form-control" />
             </div>
             <div className="col-6">
-              <div className="name labelName">個人淨資產(資產扣除負債)</div>
-              <input type="labelName" name="dependentNetWorth" className="form-control" />萬元
+              <div className="name labelName">個人淨資產(資產扣除負債)(萬元)</div>
+              <input type="labelName" name="dependentNetWorth" className="form-control" />
             </div>
           </div>
           <div className="row custom-box">
@@ -331,54 +554,65 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     ;
   };
 
-  const getFatcaCrsNoticeContent = () => {
+  const getDataUsageNoticeContent = () => {
     return (
 
       <>
         <div className="row custom-box">
-          <div className="row custom-box">
-            <label className="labelName me-2">
-              要保人聲明國外稅務居民身分(以下(1)(2)(3)由要保人擇一勾選)：
-            </label>
-            <div className="d-flex flex-column">
-              <div className="form-check mb-3">
-                <input type="radio" className="form-check-input" name="foreignTaxDeclaration" value="option1" />
-                <label className="form-check-label button-spacing">
-                  本人不具有國外稅務居民身分（1.美國公民或稅務居民身分，且沒有美國指標。2.美國以外其他國家公民或稅務居民身分）
-                </label>
-              </div>
-              <div className="form-check mb-3">
-                <input type="radio" className="form-check-input" name="foreignTaxDeclaration" value="option2" />
-                <label className="form-check-label button-spacing">
-                  <div>本人具有國外公民或稅務居民身分</div>
-                  <div>1. 具有美國公民或稅務居民身分</div>
-                  <div className="details">
-                    【美國公民或稅務居民係指具有美國國籍者(持有美國護照)、持有綠卡者，或當年度入境美國並停留超過183天，
-                    或者當年度入境並在美國待超過31天，同時滿足所謂的『前3年審核期』的計算超過183天。『前3年審核期』
-                    係以報稅年度及前二年在美居留天數「加權」計算，當年度在美國實際居留天數 x 1 + 前一年度在美國實際居留
-                    天數 x 1/2 + 前二年度在美國實際居留天數 x 1/3，若總天數大於（或等於）183天，該客戶即為美國稅務居民。】
-                  </div>
-                  <div>2. 具有美國以外其他國家公民或稅務居民身分</div>
-                </label>
-              </div>
-
-              <div className="form-check mb-3">
-                <input type="radio" className="form-check-input" name="foreignTaxDeclaration" value="option3" />
-                <label className="form-check-label button-spacing">
-                  <div>本人不具有美國公民或稅務居民身分，但具備以下任一美國指標：(綠卡)</div>
-                  <div>1. 曾被註記具美國公民身分或擁有永久居留權(綠卡)</div>
-                  <div>2. 出生地為美國</div>
-                  <div>3. 擁有美國住址或郵寄地址</div>
-                  <div>4. 擁有美國電話號碼</div>
-                  <div>5. 經常將資金轉入位於美國的帳戶</div>
-                  <div>6. 曾指定住址設於美國的人士為代理人以處理本件要保相關事宜</div>
-                  <div>7. 留存於本公司之地址並非要保人之地址，而是以「郵局暫時代替保管郵件」(如郵政信箱)或「交由某人代轉信件」為唯一地址
-                  </div>
-                </label>
-              </div>
-            </div>
+          <div>
+            <h2>臺銀人壽個人資料蒐集、處理、利用告知事項</h2>
           </div>
 
+          <div className="content-container" id="content">
+            <div>
+              <p>臺銀人壽保險股份有限公司(下稱本公司)依據個人資料保護法（以下稱個資法）第六條第二項、第八條
+                第一項(如為間接蒐集之個人資料則為第九條第一項)規定，向 台端告知下列事項，請 台端詳閱：
+              </p>
+              <p><strong>一、蒐集之目的：</strong></p>
+              <p>(一) 人身保險(００一)。</p>
+              <p>(二) 行銷(０四０)。</p>
+              <p>(三) 金融服務業依法令規定及金融監理需要，所為之蒐集處理及利用(０五九)。</p>
+              <p>(四) 其他經營合於營業登記項目或組織章程所定之業務(一八一) 。</p>
+              <p><strong>二、蒐集之個人資料類別：</strong></p>
+              <p>(一) 姓名。</p>
+              <p>(二) 出生年月日及身分證統一編號。</p>
+              <p>(三) 地址及電話等聯絡方式。</p>
+              <p>(四) 病歷、醫療、健康檢查。</p>
+              <p>(五) 其他詳如要保書等相關業務申請文件內容。</p>
+              <p><strong>三、個人資料之來源（個人資料非由當事人提供間接蒐集之情形適用）：</strong></p>
+              <p>(一) 要保人。</p>
+              <p>(二) 當事人之法定代理人、輔助人。</p>
+              <p>(三) 各醫療院所。</p>
+              <p>(四) 與第三人共同行銷、交互運用客戶資料、合作推廣等關係、或於本公司各項業務內所委託往來之第三人。</p>
+              <p><strong>四、個人資料利用之期間、對象、地區、方式：</strong></p>
+              <p>(一) 期間：因執行業務所必須及依法令規定應為保存之期間。</p>
+              <p>(二) 對象：本(分)公司及本公司海外分支機構、中華民國人壽保險商業同業公會、中華民國產
+                物保險商業同業公會、財團法人保險事業發展中心、財團法人保險安定基金、財團
+                法人金融消費評議中心、財團法人金融聯合徵信中心、財團法人聯合信用卡中心、
+                台灣票據交換所、財金資訊公司、業務委外機構、合作推廣台端保險契約之保險代
+                理人/保險經紀人、與本公司有再保業務往來之公司、依法有調查權機關或金融監理
+                機關。
+              </p>
+              <p>(三) 地區：上述對象所在之地區。</p>
+              <p>(四) 方式：合於法令規定之利用方式。</p>
+              <p><strong>五、依據個資法第三條規定，台端就本公司保有 台端之個人資料得行使之權利及方式：</strong></p>
+              <p>(一) 得向本公司行使之權利：</p>
+              <p>1.向本公司查詢、請求閱覽或請求製給複製本。</p>
+              <p>2.向本公司請求補充或更正。</p>
+              <p>3.向本公司請求停止蒐集、處理或利用及請求刪除。</p>
+              <p>(二) 行使權利之方式：以書面、電子郵件、傳真、電子文件。</p>
+              <p><strong>六、台端不提供個人資料所致權益之影響（個人資料由當事人直接蒐集之情形適用）：</strong></p>
+              <p>台端若未能提供相關個人資料時，本公司將可能延後或無法進行必要之審核及處理作業，因此可
+                能婉謝承保、遲延或無法提供 台端相關服務或給付。
+              </p>
+            </div>
+          </div>
+          <div className="row custom-box">
+            <div className="checkbox-container">
+              <input type="checkbox" id="confirm" disabled />
+              <label htmlFor="confirm">本人已閱覽相關文件</label>
+            </div>
+          </div>
         </div>
 
       </>
@@ -776,7 +1010,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
                     </select>
                   </div>
                   <div className="col-6">
-                    <div className="name labelName">身分證統一編號</div>
+                    <div className="name labelName ">身分證統一編號</div>
                     <input type="labelName" name="rocId" className="form-control" />
                   </div>
                   <div className="col-6">
@@ -1065,12 +1299,14 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     switch (formName) {
       case 'HealthDeclarationForm':
         return (<HealthDeclarationForm ref={HealthDeclarationFormRef} />);
+      case 'InsuranceRightsConfirmation':
+        return getInsuranceRightsConfirmationContent();
       case 'ReviewPeriodConfirmation':
         return getReviewPeriodConfirmationContent();
       case 'FinancialDisclosure':
         return getFinancialDisclosureContent();
-      case 'FatcaCrsNotice':
-        return getFatcaCrsNoticeContent();
+      case 'DataUsageNotice':
+        return getDataUsageNoticeContent();
       case 'AgentDisclosure':
         return getAgentDisclosureContent();
       default:
@@ -1080,20 +1316,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
 
   const getFooterContent = () => {
     switch (formName) {
-      case 'AgentDisclosure':
-        return (
-          <>
-            <button
-              type="button"
-              className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
-              onClick={() => setModalVisible(false)}
-            >
-              <div className="row">
-                <div className="col-lg-12">完成</div>
-              </div>
-            </button>
-          </>
-        );
+      case 'InsuranceRightsConfirmation':
       default:
         return '';
     }
