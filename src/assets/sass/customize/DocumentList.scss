@@ -11,6 +11,13 @@
     justify-content: center;
     opacity: 0;
     visibility: hidden;
+    &.modal-message {
+      .modal-container {
+        border-radius: 8px;
+        width: 50%;
+        height: 50%;
+      }
+    }
   }
 
   &.modal-overlay.visible {

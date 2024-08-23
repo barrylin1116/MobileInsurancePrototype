@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table, TableColumnsType } from 'antd';
+import CustomModal from '../../../Insurance/pages/Modals/CustomModal';
 
 const PreviewHistory: React.FC<any> = () => {
   const columns: TableColumnsType = [
@@ -17,26 +18,39 @@ const PreviewHistory: React.FC<any> = () => {
               {
               record.Status === '成功'
                 ? (
-                  <div
-                    key={`icon-${index}`}
-                    style={{ marginInline: '0.5rem', width: '2rem' }}
-                    className="p-0 col-1"
-                  />
+                  <>
+                    <div
+                      key={`icon-${index}`}
+                      style={{ marginInline: '0.5rem', width: '2rem' }}
+                      className="p-0 col-1"
+                    />
+                    <div
+                      key={`title-${index}`} className="item col"
+                    >
+                      {r.title}
+                    </div>
+                  </>
                   )
                 : (
-                  <img
-                    key={`icon-${index}`}
-                    className="p-0 col-1 exclamation-icon"
-                    src={require('assets/img/icons/exclamation.svg').default}
-                  />
+                  <>
+                    <img
+                      key={`icon-${index}`}
+                      className="p-0 col-1 exclamation-icon"
+                      src={require('assets/img/icons/exclamation.svg').default}
+                    />
+                    <div
+                      onClick={() => openErrMsgModal(r)}
+                      className="col ps-2 border-0 text-start btn-outline-primary"
+                    >
+                      {
+                      r.title
+                    }
+                    </div>
+                  </>
 
                   )
-            }
-              <div
-                key={`title-${index}`} className="item col"
-              >
-                {r}
-              </div>
+              }
+
             </div>
           </>
         ))
@@ -47,6 +61,9 @@ const PreviewHistory: React.FC<any> = () => {
 
   const [datasource, setDatasource] = useState<any[]>([]); // Store the selected files
 
+  const [errMsgModalVisible, setErrMsgModalVisible] = useState(false);
+  const [modalProps, setModalProps] = useState<any>(null);
+
   useEffect(() => {
     setDatasource([
       {
@@ -54,7 +71,7 @@ const PreviewHistory: React.FC<any> = () => {
         MainPolicy_CoverageAmount: 'OA/100000',
         Status: '成功',
         SubmissionMessage: [
-          '案件建立(案件狀態: 受理中)'
+          { title: '案件建立(案件狀態: 受理中)', msg: '' }
         ]
       },
       {
@@ -62,15 +79,42 @@ const PreviewHistory: React.FC<any> = () => {
         MainPolicy_CoverageAmount: 'OA/100000',
         Status: '失敗',
         SubmissionMessage: [
-          '要保文件預檢未通過',
-          '線核預檢未通過'
+          { title: '要保文件預檢未通過', msg: '資料錯誤' },
+          { title: '線核預檢未通過', msg: '條件不符' }
         ]
       }
     ]);
   }, []);
 
+  const openErrMsgModal = (data: any) => {
+    setErrMsgModalVisible(true);
+    setModalProps(data);
+  };
+
   return (
-    <Table pagination={false} columns={columns} dataSource={datasource} />
+    <>
+      <Table id="PreviewHistory" pagination={false} columns={columns} dataSource={datasource} />
+      {
+          errMsgModalVisible && (
+            <>
+              <CustomModal
+                isModalMsg
+                headerTitle={modalProps.title}
+                isOpen={errMsgModalVisible}
+                buttonPosition="right"
+                onClose={setErrMsgModalVisible}
+                headerButton={<div>關閉</div>}
+              >
+                <div className="row">
+                  <div className="col">
+                    {modalProps.msg}
+                  </div>
+                </div>
+              </CustomModal>
+            </>
+          )
+      }
+    </>
   );
 };
 export default PreviewHistory;

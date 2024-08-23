@@ -52,7 +52,7 @@ const Preview: React.FC<any> = () => {
   }, []);
 
   return (
-    <Table pagination={false} columns={columns} dataSource={datasource} />
+    <Table id="Preview" pagination={false} columns={columns} dataSource={datasource} />
   );
 };
 

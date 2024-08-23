@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, message, Modal, Table, TableColumnsType, Upload, UploadProps } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import TipsModal from '../../../Insurance/pages/Modals/TipsModal';
+import maxzIndexService from '../../../../core/services/maxzIndexService';
 
 declare const $: any;
 
@@ -15,7 +15,7 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
   const [previewContent, setPreviewContent] = useState<string>(''); // Store preview content
   const [previewFileType, setPreviewFileType] = useState<string>(''); // Store file type for preview
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false); // Control modal visibility
-  const tipsModalRef = useRef<any>(null);
+  const [tipsModalVisible, setTipsModalVisible] = useState(false);
 
   useEffect(() => {
     $(inputElemRef.current).selectpicker();
@@ -58,7 +58,7 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
   };
 
   const handleRemove = (index: number) => {
-    tipsModalRef.current.open();
+    setTipsModalVisible(true);
     setRemoveIndex(index);
   };
 
@@ -68,11 +68,12 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
       newList.splice(removeIndex, 1);
       return newList;
     });
-    tipsModalRef.current.close();
+    setTipsModalVisible(false);
   };
 
   const handleTipsModalCancel = () => {
-    tipsModalRef.current.close();
+    // tipsModalRef.current.close();
+    setTipsModalVisible(false);
   };
 
   const handleUpload = () => {
@@ -251,7 +252,13 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
           <p>{previewContent}</p>
         )}
       </Modal>
-      <TipsModal ref={tipsModalRef} title="" headerVisible={false}>
+      <Modal
+        visible={tipsModalVisible}
+        title={false}
+        footer={null}
+        zIndex={maxzIndexService.getMaxZIndex()}
+        closable={false}
+      >
         <div className="row labelName justify-content-center">
           是否確認移除
         </div>
@@ -265,7 +272,7 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
           </button>
           {/* </div> */}
         </div>
-      </TipsModal>
+      </Modal>
     </div>
   );
 };

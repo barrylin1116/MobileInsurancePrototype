@@ -10,7 +10,8 @@ const CustomModal: React.FC<{
   children: any,
   footerContent?: any,
   customHeaderButtonOnclick?: () => void
-}> = ({ isOpen, onClose, headerTitle, headerButton, buttonPosition, children, footerContent, customHeaderButtonOnclick }) => {
+  isModalMsg?: boolean
+}> = ({ isOpen, onClose, headerTitle, headerButton, buttonPosition, children, footerContent, customHeaderButtonOnclick, isModalMsg, ...props }) => {
   const divRefs = useRef<(HTMLDivElement)>(null);
 
   const getMaxZIndex = (): number => {
@@ -37,7 +38,7 @@ const CustomModal: React.FC<{
   return (
     <>
       <div
-        id="CustomModal" className={`modal-overlay ${isOpen ? 'visible' : ''} `} style={{
+        id="CustomModal" className={`modal-overlay ${isOpen ? 'visible' : ''} ${isModalMsg ? 'modal-message' : ''}`} style={{
           zIndex: `${isOpen ? getMaxZIndex() + 10 : 0}`
         }}
       >
