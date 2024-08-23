@@ -332,6 +332,7 @@ const Page1: React.FC<any> = (props) => {
                     <div
                       className="row m-5 btn btn-outline-primary" onClick={() => {
                         setSubmissionModalVisible(false);
+                        setIsUpload(false);
                       }}
                     >確認
                     </div>
@@ -357,6 +358,7 @@ const Page1: React.FC<any> = (props) => {
                     <div
                       className="row m-5 btn btn-outline-primary" onClick={() => {
                         setSubmissionModalVisible(false);
+                        setIsUpload(false);
                       }}
                     >確認
                     </div>
