@@ -102,8 +102,7 @@ const PreviewHistory: React.FC<any> = () => {
                 headerTitle={modalProps.title}
                 isOpen={errMsgModalVisible}
                 buttonPosition="right"
-                onClose={setErrMsgModalVisible}
-                headerButton={<div>關閉</div>}
+                headerButton={<div onClick={() => setErrMsgModalVisible(false)}>關閉</div>}
               >
                 <div className="row">
                   <div className="col">

@@ -1509,7 +1509,6 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
           modalVisible && (
             <CustomModal
               isOpen={modalVisible}
-              onClose={setModalVisible}
               headerTitle={modalTitle}
               headerButton={
                 <>
@@ -1518,7 +1517,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
                     className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
                   >
                     <div className="row">
-                      <div className="col-lg-12">完成</div>
+                      <div className="col-lg-12" onClick={() => setModalVisible(false)}>完成</div>
                     </div>
                   </button>
                 </>

@@ -3,15 +3,15 @@ import TopButton from '../../../Other/components/TopButton';
 
 const CustomModal: React.FC<{
   isOpen: boolean,
-  onClose: React.Dispatch<React.SetStateAction<boolean>>,
   headerTitle: string,
-  headerButton: any,
-  buttonPosition: string,
+  headerButton?: any,
+  buttonPosition?: string,
   children: any,
   footerContent?: any,
   customHeaderButtonOnclick?: () => void
   isModalMsg?: boolean
-}> = ({ isOpen, onClose, headerTitle, headerButton, buttonPosition, children, footerContent, customHeaderButtonOnclick, isModalMsg, ...props }) => {
+  bodyClassName?: string
+}> = ({ bodyClassName, isOpen, headerTitle, headerButton, buttonPosition, children, footerContent, customHeaderButtonOnclick, isModalMsg, ...props }) => {
   const divRefs = useRef<(HTMLDivElement)>(null);
 
   const getMaxZIndex = (): number => {
@@ -30,35 +30,40 @@ const CustomModal: React.FC<{
     return maxZ;
   };
 
-  const headerButtonOnclick = () => {
-    if (customHeaderButtonOnclick) customHeaderButtonOnclick();
-    onClose(false);
-  };
-
   return (
     <>
-      <div
-        id="CustomModal" className={`modal-overlay ${isOpen ? 'visible' : ''} ${isModalMsg ? 'modal-message' : ''}`} style={{
-          zIndex: `${isOpen ? getMaxZIndex() + 10 : 0}`
-        }}
-      >
-        <div className="modal-container">
-          <div className="modal-header">
-            {buttonPosition === 'left' && <div className="header-button" onClick={headerButtonOnclick}>{headerButton}</div>}
-            <div className="header-title">{headerTitle}</div>
-            {buttonPosition === 'right' && <div className="header-button" onClick={headerButtonOnclick}>{headerButton}</div>}
-          </div>
-          <div ref={divRefs} className="modal-body">
-            {children}
-          </div>
-          {footerContent && (
-            <div className="modal-footer justify-content-center">
-              {footerContent}
+      {
+        isOpen && (
+          <div
+            id="CustomModal" className={`modal-overlay ${isOpen ? 'visible' : ''} ${isModalMsg ? 'modal-message' : ''}`} style={{
+              zIndex: `${isOpen ? getMaxZIndex() + 10 : 0}`
+            }}
+          >
+            <div className="modal-container">
+              <div className="modal-header">
+                {
+              headerButton && (
+                <div className={`header-button ${buttonPosition ?? 'right'}`}>
+                  {headerButton}
+                </div>
+              )
+            }
+                <div className="header-title">{headerTitle}</div>
+              </div>
+              <div ref={divRefs} className={`modal-body ${bodyClassName ?? ''}`}>
+                {children}
+              </div>
+              {footerContent && (
+                <div className="modal-footer justify-content-center">
+                  {footerContent}
+                </div>
+              )}
             </div>
-          )}
-        </div>
-        {divRefs && (<TopButton isModal containerRef={divRefs} />)}
-      </div>
+            {divRefs && (<TopButton isModal containerRef={divRefs} />)}
+          </div>
+
+        )
+      }
     </>
   );
 };

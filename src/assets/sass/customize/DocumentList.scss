@@ -11,6 +11,7 @@
     justify-content: center;
     opacity: 0;
     visibility: hidden;
+
     &.modal-message {
       .modal-container {
         border-radius: 8px;
@@ -59,15 +60,23 @@
     position: absolute;
     font-weight: 400;
     font-size: 1.2rem;
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 2rem;
+    }
   }
 
-  .header-button:first-child {
-    left: 0;
-  }
-
-  .header-button:last-child {
-    right: 2rem;
-  }
+  //.header-button:first-child {
+  //  left: 0;
+  //}
+  //
+  //.header-button:last-child {
+  //  right: 2rem;
+  //}
 
   .modal-body {
     padding: 20px;
@@ -91,7 +100,7 @@
 
 #DocumentsList {
 
-  #SupplementaryDocuments{
+  #SupplementaryDocuments {
     .row {
       margin-top: 1rem !important;
       margin-right: 1rem !important;
@@ -101,7 +110,7 @@
   }
 
   #requiredDocumentsList {
-    .row:hover{
+    .row:hover {
       background-color: #cde3e3;
     }
   }

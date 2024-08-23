@@ -20,6 +20,9 @@ const Page1: React.FC<any> = (props) => {
   const [activeKey, setActiveKey] = useState('1');
   const [previewModalVisible, setPreviewModalVisible] = useState(false);
   const [submissionModalVisible, setSubmissionModalVisible] = useState(false);
+  const [submissionHintModalVisible, setSubmissionHintModalVisible] = useState(false);
+  const [isUpload, setIsUpload] = useState(false);
+  const [loadResult, setLoadResult] = useState(false);
   const [previewTabActiveKey, setpreviewTabActiveKey] = useState< string | number>('1');
 
   const openPreviewModal = () => {
@@ -27,8 +30,14 @@ const Page1: React.FC<any> = (props) => {
   };
 
   const openSubmissionModal = () => {
-    setSubmissionModalVisible(true);
+    setSubmissionHintModalVisible(true);
   };
+
+  const submissionHintList = [
+    '各項要保文件已由要/被保人親簽並審閱，且各項資料內容本人均已確認正確無誤',
+    '已確認要/被保人親自簽名及未滿7歲由法代簽署且適用於行動投保之不識字或不識字會簽名者，皆不適用行動投保',
+    '如有招攬不實者，業務員需返還佣金、業績津貼，並連帶賠償臺銀人壽所有損害及停權'
+  ];
 
   const previewBody = () => {
     return (
@@ -217,7 +226,6 @@ const Page1: React.FC<any> = (props) => {
             headerTitle="檢視"
             isOpen={previewModalVisible}
             buttonPosition="right"
-            onClose={setPreviewModalVisible}
             headerButton={
               <>
                 <button
@@ -225,7 +233,7 @@ const Page1: React.FC<any> = (props) => {
                   className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
                 >
                   <div className="row">
-                    <div className="col-lg-12">完成</div>
+                    <div className="col-lg-12" onClick={() => setPreviewModalVisible(false)}>完成</div>
                   </div>
                 </button>
               </>
@@ -256,30 +264,137 @@ const Page1: React.FC<any> = (props) => {
         )
       }
 
-          {
-              submissionModalVisible && (
-                <CustomModal
-                  headerTitle="案件提交"
-                  isOpen={submissionModalVisible}
-                  buttonPosition="right"
-                  onClose={setSubmissionModalVisible}
-                  headerButton={
-                    <>
-                      <button
-                        type="button"
-                        className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
-                      >
-                        <div className="row">
-                          <div className="col-lg-12">重新提交</div>
-                        </div>
-                      </button>
-                    </>
-                  }
-                >
-                  <div>asdfasdf</div>
-                </CustomModal>
-              )
+          <CustomModal
+            headerTitle="案件提交"
+            headerButton={
+              <>
+                <div
+                  className="btn btn-outline-primary" onClick={() => {
+                    setIsUpload(true);
+                    setLoadResult(true);
+                  }}
+                >成功 Demo
+                </div>
+                <div
+                  className="btn btn-outline-primary" onClick={() => {
+                    setIsUpload(true);
+                    setLoadResult(false);
+                  }}
+                >失敗 Demo
+                </div>
+              </>
           }
+            isOpen={submissionModalVisible}
+            bodyClassName="d-flex justify-content-center align-items-center"
+          >
+            <>
+              {!isUpload && (
+                <div className="d-flex w-100 justify-content-center  align-items-center">
+                  <img
+                    className="col-2 exclamation-icon"
+                    src={require('assets/img/icons/upload_file.svg').default}
+                  />
+                  <div className="labelName">
+                    您的要保書正在提交中!<br />
+                    資料已完備請稍候....
+                  </div>
+                </div>
+              )}
+              {isUpload && loadResult && (
+                <>
+                  <div className="container border m-5">
+                    <div
+                      className="row header-title" style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        position: 'relative',
+                        padding: '20px',
+                        background: '#348d8f',
+                        color: 'white'
+                      }}
+                    >案件已建立
+                    </div>
+                    <div className="row m-5">
+                      <div className="row">
+                        <div className="col">行動投保編號</div>
+                        <div className="col">OA11111111</div>
+                      </div>
+                      <div className="row">
+                        <div className="col">保單號碼</div>
+                        <div className="col">OB11111111</div>
+                      </div>
+                      <div className="row">
+                        <div className="col">按鍵狀態</div>
+                        <div className="col">簽署平台簽署中</div>
+                      </div>
+                    </div>
+                    <div
+                      className="row m-5 btn btn-outline-primary" onClick={() => {
+                        setSubmissionModalVisible(false);
+                      }}
+                    >確認
+                    </div>
+                  </div>
+                </>
+              )}
+              {isUpload && !loadResult && (
+                <>
+                  <div className="container border m-5">
+                    <div
+                      className="row header-title" style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        position: 'relative',
+                        padding: '20px',
+                        background: '#348d8f',
+                        color: 'white'
+                      }}
+                    >線核預檢失敗
+                    </div>
+                    <div className="row m-5">請至歷程檢視並點閱錯誤訊息，經錯誤修正後重新提交</div>
+                    <div
+                      className="row m-5 btn btn-outline-primary" onClick={() => {
+                        setSubmissionModalVisible(false);
+                      }}
+                    >確認
+                    </div>
+                  </div>
+                </>
+              )}
+            </>
+
+          </CustomModal>
+          <CustomModal
+            isModalMsg
+            headerTitle="要保書及相關文件等詢問事項應注意如下"
+            isOpen={submissionHintModalVisible}
+            buttonPosition="right"
+            footerContent={
+              <div className="row w-100">
+                <div onClick={() => setSubmissionHintModalVisible(false)} role="button" className="col text-center btn-outline-primary">
+                  取消
+                </div>
+                <div
+                  onClick={() => {
+                    setSubmissionHintModalVisible(false);
+                    setSubmissionModalVisible(true);
+                  }} role="button" className="col text-center btn-outline-primary"
+                >
+                  確認提交
+                </div>
+              </div>
+            }
+          >
+            <div className="container">
+              {
+                submissionHintList.map((hint, index) => (
+                  <div key={`hint-${index}`}>{`${index + 1}. ${hint}`}</div>
+                ))
+              }
+            </div>
+          </CustomModal>
         </main>
       </div>
     </>
