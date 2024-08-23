@@ -1,13 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from 'antd';
 import SelectField from '../../../common/components/Elements/SelectField';
 import Checkbox from 'app/common/components/Checkbox';
-import { routerHistory } from '../../../core/router/service';
-import { ROUTES } from 'app/core/router/paths';
+import OnlineAuthApplyModal from '../../Insurance/pages/Modals/OnlineAuthApplyModal';
+import OnlineAuthApply from './Inner/onlineAuthApply/OnlineAuthApply';
 
 const PaymentMethod: React.FC<any> = (props) => {
+  const [onlineAuthApplyVisible, setOnlineAuthApplyVisible] = useState(false);
+  const [activeContent, setActiveContent] = useState(1);
   return (
     <>
+      {
+        onlineAuthApplyVisible &&
+          <OnlineAuthApplyModal
+            isOpen={onlineAuthApplyVisible}
+            onClose={setOnlineAuthApplyVisible}
+            headerTitle="eDDA電子化授權"
+            headerButton={
+              <>
+                {
+                  activeContent < 3 &&
+                    <>
+                      <button
+                        type="button"
+                        className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                        onClick={() => setActiveContent(activeContent + 1)}
+                      >
+                        下一步
+                      </button>
+                      <button
+                        type="button"
+                        className="btn ml-1 btn-outline-warning me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                        onClick={() => setOnlineAuthApplyVisible(false)}
+                      >
+                        取消
+                      </button>
+                    </>
+              }
+                {
+                    activeContent >= 3 &&
+                      <>
+                        <button
+                          type="button"
+                          className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                          onClick={() => setOnlineAuthApplyVisible(false)}
+                        >
+                          確認
+                        </button>
+                      </>
+                }
+              </>
+            }
+            buttonPosition="right"
+          >
+            <OnlineAuthApply activeContent={activeContent} />
+          </OnlineAuthApplyModal>
+      }
       <Card id="paymentMethod" style={{ minHeight: '450px', width: '95%' }}>
         <div className="content mt-3">
           <div className="row justify-between">
@@ -20,16 +68,16 @@ const PaymentMethod: React.FC<any> = (props) => {
               >
                 <>
                   <SelectField.Option value="1" key="1">
-                    年繳
+                    匯款
                   </SelectField.Option>
                   <SelectField.Option value="2" key="2">
-                    半年繳
+                    郵局劃撥
                   </SelectField.Option>
                   <SelectField.Option value="3" key="3">
-                    季繳
+                    銀行(郵局)轉帳
                   </SelectField.Option>
                   <SelectField.Option value="4" key="4">
-                    月繳
+                    信用卡
                   </SelectField.Option>
                 </>
               </SelectField>
@@ -43,16 +91,13 @@ const PaymentMethod: React.FC<any> = (props) => {
               >
                 <>
                   <SelectField.Option value="1" key="1">
-                    年繳
+                    自行繳費
                   </SelectField.Option>
                   <SelectField.Option value="2" key="2">
-                    半年繳
+                    銀行(郵局)轉帳
                   </SelectField.Option>
                   <SelectField.Option value="3" key="3">
-                    季繳
-                  </SelectField.Option>
-                  <SelectField.Option value="4" key="4">
-                    月繳
+                    其他
                   </SelectField.Option>
                 </>
               </SelectField>
@@ -62,7 +107,7 @@ const PaymentMethod: React.FC<any> = (props) => {
             <div className="name labelName">保險費付款授權</div>
             <div className="d-flex flex-column">
               <div className="d-flex justify-between">
-                <div className="col-10 d-flex" style={{ paddingRight: '12px' }}>
+                <div className="col-8 d-flex" style={{ paddingRight: '12px' }}>
                   <input type="radio" name="autoPayment" className="form-check-input me-2 mb-1" />
                   <label className="form-check-label me-2 text-nowrap labelName">紙本付款授權：付款授權編號</label>
                   <input type="text" name="name" className="form-control" />
@@ -71,8 +116,13 @@ const PaymentMethod: React.FC<any> = (props) => {
               <div className="d-flex mt-3">
                 <input type="radio" name="autoPayment" className="form-check-input me-2 mb-1" />
                 <label className="form-check-label me-2 text-nowrap labelName">eDDA電子化授權</label>
-                <button className="btn btn-outline-primary btn-sm authorizationBtn" onClick={() => routerHistory.push(ROUTES.PAGE_ONLINE_AUTH_APPLY)}>
-                  執行綫上授權申請
+                <button
+                  className="btn btn-primary btn-sm authorizationBtn" onClick={() => {
+                    setActiveContent(1);
+                    setOnlineAuthApplyVisible(true);
+                  }}
+                >
+                  執行線上申請授權
                 </button>
               </div>
             </div>

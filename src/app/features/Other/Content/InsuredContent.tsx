@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from 'antd';
 import SelectField from '../../../common/components/Elements/SelectField';
 
 const InsuredContent: React.FC<any> = (props) => {
+  const [visible, setVisible] = useState(false);
   return (
     <>
       <Card id="insuredContent" style={{ minHeight: '450px', width: '95%' }}>
@@ -64,26 +65,27 @@ const InsuredContent: React.FC<any> = (props) => {
             <div className="col-5">
               <div className="name labelName">集彙件</div>
               <div className="d-flex">
-                <input type="radio" name="relationship" className="form-check-input me-2 mb-1" />
+                <input type="radio" onChange={() => setVisible(false)} name="relationship" className="form-check-input me-2 mb-1" />
                 <label className="form-check-label me-2 text-nowrap labelName">否</label>
-                <input type="radio" name="relationship" className="form-check-input me-2 mb-1" />
+                <input type="radio" onChange={() => setVisible(true)} name="relationship" className="form-check-input me-2 mb-1" />
                 <label className="form-check-label me-2 text-nowrap labelName">是</label>
               </div>
             </div>
-            <div className="col-5">
-              <div className="name labelName">繳費單位</div>
-              <SelectField
-                label=""
-                className="selectpicker w-100 relation"
-                name="payUnit"
-              >
-                <>
-                  <SelectField.Option value="1" key="1">
-                    臺銀人壽
-                  </SelectField.Option>
-                </>
-              </SelectField>
-            </div>
+            {visible &&
+              <div className="col-5">
+                <div className="name labelName">彙繳單位</div>
+                <SelectField
+                  label=""
+                  className="selectpicker w-100 relation"
+                  name="payUnit"
+                >
+                  <>
+                    <SelectField.Option value="1" key="1">
+                      臺銀人壽
+                    </SelectField.Option>
+                  </>
+                </SelectField>
+              </div>}
           </div>
           <div className="row justify-between">
             <div className="col-5">

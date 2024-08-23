@@ -28,7 +28,6 @@ export enum ROUTES {
 
     PAGE_SETTINGS_PASS_PHRASE_AUTH = '/Page/Password/Auth',
 
-    PAGE_SETTINGS_PASS_PHRASE_SETUP = '/Page/Password/Setup',
+    PAGE_SETTINGS_PASS_PHRASE_SETUP = '/Page/Password/Setup'
 
-    PAGE_ONLINE_AUTH_APPLY = '/Page/OnlineAuthApply',
 }

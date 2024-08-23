@@ -1,13 +1,11 @@
 import React from 'react';
 import { Card } from 'antd';
-import SelectField from '../../../../common/components/Elements/SelectField';
-import DatePickerTW from '../../../../common/components/Elements/DatePickerTW';
-import { routerHistory } from '../../../../core/router/service';
-import { ROUTES } from 'app/core/router/paths';
+import SelectField from 'app/common/components/Elements/SelectField';
+import DatePickerTW from 'app/common/components/Elements/DatePickerTW';
 
-const OnlineAuthApply: React.FC<any> = (props) => {
+const Step1: React.FC<any> = (props) => {
   return (
-    <div id="onlineAuthApply" className="justify-center d-flex pt-3">
+    <div className="justify-center d-flex pt-3">
       <Card style={{ minHeight: '450px', width: '95%' }}>
         <div className="row contentHeader justify-between">
           <div className="col-12">
@@ -101,18 +99,10 @@ const OnlineAuthApply: React.FC<any> = (props) => {
               <input type="labelName" name="tel" className="form-control" />
             </div>
           </div>
-          <div className="row d-flex justify-center">
-            <div className="col-3" style={{ textAlign: 'center' }}>
-              <button type="button" className="btn btn-primary next-step" aria-label="下一步">下一步</button>
-            </div>
-            <div className="col-3" style={{ textAlign: 'center' }}>
-              <button type="button" onClick={() => routerHistory.push({ pathname: ROUTES.PAGE_EMPTY, state: { activeTab: '4' } })} className="btn btn-outline-primary" value="取消" aria-label="取消">取消</button>
-            </div>
-          </div>
         </div>
       </Card>
     </div>
   );
 };
 
-export default OnlineAuthApply;
+export default Step1;
