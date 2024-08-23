@@ -1,0 +1,2 @@
+import ArticleDisplayerFieldNotification from './ArticleDisplayerFieldNotification';
+export default ArticleDisplayerFieldNotification;

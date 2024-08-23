@@ -11594,6 +11594,49 @@ a {
 }
 
 
+.custom-container {
+  width: 100%; /* 保持主容器寬度 */
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.scroll-hint {
+  color: #008080;
+  font-size: 14px;
+}
+
+.content-container {
+  max-height: calc(100vh - 300px); /* 動態設置最大高度 */
+  overflow-y: auto;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%; /* 讓框架寬度自適應容器寬度 */
+}
+
+.checkbox-container {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+
+
 
 
 

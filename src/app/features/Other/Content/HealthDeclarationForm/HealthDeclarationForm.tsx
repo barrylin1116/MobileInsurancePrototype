@@ -178,22 +178,49 @@ const HealthDeclarationForm = React.forwardRef<any, any>((props, ref) => {
       {
               checkboxesState.filter(data => data).length > 0 && (
                 <>
-                  <div className="row m-0 p-2" style={{ border: '1px solid #348d8f', background: '#edf5f4', borderTop: 'none' }}>
+                  <div
+                    className="row m-0 p-2"
+                    style={{ border: '1px solid #348d8f', background: '#edf5f4', borderTop: 'none' }}
+                  >
                     <div className="col-12">
                       <div className="name labelName">當健康告知事項有任一題回覆為「是」需加填「疾病問券」</div>
                     </div>
                   </div>
-                  <div className="row m-0 p-2" style={{ border: '1px solid #348d8f', background: '#edf5f4', borderTop: 'none' }}>
+                  <div
+                    className="row m-0 p-2"
+                    style={{ border: '1px solid #348d8f', background: '#edf5f4', borderTop: 'none' }}
+                  >
                     <div className="col-12">
                       <div className="name labelName">請勾選(可複選，至少要勾選一個)。</div>
                     </div>
                   </div>
                   {
-                          getDiseaseQuestionnaireListBody()
-                      }
+                getDiseaseQuestionnaireListBody()
+              }
+                  <div
+                    className="row m-0 p-2"
+                    style={{ border: '1px solid #348d8f', background: '#edf5f4', borderTop: 'none' }}
+                  >
+                    <div className="col-12">
+                      <div className="name labelName">健康告知書</div>
+                    </div>
+                  </div>
+                  <div
+                    className="row m-0 p-2"
+                    style={{ border: '1px solid #348d8f', background: '#edf5f4', borderTop: 'none' }}
+                  >
+                    <div className="col-12">
+                      <div
+                        className="name labelName"
+                      >當健康告知事項有任一題回覆為「是」者，請註明告知事項編號並詳述原因或疾病之名稱、症狀、治療經過、大約就診時間、地點、診斷結果及目前狀況：
+                      </div>
+                    </div>
+                  </div>
+                  <input type="labelName" name="healthConditionDisclosure" className="form-control" />
+
                 </>
               )
-          }
+      }
 
     </>
   );
