@@ -95,13 +95,13 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     return (
 
       <>
+        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+          <div className="labelName m-0 label-styling">
+            投保內容確認問項 :
+          </div>
+        </div>
         <div className="row custom-box">
           <div className="col-12">
-            <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
-              <div className="labelName m-0 label-styling">
-                投保內容確認問項。
-              </div>
-            </div>
             <div className="name labelName">
               (1) 業務員已向您出示登錄證，並向您說明本保險之保障內容，而您也認為投保內容(含保險種類、保障項目、給付條
               件、保險金額及應繳保險費等)皆符合您的需要。<br />
@@ -141,7 +141,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
           <div className="labelName m-0 label-styling">
-            利率變動型保險商品時，請填寫本問項。
+            利率變動型保險商品時，請填寫本問項 :
           </div>
         </div>
         <div className="row custom-box">
@@ -162,7 +162,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
           <div className="labelName m-0 label-styling">
-            外幣收付之非投資型保險商品時，請填寫本問項。
+            外幣收付之非投資型保險商品時，請填寫本問項 :
           </div>
         </div>
         <div className="row custom-box">
@@ -183,7 +183,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
           <div className="labelName m-0 label-styling">
-            投資型保險商品時，請填寫以下問項。
+            投資型保險商品時，請填寫以下問項 :
           </div>
         </div>
         <div className="row custom-box">
@@ -205,7 +205,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
           <div className="labelName m-0 label-styling">
-            分紅保險商品時，請填寫本問項。
+            分紅保險商品時，請填寫本問項 :
           </div>
         </div>
         <div className="row custom-box">
@@ -225,7 +225,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
           <div className="labelName m-0 label-styling">
-            要保人、被保險人或實際繳費人購買本商品時保險年齡為65歲(含)以上者，請填寫以下問項以再次確認。
+            要保人、被保險人或實際繳費人購買本商品時保險年齡為65歲(含)以上者，請填寫以下問項以再次確認 :
           </div>
         </div>
         <div className="row custom-box">
@@ -245,7 +245,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
           <div className="labelName m-0 label-styling">
-            要保人、被保險人或實際繳費人購買本商品時年齡為18足歲以上惟未滿20足歲者，請填寫以下問項以再次確認。
+            要保人、被保險人或實際繳費人購買本商品時年齡為18足歲以上惟未滿20足歲者，請填寫以下問項以再次確認 :
           </div>
         </div>
         <div className="row custom-box">
@@ -265,7 +265,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
           <div className="labelName m-0 label-styling">
-            FATCA問項
+            FATCA問項 :
           </div>
         </div>
         <div className="row custom-box">
@@ -385,214 +385,212 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     return (
 
       <>
+        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+          <div className="labelName m-0 label-styling">
+            被保險人財務/工作狀況 :
+          </div>
+        </div>
         <div className="row custom-box">
-          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
-            <div className="labelName m-0 label-styling">
-              被保險人財務/工作狀況
+          <div className="col-6">
+            <div className="name labelName">個人工作年收入約(萬元)</div>
+            <input type="labelName" name="annualEmploymentIncome" className="form-control" />
+          </div>
+          <div className="col-6">
+            <div className="name labelName">個人其他年收入(如利息、投資等)(萬元)</div>
+            <input type="labelName" name="otherYearlyIncome" className="form-control" />
+          </div>
+        </div>
+        <div className="row custom-box">
+          <div className="col-6">
+            <div className="name labelName">家庭年收入(萬元)</div>
+            <input type="labelName" name="householdYearlyIncome" className="form-control" />
+          </div>
+          <div className="col-6">
+            <div className="name labelName">個人淨資產(資產扣除負債)(萬元)</div>
+            <input type="labelName" name="netWorth" className="form-control" />
+          </div>
+        </div>
+        <div className="row custom-box">
+          <div className="col-6">
+            <div className="name labelName">服務單位/職稱</div>
+            <input type="labelName" name="householdYearlyIncome" className="form-control" />
+          </div>
+          <div className="col-6">
+            <div className="name labelName">工作內容</div>
+            <input type="labelName" name="jobDescription" className="form-control" />
+          </div>
+        </div>
+        <div className="row custom-box">
+          <label className="form-check-label button-spacing me-2 text-nowrap labelName">與服務單位關係</label>
+          <div className="d-flex flex-wrap align-items-center">
+            <div className="form-check me-3">
+              <input type="radio" className="form-check-input" name="serviceRelationship" value="所有人" />
+              <label className="form-check-label button-spacing ">所有人</label>
+            </div>
+            <div className="form-check me-3">
+              <input type="radio" className="form-check-input" name="serviceRelationship" value="股東" />
+              <label className="form-check-label button-spacing ">股東</label>
+            </div>
+            <div className="form-check d-flex align-items-center">
+              <input type="radio" className="form-check-input" name="serviceRelationship" value="其他" />
+              <label className="form-check-label button-spacing  me-2">受雇:服務</label>
+              <input
+                type="text" className="form-control button-spacing" placeholder="請說明"
+                style={{ width: '150px', marginTop: '0px' }}
+              />
+              <span className="button-spacing">年</span>
             </div>
           </div>
-          <div className="row custom-box">
-            <div className="col-6">
-              <div className="name labelName">個人工作年收入約(萬元)</div>
-              <input type="labelName" name="annualEmploymentIncome" className="form-control" />
-            </div>
-            <div className="col-6">
-              <div className="name labelName">個人其他年收入(如利息、投資等)(萬元)</div>
-              <input type="labelName" name="otherYearlyIncome" className="form-control" />
-            </div>
-          </div>
-          <div className="row custom-box">
-            <div className="col-6">
-              <div className="name labelName">家庭年收入(萬元)</div>
-              <input type="labelName" name="householdYearlyIncome" className="form-control" />
-            </div>
-            <div className="col-6">
-              <div className="name labelName">個人淨資產(資產扣除負債)(萬元)</div>
-              <input type="labelName" name="netWorth" className="form-control" />
-            </div>
-          </div>
-          <div className="row custom-box">
-            <div className="col-6">
-              <div className="name labelName">服務單位/職稱</div>
-              <input type="labelName" name="householdYearlyIncome" className="form-control" />
-            </div>
-            <div className="col-6">
-              <div className="name labelName">工作內容</div>
-              <input type="labelName" name="jobDescription" className="form-control" />
-            </div>
-          </div>
-          <div className="row custom-box">
-            <label className="form-check-label button-spacing me-2 text-nowrap labelName">與服務單位關係</label>
-            <div className="d-flex flex-wrap align-items-center">
-              <div className="form-check me-3">
-                <input type="radio" className="form-check-input" name="serviceRelationship" value="所有人" />
-                <label className="form-check-label button-spacing ">所有人</label>
-              </div>
-              <div className="form-check me-3">
-                <input type="radio" className="form-check-input" name="serviceRelationship" value="股東" />
-                <label className="form-check-label button-spacing ">股東</label>
-              </div>
-              <div className="form-check d-flex align-items-center">
-                <input type="radio" className="form-check-input" name="serviceRelationship" value="其他" />
-                <label className="form-check-label button-spacing  me-2">受雇:服務</label>
-                <input
-                  type="text" className="form-control button-spacing" placeholder="請說明"
-                  style={{ width: '150px', marginTop: '0px' }}
-                />
-                <span className="button-spacing">年</span>
-              </div>
-            </div>
-          </div>
+        </div>
 
-          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
-            <div className="labelName m-0 label-styling">
-              要保人財務/工作狀況
+        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+          <div className="labelName m-0 label-styling">
+            要保人財務/工作狀況 :
+          </div>
+        </div>
+        <div className="row custom-box">
+          <div className="col-6">
+            <div className="name labelName">個人工作年收入約(萬元)</div>
+            <input type="labelName" name="policyholderAnnualEmploymentIncome" className="form-control" />
+          </div>
+          <div className="col-6">
+            <div className="name labelName">個人其他年收入(如利息、投資等)(萬元)</div>
+            <input type="labelName" name="policyholderOtherYearlyIncome" className="form-control" />
+          </div>
+        </div>
+        <div className="row custom-box">
+          <div className="col-6">
+            <div className="name labelName">家庭年收入(萬元)</div>
+            <input type="labelName" name="policyholderHouseholdYearlyIncome" className="form-control" />
+          </div>
+          <div className="col-6">
+            <div className="name labelName">個人淨資產(資產扣除負債)(萬元)</div>
+            <input type="labelName" name="policyholderNetWorth" className="form-control" />
+          </div>
+        </div>
+        <div className="row custom-box">
+          <div className="col-6">
+            <div className="name labelName">服務單位/職稱</div>
+            <input type="labelName" name="policyholderHouseholdYearlyIncome" className="form-control" />
+          </div>
+          <div className="col-6">
+            <div className="name labelName">工作內容</div>
+            <input type="labelName" name="policyholderJobDescription" className="form-control" />
+          </div>
+        </div>
+        <div className="row custom-box">
+          <label className="form-check-label button-spacing me-2 text-nowrap labelName">與服務單位關係</label>
+          <div className="d-flex flex-wrap align-items-center">
+            <div className="form-check me-3">
+              <input type="radio" className="form-check-input" name="policyholderServiceRelationship" value="所有人" />
+              <label className="form-check-label button-spacing ">所有人</label>
+            </div>
+            <div className="form-check me-3">
+              <input type="radio" className="form-check-input" name="policyholderServiceRelationship" value="股東" />
+              <label className="form-check-label button-spacing ">股東</label>
+            </div>
+            <div className="form-check d-flex align-items-center">
+              <input type="radio" className="form-check-input" name="policyholderServiceRelationship" value="其他" />
+              <label className="form-check-label button-spacing  me-2">受雇:服務</label>
+              <input
+                type="text" className="form-control button-spacing" placeholder="請說明"
+                style={{ width: '150px', marginTop: '0px' }}
+              />
+              <span className="button-spacing">年</span>
             </div>
           </div>
-          <div className="row custom-box">
-            <div className="col-6">
-              <div className="name labelName">個人工作年收入約(萬元)</div>
-              <input type="labelName" name="policyholderAnnualEmploymentIncome" className="form-control" />
-            </div>
-            <div className="col-6">
-              <div className="name labelName">個人其他年收入(如利息、投資等)(萬元)</div>
-              <input type="labelName" name="policyholderOtherYearlyIncome" className="form-control" />
-            </div>
-          </div>
-          <div className="row custom-box">
-            <div className="col-6">
-              <div className="name labelName">家庭年收入(萬元)</div>
-              <input type="labelName" name="policyholderHouseholdYearlyIncome" className="form-control" />
-            </div>
-            <div className="col-6">
-              <div className="name labelName">個人淨資產(資產扣除負債)(萬元)</div>
-              <input type="labelName" name="policyholderNetWorth" className="form-control" />
-            </div>
-          </div>
-          <div className="row custom-box">
-            <div className="col-6">
-              <div className="name labelName">服務單位/職稱</div>
-              <input type="labelName" name="policyholderHouseholdYearlyIncome" className="form-control" />
-            </div>
-            <div className="col-6">
-              <div className="name labelName">工作內容</div>
-              <input type="labelName" name="policyholderJobDescription" className="form-control" />
-            </div>
-          </div>
-          <div className="row custom-box">
-            <label className="form-check-label button-spacing me-2 text-nowrap labelName">與服務單位關係</label>
-            <div className="d-flex flex-wrap align-items-center">
-              <div className="form-check me-3">
-                <input type="radio" className="form-check-input" name="policyholderServiceRelationship" value="所有人" />
-                <label className="form-check-label button-spacing ">所有人</label>
-              </div>
-              <div className="form-check me-3">
-                <input type="radio" className="form-check-input" name="policyholderServiceRelationship" value="股東" />
-                <label className="form-check-label button-spacing ">股東</label>
-              </div>
-              <div className="form-check d-flex align-items-center">
-                <input type="radio" className="form-check-input" name="policyholderServiceRelationship" value="其他" />
-                <label className="form-check-label button-spacing  me-2">受雇:服務</label>
-                <input
-                  type="text" className="form-control button-spacing" placeholder="請說明"
-                  style={{ width: '150px', marginTop: '0px' }}
-                />
-                <span className="button-spacing">年</span>
-              </div>
-            </div>
-          </div>
+        </div>
 
-          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
-            <div className="labelName m-0 label-styling">
-              經濟負擔者財務/工作狀況
+        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+          <div className="labelName m-0 label-styling">
+            經濟負擔者財務/工作狀況 :
+          </div>
+        </div>
+        <div className="row custom-box">
+          <div className="col-6">
+            <div className="name labelName">個人工作年收入約(萬元)</div>
+            <input type="labelName" name="dependentAnnualEmploymentIncome" className="form-control" />
+          </div>
+          <div className="col-6">
+            <div className="name labelName">個人其他年收入(如利息、投資等)(萬元)</div>
+            <input type="labelName" name="dependentOtherYearlyIncome" className="form-control" />
+          </div>
+        </div>
+        <div className="row custom-box">
+          <div className="col-6">
+            <div className="name labelName">家庭年收入(萬元)</div>
+            <input type="labelName" name="dependentHouseholdYearlyIncome" className="form-control" />
+          </div>
+          <div className="col-6">
+            <div className="name labelName">個人淨資產(資產扣除負債)(萬元)</div>
+            <input type="labelName" name="dependentNetWorth" className="form-control" />
+          </div>
+        </div>
+        <div className="row custom-box">
+          <div className="col-6">
+            <div className="name labelName">服務單位/職稱</div>
+            <input type="labelName" name="dependentHouseholdYearlyIncome" className="form-control" />
+          </div>
+          <div className="col-6">
+            <div className="name labelName">工作內容</div>
+            <input type="labelName" name="dependentJobDescription" className="form-control" />
+          </div>
+        </div>
+        <div className="row custom-box">
+          <label className="form-check-label button-spacing me-2 text-nowrap labelName">與服務單位關係</label>
+          <div className="d-flex flex-wrap align-items-center">
+            <div className="form-check me-3">
+              <input type="radio" className="form-check-input" name="dependentServiceRelationship" value="所有人" />
+              <label className="form-check-label button-spacing ">所有人</label>
+            </div>
+            <div className="form-check me-3">
+              <input type="radio" className="form-check-input" name="dependentServiceRelationship" value="股東" />
+              <label className="form-check-label button-spacing ">股東</label>
+            </div>
+            <div className="form-check d-flex align-items-center">
+              <input type="radio" className="form-check-input" name="dependentServiceRelationship" value="受雇:服務" />
+              <label className="form-check-label button-spacing  me-2">受雇:服務</label>
+              <input
+                type="text" className="form-control button-spacing" placeholder="請說明"
+                style={{ width: '150px', marginTop: '0px' }}
+              />
+              <span className="button-spacing">年</span>
             </div>
           </div>
-          <div className="row custom-box">
-            <div className="col-6">
-              <div className="name labelName">個人工作年收入約(萬元)</div>
-              <input type="labelName" name="dependentAnnualEmploymentIncome" className="form-control" />
-            </div>
-            <div className="col-6">
-              <div className="name labelName">個人其他年收入(如利息、投資等)(萬元)</div>
-              <input type="labelName" name="dependentOtherYearlyIncome" className="form-control" />
-            </div>
-          </div>
-          <div className="row custom-box">
-            <div className="col-6">
-              <div className="name labelName">家庭年收入(萬元)</div>
-              <input type="labelName" name="dependentHouseholdYearlyIncome" className="form-control" />
-            </div>
-            <div className="col-6">
-              <div className="name labelName">個人淨資產(資產扣除負債)(萬元)</div>
-              <input type="labelName" name="dependentNetWorth" className="form-control" />
-            </div>
-          </div>
-          <div className="row custom-box">
-            <div className="col-6">
-              <div className="name labelName">服務單位/職稱</div>
-              <input type="labelName" name="dependentHouseholdYearlyIncome" className="form-control" />
-            </div>
-            <div className="col-6">
-              <div className="name labelName">工作內容</div>
-              <input type="labelName" name="dependentJobDescription" className="form-control" />
-            </div>
-          </div>
-          <div className="row custom-box">
-            <label className="form-check-label button-spacing me-2 text-nowrap labelName">與服務單位關係</label>
-            <div className="d-flex flex-wrap align-items-center">
-              <div className="form-check me-3">
-                <input type="radio" className="form-check-input" name="dependentServiceRelationship" value="所有人" />
-                <label className="form-check-label button-spacing ">所有人</label>
-              </div>
-              <div className="form-check me-3">
-                <input type="radio" className="form-check-input" name="dependentServiceRelationship" value="股東" />
-                <label className="form-check-label button-spacing ">股東</label>
-              </div>
-              <div className="form-check d-flex align-items-center">
-                <input type="radio" className="form-check-input" name="dependentServiceRelationship" value="受雇:服務" />
-                <label className="form-check-label button-spacing  me-2">受雇:服務</label>
-                <input
-                  type="text" className="form-control button-spacing" placeholder="請說明"
-                  style={{ width: '150px', marginTop: '0px' }}
-                />
-                <span className="button-spacing">年</span>
-              </div>
-            </div>
-          </div>
+        </div>
 
-          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
-            <div className="labelName m-0 label-styling">
-              其他財務狀況
+        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+          <div className="labelName m-0 label-styling">
+            其他財務狀況 :
+          </div>
+        </div>
+        <div className="row custom-box">
+          <label
+            className="form-check-label button-spacing me-2 text-nowrap labelName"
+          >被保險人目前所居住的房屋為：
+          </label>
+          <div className="d-flex flex-wrap align-items-center">
+            <div className="form-check me-3">
+              <input
+                type="radio" className="form-check-input" name="residenceType"
+                value="自有（含本人、配偶、子女、父母所有）"
+              />
+              <label className="form-check-label button-spacing ">自有（含本人、配偶、子女、父母所有）</label>
+            </div>
+            <div className="form-check me-3">
+              <input type="radio" className="form-check-input" name="residenceType" value="租賃" />
+              <label className="form-check-label button-spacing ">租賃</label>
+            </div>
+            <div className="form-check d-flex align-items-center">
+              <input type="radio" className="form-check-input" name="residenceType" value="其他" />
+              <label className="form-check-label button-spacing  me-2">其他</label>
             </div>
           </div>
-          <div className="row custom-box">
-            <label
-              className="form-check-label button-spacing me-2 text-nowrap labelName"
-            >被保險人目前所居住的房屋為：
-            </label>
-            <div className="d-flex flex-wrap align-items-center">
-              <div className="form-check me-3">
-                <input
-                  type="radio" className="form-check-input" name="residenceType"
-                  value="自有（含本人、配偶、子女、父母所有）"
-                />
-                <label className="form-check-label button-spacing ">自有（含本人、配偶、子女、父母所有）</label>
-              </div>
-              <div className="form-check me-3">
-                <input type="radio" className="form-check-input" name="residenceType" value="租賃" />
-                <label className="form-check-label button-spacing ">租賃</label>
-              </div>
-              <div className="form-check d-flex align-items-center">
-                <input type="radio" className="form-check-input" name="residenceType" value="其他" />
-                <label className="form-check-label button-spacing  me-2">其他</label>
-              </div>
-            </div>
-          </div>
-          <div className="row custom-box">
-            <div className="col-12">
-              <div className="name labelName">其他補充說明</div>
-              <input type="labelName" name="dependentAnnualEmploymentIncome" className="form-control" />
-            </div>
+        </div>
+        <div className="row custom-box">
+          <div className="col-12">
+            <div className="name labelName">其他補充說明</div>
+            <input type="labelName" name="dependentAnnualEmploymentIncome" className="form-control" />
           </div>
         </div>
 
@@ -611,12 +609,11 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     return (
       <div className="custom-container">
         <div className="title">
-          <h2>臺銀人壽個人資料蒐集、處理、利用告知事項</h2>
           <a className="scroll-hint">請下拉卷軸至內容文末</a>
         </div>
         <ArticleDisplayerFieldNotification onScrollToBottom={handleScrollToBottom} />
         <div className="checkbox-container">
-          <input type="checkbox" id="confirmNotification" disabled={!isButtonEnabled} />
+          <input type="checkbox" className="form-check-input" id="confirmNotification" disabled={!isButtonEnabled} />
           <label htmlFor="confirm">本人已閱覽相關文件</label>
         </div>
       </div>
@@ -633,12 +630,11 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     return (
       <div className="custom-container">
         <div className="title">
-          <h2>要保書填寫說明</h2>
           <a className="scroll-hint">請下拉卷軸至內容文末</a>
         </div>
         <ArticleDisplayerFieldInsurance onScrollToBottom={handleScrollToBottom} />
         <div className="checkbox-container">
-          <input type="checkbox" id="confirmInsurance" disabled={!isButtonEnabled} />
+          <input type="checkbox" className="form-check-input" id="confirmInsurance" disabled={!isButtonEnabled} />
           <label htmlFor="confirm">本人已閱覽相關文件</label>
         </div>
       </div>
@@ -655,12 +651,11 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     return (
       <div className="custom-container">
         <div className="title">
-          <h2>人壽保險投保人須知</h2>
           <a className="scroll-hint">請下拉卷軸至內容文末</a>
         </div>
         <ArticleDisplayerFieldLifeInsurance onScrollToBottom={handleScrollToBottom} />
         <div className="checkbox-container">
-          <input type="checkbox" id="confirmLifeInsurance" disabled={!isButtonEnabled} />
+          <input type="checkbox" className="form-check-input" id="confirmLifeInsurance" disabled={!isButtonEnabled} />
           <label htmlFor="confirm">本人已閱覽相關文件</label>
         </div>
       </div>
@@ -671,12 +666,12 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     return (
 
       <>
-        <div className="row custom-box">
-          <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
-            <div className="labelName m-0 label-styling">
-              投保案件分析
-            </div>
+        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+          <div className="labelName m-0 label-styling">
+            投保案件分析 :
           </div>
+        </div>
+        <div className="row custom-box">
           <label className="form-check-label button-spacing me-2 text-nowrap labelName">投保來源：</label>
           <div className="d-flex flex-wrap align-items-center">
             <div className="form-check me-3">
@@ -708,6 +703,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
               />
             </div>
           </div>
+
         </div>
 
         <div className="row custom-box">
@@ -823,7 +819,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
           <div className="labelName m-0 label-styling">
-            被保險人姓名/財務狀況/職業/投保經驗
+            被保險人姓名/財務狀況/職業/投保經驗 :
           </div>
         </div>
         <div className="row custom-box">
@@ -960,7 +956,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
           <div className="labelName m-0 label-styling">
-            要保人姓名/財務狀況/職業/投保經驗
+            要保人姓名/財務狀況/職業/投保經驗 :
           </div>
         </div>
         <div className="row custom-box">
@@ -1041,12 +1037,12 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
           <div className="labelName m-0 label-styling">
-            其他財務狀況/職業/投保經驗
+            其他財務狀況/職業/投保經驗 :
           </div>
         </div>
         <div className="row custom-box">
           <div className="col-12">
-            <div className="name labelName">本件身故受益人是否指定為配偶、直系親屬或法定繼承人，且其順位及應得比
+            <div className="name labelName">本件身故受益人是否指定為配偶、直系親屬或法定繼承人，且其順位及應得比本次投保具有解約金之商品(不包括小額終老保險、團體年金保險及保險期間在三年以下之傷害保險)或投資型保險商品時，如要保人或被保險人或實際繳交保費之利害關係人之保險年齡依保險業招攬及核保理賠辦法需進行錄音者，請填寫下列欄位 :
               例適用民法繼承編相關規定？
             </div>
             <div className="form-check d-flex align-items-center">
