@@ -32,24 +32,40 @@ const Documents: React.FC<any> = (props) => {
           </div>}
         {['1', '2', '3', '5', '6'].indexOf(props.activeKey) !== -1 &&
           <div className="row align-items-center border-bottom mx-0 mt-0">
+            <div
+              style={{ marginInline: '0.5rem', width: '2rem' }}
+              className="p-0 col-1"
+            />
             <div className="item col">
               投保權益確認書
             </div>
           </div>}
         {['1', '2', '5', '6'].indexOf(props.activeKey) !== -1 &&
           <div className="row align-items-center border-bottom mx-0 mt-0">
+            <div
+              style={{ marginInline: '0.5rem', width: '2rem' }}
+              className="p-0 col-1"
+            />
             <div className="item col">
               審閱期間確認聲明書
             </div>
           </div>}
         {['1', '2', '3', '5', '6'].indexOf(props.activeKey) !== -1 &&
           <div className="row align-items-center border-bottom mx-0 mt-0">
+            <div
+              style={{ marginInline: '0.5rem', width: '2rem' }}
+              className="p-0 col-1"
+            />
             <div className="item col">
               財務狀況告知書
             </div>
           </div>}
         {['1', '2', '6'].indexOf(props.activeKey) !== -1 &&
           <div className="row align-items-center border-bottom mx-0 mt-0">
+            <div
+              style={{ marginInline: '0.5rem', width: '2rem' }}
+              className="p-0 col-1"
+            />
             <div className="item col">
               電子保單申請書
             </div>

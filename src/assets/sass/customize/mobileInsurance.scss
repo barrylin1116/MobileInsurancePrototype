@@ -31,6 +31,15 @@
       opacity: 1;
       transition: all .3s cubic-bezier(.78,.14,.15,.86);
     }
+    .itemCard:hover {
+      background-color: #cde3e3;
+    }
+    .itemCard:hover .rowItem{
+      background-color: #cde3e3;
+    }
+    .rowItem {
+      background: #fafafa;
+    }
     .searchTagClose {
       display: inline-block;
       -ms-transform: scale(.83333333) rotate(0deg);

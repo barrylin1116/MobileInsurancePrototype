@@ -156,7 +156,7 @@ const Page1: React.FC = () => {
                 <span className="cardTitle">建立時間</span><span className="cardValue">117-11-16 12:01:02</span>
               </div>
             </div>
-            <div className="row" style={{ background: '#fafafa', marginTop: '5px', paddingBottom: '6px' }}>
+            <div className="row rowItem" style={{ marginTop: '5px', paddingBottom: '6px' }}>
               <div className="col-lg-4">
                 <div className="row">
                   <span className="pd-0 title">商品名稱</span>
@@ -195,7 +195,7 @@ const Page1: React.FC = () => {
                 <span className="cardTitle">建立時間</span><span className="cardValue">117-11-16 12:01:02</span>
               </div>
             </div>
-            <div className="row" style={{ background: '#fafafa', marginTop: '5px', paddingBottom: '6px' }}>
+            <div className="row rowItem" style={{ marginTop: '5px', paddingBottom: '6px' }}>
               <div className="col-lg-4">
                 <div className="row">
                   <span className="pd-0 title">商品名稱</span>
@@ -234,7 +234,7 @@ const Page1: React.FC = () => {
                 <span className="cardTitle">建立時間</span><span className="cardValue">117-11-16 12:01:02</span>
               </div>
             </div>
-            <div className="row" style={{ background: '#fafafa', marginTop: '5px', paddingBottom: '6px' }}>
+            <div className="row rowItem" style={{ marginTop: '5px', paddingBottom: '6px' }}>
               <div className="col-lg-4">
                 <div className="row">
                   <span className="pd-0 title">商品名稱</span>
