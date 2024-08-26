@@ -7,11 +7,6 @@ const Step1: React.FC<any> = (props) => {
   return (
     <div className="justify-center d-flex pt-3">
       <Card style={{ minHeight: '450px', width: '95%' }}>
-        <div className="row contentHeader justify-between">
-          <div className="col-12">
-            <span className="cardTitle">eDDA電子化授權</span>
-          </div>
-        </div>
         <div className="content mt-3">
           <div className="row">
             <div className="col-7">
