@@ -21,6 +21,7 @@ const Page1: React.FC<any> = (props) => {
   const [previewModalVisible, setPreviewModalVisible] = useState(false);
   const [submissionModalVisible, setSubmissionModalVisible] = useState(false);
   const [submissionHintModalVisible, setSubmissionHintModalVisible] = useState(false);
+  const [dataStorageModalVisible, setDataStorageModalVisible] = useState(false);
   const [isUpload, setIsUpload] = useState(false);
   const [loadResult, setLoadResult] = useState(false);
   const [previewTabActiveKey, setpreviewTabActiveKey] = useState< string | number>('1');
@@ -31,6 +32,10 @@ const Page1: React.FC<any> = (props) => {
 
   const openSubmissionModal = () => {
     setSubmissionHintModalVisible(true);
+  };
+
+  const openDataStorageModal = () => {
+    setDataStorageModalVisible(true);
   };
 
   const submissionHintList = [
@@ -195,6 +200,7 @@ const Page1: React.FC<any> = (props) => {
                       type="button"
                       className="btn btn-outline-primary me-lg-0 cus-outline-transparent InsuranceEndButton"
                       value="資料存儲"
+                      onClick={() => openDataStorageModal()}
                     >
                       資料存儲
                     </button>
@@ -294,7 +300,7 @@ const Page1: React.FC<any> = (props) => {
                     className="col-2 exclamation-icon"
                     src={require('assets/img/icons/upload_file.svg').default}
                   />
-                  <div className="labelName">
+                  <div className="labelName fs-3">
                     您的要保書正在提交中!<br />
                     資料已完備請稍候....
                   </div>
@@ -302,7 +308,7 @@ const Page1: React.FC<any> = (props) => {
               )}
               {isUpload && loadResult && (
                 <>
-                  <div className="container border m-5">
+                  <div className="container border m-5 fs-3">
                     <div
                       className="row header-title" style={{
                         display: 'flex',
@@ -316,15 +322,15 @@ const Page1: React.FC<any> = (props) => {
                     >案件已建立
                     </div>
                     <div className="row m-5">
-                      <div className="row">
+                      <div className="row p-2">
                         <div className="col">行動投保編號</div>
                         <div className="col">OA11111111</div>
                       </div>
-                      <div className="row">
+                      <div className="row p-2">
                         <div className="col">保單號碼</div>
                         <div className="col">OB11111111</div>
                       </div>
-                      <div className="row">
+                      <div className="row p-2">
                         <div className="col">按鍵狀態</div>
                         <div className="col">簽署平台簽署中</div>
                       </div>
@@ -341,7 +347,7 @@ const Page1: React.FC<any> = (props) => {
               )}
               {isUpload && !loadResult && (
                 <>
-                  <div className="container border m-5">
+                  <div className="container border m-5 fs-3">
                     <div
                       className="row header-title" style={{
                         display: 'flex',
@@ -389,12 +395,57 @@ const Page1: React.FC<any> = (props) => {
               </div>
             }
           >
-            <div className="container">
+            <div className="container fs-4">
               {
                 submissionHintList.map((hint, index) => (
-                  <div key={`hint-${index}`}>{`${index + 1}. ${hint}`}</div>
+                  <div className="p-2" key={`hint-${index}`}>{`${index + 1}. ${hint}`}</div>
                 ))
               }
+            </div>
+          </CustomModal>
+
+          <CustomModal
+            isModalMsg
+            headerTitle="資料已儲存"
+            isOpen={dataStorageModalVisible}
+            buttonPosition="right"
+            footerContent={
+              <div className="row w-100 fs-4">
+                <div
+                  onClick={() => {
+                    setDataStorageModalVisible(false);
+                  }} role="button" className="col text-center btn-outline-primary"
+                >
+                  確認
+                </div>
+              </div>
+              }
+          >
+            <div className="container text-center fs-4">
+              <div className="row py-2 border-bottom">
+                <div className="col">
+                  行動投保編號
+                </div>
+                <div className="col">
+                  OA11111111
+                </div>
+              </div>
+              <div className="row py-2 border-bottom">
+                <div className="col">
+                  保單號碼
+                </div>
+                <div className="col">
+                  OB11111111
+                </div>
+              </div>
+              <div className="row py-2">
+                <div className="col">
+                  按鍵狀態
+                </div>
+                <div className="col">
+                  簽署平台簽署中
+                </div>
+              </div>
             </div>
           </CustomModal>
         </main>
