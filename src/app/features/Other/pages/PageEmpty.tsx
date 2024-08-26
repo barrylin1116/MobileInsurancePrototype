@@ -11,6 +11,7 @@ import CustomModal from '../../Insurance/pages/Modals/CustomModal';
 import CustomTab from '../components/CustomTab';
 import Preview from '../Content/DocumentInner/Preview';
 import PreviewHistory from '../Content/DocumentInner/PreviewHistory';
+import Sign from '../Content/Sign/Sign';
 
 const Page1: React.FC<any> = (props) => {
   const [updateTime, setUpdateTime] = useState('');
@@ -216,9 +217,10 @@ const Page1: React.FC<any> = (props) => {
           <div className="row pb-3 pt-3 m-1 justify-center">
             {activeKey === '1' ? <ProductChoose /> : null}
             {activeKey === '2' ? <Relation /> : null}
-            {activeKey === '5' ? <DocumentsList /> : null}
             {activeKey === '3' ? <InsuredContent /> : null}
             {activeKey === '4' ? <PaymentMethod /> : null}
+            {activeKey === '5' ? <DocumentsList /> : null}
+            {activeKey === '6' ? <Sign /> : null}
           </div>
           {
         previewModalVisible && (
