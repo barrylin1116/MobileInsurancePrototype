@@ -35,6 +35,10 @@ const OtherRoutes: React.FC = () => (
         path={ROUTES.PAGE_SETTINGS_PASS_PHRASE_SETUP}
         component={React.lazy(() => import('../Other/pages/PassPhrase'))}
       />
+      <RouterRoute
+        path="/Page/InsureDoc"
+        component={React.lazy(() => import('../Other/Content/Sign/Inner/InsureDoc'))}
+      />
       <Redirect to={ROUTES.PAGE_LOGIN} />
     </Switch>
   </React.Suspense>
