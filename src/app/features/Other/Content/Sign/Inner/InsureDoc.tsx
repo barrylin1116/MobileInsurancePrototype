@@ -67,7 +67,16 @@ const InsureDoc: React.FC<any> = (props) => {
                         [...Array(pdf.numPages ?? 0)].map((_, index) => {
                           return (
                             <Card id={'pdfCard-' + (index + 1)} className="mt-3" key={index}>
-                              <canvas id={'pdfCanvas-' + (index + 1)} />
+                              <canvas
+                                onClick={(e) => {
+                                  let x = e.clientX;
+                                  let y = e.clientY;
+                                  const rect = e.currentTarget.getBoundingClientRect();
+                                  x -= rect.left;
+                                  y -= rect.top;
+                                  console.log(x, y); // (x, y) 就是鼠标在 canvas 单击时的坐标
+                                }} id={'pdfCanvas-' + (index + 1)}
+                              />
                             </Card>
                           );
                         })}

@@ -71,7 +71,7 @@ const SignModal: React.FC<{
                   }
                 </ul>
               </div>
-              <div ref={divRefs} className={`modal-body ${bodyClassName ?? ''}`}>
+              <div ref={divRefs} className={`modal-body mb-5 ${bodyClassName ?? ''}`}>
                 {children}
               </div>
               {footerContent && (
