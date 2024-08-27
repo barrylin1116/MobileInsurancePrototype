@@ -11,6 +11,8 @@ import ArticleDisplayerFieldLifeInsurance from '../ArticleDisplayerFieldLifeInsu
 
 const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [hintModalVisible, setHintModalVisible] = useState(false);
+  const [hintModalProps, setHintModalProps] = useState<any>(null);
   const [formName, setFormName] = useState('');
   const [modalTitle, setModalTitle] = useState<string>('');
   const [isMinorOrStudent, setIsMinorOrStudent] = useState<boolean>(false); // 用來控制 "是" 或 "否" 的狀態
@@ -1432,6 +1434,14 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     }
   };
 
+  const openHintModal = (param: any) => {
+    setHintModalProps({
+      action: param.action,
+      title: param.title
+    });
+    setHintModalVisible(true);
+  };
+
   return (
     <>
       <div id="requiredDocumentsList" className="container mw-100 mx-0 px-0">
@@ -1501,30 +1511,98 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
           ))
         }
       </div>
-      {
-          modalVisible && (
-            <CustomModal
-              isOpen={modalVisible}
-              headerTitle={modalTitle}
-              headerButton={
-                <>
+
+      <CustomModal
+        isOpen={modalVisible}
+        headerTitle={modalTitle}
+        headerButton={
+          <>
+            <button
+              type="button"
+              className="btn btn-outline-primary mx-1 InsuranceButton"
+            >
+              <div className="row">
+                {/* <div className="col-lg-12" onClick={() => setModalVisible(false)}>完成</div> */}
+                <div className="col-lg-12" onClick={() => openHintModal({ title: '文件已儲存。', action: 'complete' })}>完成</div>
+              </div>
+            </button>
+            <button
+              type="button"
+              className="btn btn-primary border-white mx-1 InsuranceButton"
+            >
+              <div className="row">
+                <div className="col-lg-12" onClick={() => openHintModal({ title: '文件修改內容將不會儲存，是否確認離開此文件?', action: 'cancel' })}>取消</div>
+              </div>
+            </button>
+          </>
+                    }
+        buttonPosition="right"
+        footerContent={getFooterContent()}
+      >
+        {getFormContent()}
+      </CustomModal>
+
+      <CustomModal
+        isModalMsg
+        isOpen={hintModalVisible}
+      >
+        <div className="container">
+          <div className="row justify-content-center align-items-center">
+            <div className="col d-flex justify-content-center align-items-center fs-4 p-5">
+              {hintModalProps?.title}
+            </div>
+          </div>
+
+          {
+            hintModalProps?.action === 'complete' && (
+              <div className="row justify-content-evenly align-items-center p-5">
+                <div className="col d-flex justify-content-center align-items-center">
                   <button
                     type="button"
-                    className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                    className="fs-4 btn btn-primary me-1 me-lg-0 cus-outline-transparent"
+                    onClick={() => {
+                      setModalVisible(false);
+                      setHintModalVisible(false);
+                    }}
                   >
-                    <div className="row">
-                      <div className="col-lg-12" onClick={() => setModalVisible(false)}>完成</div>
-                    </div>
+                    確認
                   </button>
-                </>
-                    }
-              buttonPosition="right"
-              footerContent={getFooterContent()}
-            >
-              {getFormContent()}
-            </CustomModal>
+                </div>
+              </div>
+            )
+          }
+          {
+          hintModalProps?.action === 'cancel' && (
+            <div className="row justify-content-evenly align-items-center p-5">
+              <div className="col d-flex justify-content-center align-items-center">
+                <button
+                  type="button"
+                  className="fs-4 btn btn-primary me-1 me-lg-0 cus-outline-transparent"
+                  onClick={() => {
+                    setModalVisible(false);
+                    setHintModalVisible(false);
+                  }}
+                >
+                  確認
+                </button>
+              </div>
+              <div className="col d-flex justify-content-center align-items-center">
+                <button
+                  type="button"
+                  className="fs-4 btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent"
+                  onClick={() => {
+                    setHintModalVisible(false);
+                  }}
+                >
+                  取消
+                </button>
+              </div>
+            </div>
           )
-        }
+          }
+
+        </div>
+      </CustomModal>
 
     </>
   )

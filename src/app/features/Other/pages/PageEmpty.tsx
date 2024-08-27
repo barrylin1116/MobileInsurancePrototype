@@ -273,25 +273,37 @@ const Page1: React.FC<any> = (props) => {
       }
 
           <CustomModal
-            headerTitle="案件提交"
+            isModalMsg
+            headerTitle={isUpload ? (loadResult ? '案件已建立' : '線核預檢失敗') : '案件提交'}
             headerButton={
               <>
-                <div
-                  className="btn btn-outline-primary" onClick={() => {
-                    setIsUpload(true);
-                    setLoadResult(true);
-                  }}
-                >成功 Demo
+                <div className="container justify-content-center align-items-center">
+                  <div className="row justify-content-center align-items-center">
+                    <div className="col">
+                      <div
+                        className="btn btn-outline-primary" onClick={() => {
+                          setIsUpload(true);
+                          setLoadResult(true);
+                        }}
+                      >成功 Demo
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row justify-content-center align-items-center">
+                    <div className="col">
+                      <div
+                        className="btn btn-outline-primary" onClick={() => {
+                          setIsUpload(true);
+                          setLoadResult(false);
+                        }}
+                      >失敗 Demo
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  className="btn btn-outline-primary" onClick={() => {
-                    setIsUpload(true);
-                    setLoadResult(false);
-                  }}
-                >失敗 Demo
-                </div>
+
               </>
-          }
+            }
             isOpen={submissionModalVisible}
             bodyClassName="d-flex justify-content-center align-items-center"
           >
@@ -310,67 +322,75 @@ const Page1: React.FC<any> = (props) => {
               )}
               {isUpload && loadResult && (
                 <>
-                  <div className="container border m-5 fs-3">
-                    <div
-                      className="row header-title" style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        position: 'relative',
-                        padding: '20px',
-                        background: '#348d8f',
-                        color: 'white'
-                      }}
-                    >案件已建立
-                    </div>
-                    <div className="row m-5">
-                      <div className="row p-2">
-                        <div className="col">行動投保編號</div>
-                        <div className="col">OA11111111</div>
-                      </div>
-                      <div className="row p-2">
-                        <div className="col">保單號碼</div>
-                        <div className="col">OB11111111</div>
-                      </div>
-                      <div className="row p-2">
-                        <div className="col">按鍵狀態</div>
-                        <div className="col">簽署平台簽署中</div>
+                  <div className="container">
+                    <div className="row align-items-center fs-4">
+                      <div className="container">
+                        <div className="row justify-content-center align-items-center p-2">
+                          <div className="col">行動投保編號</div>
+                          <div className="col">OA11111111</div>
+                        </div>
+                        <div className="row justify-content-center align-items-center p-2">
+                          <div className="col">保單號碼</div>
+                          <div className="col">OB11111111</div>
+                        </div>
+                        <div className="row justify-content-center align-items-center p-2">
+                          <div className="col">按鍵狀態</div>
+                          <div className="col">簽署平台簽署中</div>
+                        </div>
                       </div>
                     </div>
-                    <div
-                      className="row m-5 btn btn-outline-primary" onClick={() => {
-                        setSubmissionModalVisible(false);
-                        setIsUpload(false);
-                      }}
-                    >確認
+                    <div className="row justify-content-evenly align-items-center py-2">
+                      <div className="col d-flex justify-content-center align-items-center">
+                        <button
+                          className="fs-4 btn btn-primary w-100" onClick={() => {
+                            setSubmissionModalVisible(false);
+                            setIsUpload(false);
+                          }}
+                        >確認
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </>
               )}
               {isUpload && !loadResult && (
                 <>
-                  <div className="container border m-5 fs-3">
-                    <div
-                      className="row header-title" style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        position: 'relative',
-                        padding: '20px',
-                        background: '#348d8f',
-                        color: 'white'
-                      }}
-                    >線核預檢失敗
+                  <div className="container">
+                    <div className="row align-items-center fs-4">
+                      請至歷程檢視並點閱錯誤訊息，經錯誤修正後重新提交
                     </div>
-                    <div className="row m-5">請至歷程檢視並點閱錯誤訊息，經錯誤修正後重新提交</div>
-                    <div
-                      className="row m-5 btn btn-outline-primary" onClick={() => {
-                        setSubmissionModalVisible(false);
-                        setIsUpload(false);
-                      }}
-                    >確認
+                    <div className="row align-items-center m-5">
+                      <button
+                        className="btn btn-primary" onClick={() => {
+                          setSubmissionModalVisible(false);
+                          setIsUpload(false);
+                        }}
+                      >確認
+                      </button>
                     </div>
                   </div>
+                  {/* <div className="container border m-5 fs-3"> */}
+                  {/*  <div */}
+                  {/*      className="row header-title" style={{ */}
+                  {/*    display: 'flex', */}
+                  {/*    justifyContent: 'center', */}
+                  {/*    alignItems: 'center', */}
+                  {/*    position: 'relative', */}
+                  {/*    padding: '20px', */}
+                  {/*    background: '#348d8f', */}
+                  {/*      color: 'white' */}
+                  {/*    }} */}
+                  {/*  >線核預檢失敗 */}
+                  {/*  </div> */}
+                  {/*  <div className="row m-5">請至歷程檢視並點閱錯誤訊息，經錯誤修正後重新提交</div> */}
+                  {/*  <div */}
+                  {/*    className="row m-5 btn btn-outline-primary" onClick={() => { */}
+                  {/*      setSubmissionModalVisible(false); */}
+                  {/*      setIsUpload(false); */}
+                  {/*    }} */}
+                  {/*  >確認 */}
+                  {/*  </div> */}
+                  {/* </div> */}
                 </>
               )}
             </>
@@ -382,19 +402,44 @@ const Page1: React.FC<any> = (props) => {
             isOpen={submissionHintModalVisible}
             buttonPosition="right"
             footerContent={
-              <div className="row w-100">
-                <div onClick={() => setSubmissionHintModalVisible(false)} role="button" className="col text-center btn-outline-primary">
-                  取消
-                </div>
-                <div
-                  onClick={() => {
-                    setSubmissionHintModalVisible(false);
-                    setSubmissionModalVisible(true);
-                  }} role="button" className="col text-center btn-outline-primary"
-                >
-                  確認提交
+              <div className="container">
+                <div className="row justify-content-evenly align-items-center">
+                  <div className="col d-flex justify-content-center align-items-center">
+                    <button
+                      type="button"
+                      className="fs-4 btn btn-primary w-100"
+                      onClick={() => {
+                        setSubmissionHintModalVisible(false);
+                        setSubmissionModalVisible(true);
+                      }}
+                    >
+                      確認提交
+                    </button>
+                  </div>
+                  <div className="col d-flex justify-content-center align-items-center">
+                    <button
+                      type="button"
+                      className="fs-4 btn btn-primary w-100"
+                      onClick={() => setSubmissionHintModalVisible(false)}
+                    >
+                      取消
+                    </button>
+                  </div>
                 </div>
               </div>
+              // <div className="row w-100">
+              //   <div onClick={() => setSubmissionHintModalVisible(false)} role="button" className="col text-center btn btn-outline-primary">
+              //     取消
+              //   </div>
+              //   <div
+              //     onClick={() => {
+              //       setSubmissionHintModalVisible(false);
+              //       setSubmissionModalVisible(true);
+              //     }} role="button" className="col text-center btn btn-outline-primary"
+              //   >
+              //     確認提交
+              //   </div>
+              // </div>
             }
           >
             <div className="container fs-4">
@@ -412,16 +457,20 @@ const Page1: React.FC<any> = (props) => {
             isOpen={dataStorageModalVisible}
             buttonPosition="right"
             footerContent={
-              <div className="row w-100 fs-4">
-                <div
-                  onClick={() => {
-                    setDataStorageModalVisible(false);
-                  }} role="button" className="col text-center btn-outline-primary"
-                >
-                  確認
+              <div className="container">
+                <div className="row justify-content-evenly align-items-center">
+                  <div className="col d-flex justify-content-center align-items-center">
+                    <button
+                      onClick={() => {
+                        setDataStorageModalVisible(false);
+                      }} role="button" className="fs-4 btn btn-primary w-100"
+                    >
+                      確認
+                    </button>
+                  </div>
                 </div>
               </div>
-              }
+                }
           >
             <div className="container text-center fs-4">
               <div className="row py-2 border-bottom">
