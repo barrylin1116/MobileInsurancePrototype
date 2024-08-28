@@ -55,7 +55,7 @@ const SignModal: React.FC<{
               </div>
               <div className="row header-page justify-center">
                 <ul className="d-flex justify-center pdfPage">
-                  <li className="pageLabel">页面快速索引：</li>
+                  <li className="pageLabel">頁面快速索引：</li>
                   {
                     [...Array(props.numPages ?? 0)].map((_, index) => {
                       return (
