@@ -14,8 +14,22 @@ const SignModal: React.FC<{
   numPages: number
 }> = ({ bodyClassName, isOpen, headerTitle, headerButton, buttonPosition, children, footerContent, customHeaderButtonOnclick, isModalMsg, ...props }) => {
   const divRefs = useRef<(HTMLDivElement)>(null);
-
   const [activePage, setActivePage] = useState(1);
+
+  const pageItem = [
+    {
+      pageNum: 1,
+      edit: false
+    },
+    {
+      pageNum: 2,
+      edit: false
+    },
+    {
+      pageNum: 3,
+      edit: true
+    }
+  ];
 
   const getMaxZIndex = (): number => {
     const elements = document.getElementsByTagName('*');
@@ -57,15 +71,15 @@ const SignModal: React.FC<{
                 <ul className="d-flex justify-center pdfPage">
                   <li className="pageLabel">頁面快速索引：</li>
                   {
-                    [...Array(props.numPages ?? 0)].map((_, index) => {
+                    pageItem.map((p, index) => {
                       return (
                         <li
-                          id={'pageItem-' + (index + 1)}
+                          id={'pageItem-' + (p.pageNum)}
                           onClick={() => {
-                            const element = document.getElementById('pdfCard-' + (index + 1));
+                            const element = document.getElementById('pdfCard-' + (p.pageNum));
                             element?.scrollIntoView({ behavior: 'smooth' });
-                          }} className={'pageItem ' + (index === 0 ? 'active' : '')} key={index}
-                        > <span className={'pageNum ' + (activePage === (index + 1) ? 'active' : '')}>{index + 1}</span>
+                          }} className={'pageItem' + (index === 0 ? ' active' : '') + (p.edit ? ' editItem' : '')} key={index}
+                        > <span className={'pageNum ' + (activePage === (p.pageNum) ? 'active' : '')}>{p.pageNum}</span>
                         </li>
                       );
                     })
