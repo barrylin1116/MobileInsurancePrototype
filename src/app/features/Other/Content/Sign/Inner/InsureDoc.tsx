@@ -27,11 +27,8 @@ const InsureDoc: React.FC<any> = (props) => {
           const viewport = page.getViewport({ scale: 1.0 });
           canvas.width = viewport.width * ratio;
           canvas.height = viewport.height * ratio;
-          // canvas.style.width = viewport.width + "px";
-          // canvas.style.height = viewport.height + "px";
           canvas.style.width = '100%';
           canvas.style.height = '95%';
-          // data.pdfWidth = viewport.width + 'px';
           ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
           // 将 PDF 页面渲染到 canvas 上下文中
           const renderContext = {
@@ -66,18 +63,20 @@ const InsureDoc: React.FC<any> = (props) => {
               {pdf !== null &&
                         [...Array(pdf.numPages ?? 0)].map((_, index) => {
                           return (
-                            <Card id={'pdfCard-' + (index + 1)} className="mt-3" key={index}>
-                              <canvas
-                                onClick={(e) => {
-                                  let x = e.clientX;
-                                  let y = e.clientY;
-                                  const rect = e.currentTarget.getBoundingClientRect();
-                                  x -= rect.left;
-                                  y -= rect.top;
-                                  console.log(x, y); // (x, y) 就是鼠标在 canvas 单击时的坐标
-                                }} id={'pdfCanvas-' + (index + 1)}
-                              />
-                            </Card>
+                            <div key={index} className="pdfCard pb-3">
+                              <Card id={'pdfCard-' + (index + 1)}>
+                                <canvas
+                                  onClick={(e) => {
+                                    let x = e.clientX;
+                                    let y = e.clientY;
+                                    const rect = e.currentTarget.getBoundingClientRect();
+                                    x -= rect.left;
+                                    y -= rect.top;
+                                    console.log(x, y); // (x, y) 就是鼠标在 canvas 单击时的坐标
+                                  }} id={'pdfCanvas-' + (index + 1)}
+                                />
+                              </Card>
+                            </div>
                           );
                         })}
             </div>

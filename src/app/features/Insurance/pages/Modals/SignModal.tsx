@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import TopButton from '../../../Other/components/TopButton';
+import SignTopButton from '../../../Other/components/SignTopButton';
 
 const SignModal: React.FC<{
   isOpen: boolean,
@@ -55,15 +55,16 @@ const SignModal: React.FC<{
               </div>
               <div className="row header-page justify-center">
                 <ul className="d-flex justify-center pdfPage">
+                  <li className="pageLabel">页面快速索引：</li>
                   {
                     [...Array(props.numPages ?? 0)].map((_, index) => {
                       return (
                         <li
                           onClick={() => {
-                            setActivePage((index + 1));
+                            // setActivePage((index + 1));
                             const element = document.getElementById('pdfCard-' + (index + 1));
                             element?.scrollIntoView({ behavior: 'smooth' });
-                          }} className={activePage === (index + 1) ? 'active' : ''} key={index}
+                          }} className={'pageItem ' + (activePage === (index + 1) ? 'active' : '')} key={index}
                         > {index + 1}
                         </li>
                       );
@@ -80,7 +81,7 @@ const SignModal: React.FC<{
                 </div>
               )}
             </div>
-            {divRefs && (<TopButton isModal containerRef={divRefs} />)}
+            {divRefs && (<SignTopButton isModal setActivePage={setActivePage} containerRef={divRefs} />)}
           </div>
 
         )
