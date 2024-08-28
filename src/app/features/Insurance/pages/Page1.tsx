@@ -4,12 +4,15 @@ import { PlusOutlined, ProductOutlined, SearchOutlined } from '@ant-design/icons
 import Page1SearchModal from './Modals/Page1SearchModal';
 import Page1AddModal from './Modals/Page1AddModal';
 import _ from 'lodash';
+import { ROUTES } from '../../../core/router/paths';
 
 const Page1: React.FC = () => {
   const functionRef = useRef<any>(null);
   const [searchModalVisible, setSearchModalVisible] = useState(false);
   const [functionModalVisible, setFunctionModalVisible] = useState(false);
   const [addModalVisible, setAddModalVisible] = useState(false);
+  const manual = require('assets/pdf/MobileOperationManual.pdf');
+  const ex = require('assets/pdf/EX.pdf');
   const [searchTag, setSearchTag] = useState([
     {
       key: 1,
@@ -94,14 +97,21 @@ const Page1: React.FC = () => {
           <div className="col-4 p-0">
             <div className="greeting nav-item-wrapper" style={{ zIndex: 1 }}>
               <div className="sub-items functionItem" style={{ display: (functionModalVisible) ? 'flex' : '' }}>
+
                 <div className="item" title="操作手冊" role="button">
-                  <a href="#">操作手冊</a>
+                  <a href={manual} target="_blank" rel="noopener noreferrer">
+                    操作手冊
+                  </a>
                 </div>
                 <div className="item" title="銷售文件管理" role="button">
-                  <a href="#">銷售文件管理</a>
+                  <a href={ROUTES.PAGE2} rel="noopener noreferrer">
+                    銷售文件管理
+                  </a>
                 </div>
-                <div className="item" title="案件進度查詢" role="button">
-                  <a href="#">案件進度查詢</a>
+                <div className="item" title="經代支援系統" role="button">
+                  <a href={ex} target="_blank" rel="noopener noreferrer">
+                    經代支援系統
+                  </a>
                 </div>
                 <div className="item" title="保單查詢" role="button">
                   <a href="#">保單查詢</a>

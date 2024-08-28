@@ -25,6 +25,10 @@ const AppRoutes: React.FC = () => (
         path={ROUTES.PAGE}
         component={React.lazy(() => import('app/features/Other'))}
       />
+      <RouterRoute
+        path={ROUTES.PAGE2} // 新增這一行來處理 Page2 路由
+        component={React.lazy(() => import('app/features/Insurance/pages/Page2'))}
+      />
       <Redirect to={ROUTES.PAGE_LOGIN} />
     </Switch>
   </React.Suspense>

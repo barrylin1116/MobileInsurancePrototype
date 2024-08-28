@@ -9,6 +9,8 @@ export enum ROUTES {
 
     PAGE_1 = '/Insurance/page1',
 
+    PAGE2 = '/page2',
+
     PAGE = '/Page',
 
     PAGE_EMPTY = '/Page/pageEmpty',

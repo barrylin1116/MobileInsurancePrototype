@@ -1,0 +1,132 @@
+.page-container {
+  padding: 20px;
+  background-color: var(--secondary-bg-color); /* 使用自定義變量設置背景顏色 */
+}
+
+.header-bar {
+  background-color: #348d8f; /* 藍綠色背景 */
+  color: white; /* 白色文字 */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center; /* 將內容水平置中 */
+  align-items: center;
+  position: relative; /* 允許絕對定位子元素 */
+
+  h1 {
+    font-size: 2rem; /* 放大字體 */
+    margin: 0;
+    text-align: center; /* 確保文字本身居中 */
+  }
+
+  .header-buttons {
+    position: absolute; /* 使用絕對定位 */
+    right: 20px; /* 使按鈕靠右對齊 */
+    display: flex;
+    gap: 10px;
+
+    button {
+      background-color: white;
+      color: #348d8f;
+      border: 2px solid #348d8f;
+      padding: 5px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #348d8f; /* 應用深一點的顏色 */
+        color: white;
+      }
+    }
+  }
+}
+
+.filter-container {
+  margin-top: 20px; /* 與標頭之間增加40px的間距 */
+  display: flex;
+  justify-content: space-between; /* 使下拉選單和輸入框左右推開 */
+  align-items: center; /* 使子元素垂直居中 */
+  margin-bottom: 30px;
+
+  .filter-item {
+    flex: 1; /* 每個項目均分可用空間 */
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    label {
+      font-size: 1.25rem; /* 放大標題文字 */
+      display: block;
+      margin-bottom: 8px; /* 與下方的輸入框保持間距 */
+    }
+
+    .select-dropdown, .input-field {
+      width: 100%;
+    }
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* 使按鈕在容器內水平居中 */
+  margin-bottom: 30px; /* 增加與下方內容的距離 */
+
+  .button-primary {
+    padding: 10px 20px;
+    font-size: 1.2rem; /* 放大按鈕文字 */
+    margin: 0 15px; /* 增加按鈕之間的間距 */
+    background-color: #348d8f; /* 綠底 */
+    color: white; /* 白字 */
+    border: none; /* 移除邊框 */
+  }
+
+  .button-reset {
+    padding: 10px 20px;
+    font-size: 1.2rem; /* 放大按鈕文字 */
+    margin: 0 15px; /* 增加按鈕之間的間距 */
+    background-color: white; /* 白底 */
+    color: #348d8f; /* 綠字 */
+    border: 2px solid #348d8f; /* 綠色邊框 */
+    cursor: pointer; /* 鼠標懸停變成指針 */
+
+    &:hover {
+      background-color: #f5f5f5; /* 懸停時稍微改變背景顏色 */
+    }
+  }
+}
+
+
+.table-container {
+  .ant-table {
+    font-size: 1.25rem; /* 放大表格文字 */
+  }
+
+  .ant-table-thead > tr > th {
+    background-color: #348d8f; /* 將表頭背景設為藍綠色 */
+    color: white; /* 表頭文字顏色設為白色 */
+    font-size: 1.25rem; /* 放大表頭文字 */
+  }
+
+  .ant-table-tbody > tr > td {
+    font-size: 1.25rem; /* 放大表格內容文字 */
+    background-color: white; /* 查詢結果的背景設為白色 */
+    color: black; /* 查詢結果文字設為黑色 */
+  }
+
+  .ant-pagination-item {
+    font-size: 1.25rem; /* 放大分页控件文字 */
+  }
+}
+
+.ant-btn {
+  font-size: 1.25rem; /* 放大“查看”按鈕文字 */
+  background-color: #348d8f;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: #348d8f; /* 按鈕的懸停狀態 */
+  }
+}
