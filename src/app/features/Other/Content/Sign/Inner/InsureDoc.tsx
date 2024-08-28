@@ -35,55 +35,82 @@ const InsureDoc: React.FC<any> = (props) => {
             canvasContext: ctx,
             viewport: viewport
           };
-          page.render(renderContext);
+          // debugger;
+          page.render(renderContext).promise.then(() => {
+            if (pageNum === 3) {
+              draw();
+            }
+          });
         });
       }
     }
   }, [pdf]);
 
+  const draw = () => {
+    const canvas: any = document.getElementById('pdfCanvas-3');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#e0e0e0';
+    ctx.fillRect(172, 340, 100, 30);
+    ctx.fillRect(308, 340, 100, 30);
+    ctx.fillRect(450, 320, 100, 30);
+    ctx.fillRect(450, 355, 100, 30);
+    ctx.fillRect(172, 485, 100, 30);
+  };
   return (
-    props.visible
-      ? (
-        <SignModal
-          headerTitle="要保書"
-          isOpen={props.visible}
-          buttonPosition="right"
-          numPages={pdf ? pdf.numPages : 0}
+    <>
+      {props.visible &&
+          (
+            <SignModal
+              headerTitle="要保書"
+              isOpen={props.visible}
+              buttonPosition="right"
+              numPages={pdf ? pdf.numPages : 0}
+              headerButton={
+                <>
+                  <div
+                    className="btn btn-outline-primary" onClick={() => {
+                      props.setVisible(false);
+                    }}
+                  >完成
+                  </div>
+                  <div
+                    className="btn btn-outline-primary" onClick={() => {
+                      setSignatureVisible(true);
+                    }}
+                  >Signature
+                  </div>
+                </>
+              }
+            >
+              <div className="justify-center d-flex">
+                <div>
+                  {pdf !== null &&
+                      [...Array(pdf.numPages ?? 0)].map((_, index) => {
+                        return (
+                          <div key={index} className="pdfCard pb-3">
+                            <Card id={'pdfCard-' + (index + 1)}>
+                              <canvas
+                                onClick={(e) => {
+                                  let x = e.clientX;
+                                  let y = e.clientY;
+                                  const rect = e.currentTarget.getBoundingClientRect();
+                                  x -= rect.left;
+                                  y -= rect.top;
+                                  console.log(x, y); // (x, y) 就是鼠标在 canvas 单击时的坐标
+                                }} id={'pdfCanvas-' + (index + 1)}
+                              />
+                            </Card>
+                          </div>
+                        );
+                      })}
+                </div>
+              </div>
+            </SignModal>
+          )}
           headerButton={
-            <div
-              className="btn btn-outline-primary" onClick={() => {
-                props.setVisible(false);
-              }}
-            >完成
-            </div>
-          }
         >
-          <div className="justify-center d-flex">
-            <div>
-              {pdf !== null &&
-                        [...Array(pdf.numPages ?? 0)].map((_, index) => {
-                          return (
-                            <div key={index} className="pdfCard pb-3">
-                              <Card id={'pdfCard-' + (index + 1)}>
-                                <canvas
-                                  onClick={(e) => {
-                                    let x = e.clientX;
-                                    let y = e.clientY;
-                                    const rect = e.currentTarget.getBoundingClientRect();
-                                    x -= rect.left;
-                                    y -= rect.top;
-                                    console.log(x, y); // (x, y) 就是鼠标在 canvas 单击时的坐标
-                                  }} id={'pdfCanvas-' + (index + 1)}
-                                />
-                              </Card>
-                            </div>
-                          );
-                        })}
-            </div>
           </div>
-        </SignModal>
-        )
-      : <></>
+    </>
   );
 };
 export default InsureDoc;

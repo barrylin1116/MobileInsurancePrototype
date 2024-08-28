@@ -4,9 +4,27 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    height: 72px;
     li.pageItem {
-      margin: 10px 3px;
-      display: inline-block;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 5px 0 5px 0;
+    }
+    li.pageItem::before {
+      content: url('../../img/icons/edit-red.svg');
+      position: relative;
+      left: 7px;
+    }
+    li.pageItem.active::before {
+      position: relative;
+      left: 7px;
+      content: url('../../img/icons/check-yellow.svg');
+    }
+    .pageNum {
+      margin: 0px 3px;
+      display: flex;
+      flex-direction: column;
       min-width: 32px;
       height: 32px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
@@ -24,6 +42,7 @@
       cursor: pointer;
       user-select: none;
     }
+
     li.pageLabel {
       margin: 10px 3px;
       display: inline-block;
@@ -33,7 +52,7 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
       'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
       'Noto Color Emoji';
-      line-height: 30px;
+      line-height: 45px;
       text-align: center;
       vertical-align: middle;
       list-style: none;
@@ -41,7 +60,7 @@
       cursor: pointer;
       user-select: none;
     }
-    li.active.pageItem {
+    span.active.pageNum {
       background: #348d8f !important;
       color: #FFFFFF !important;
     }

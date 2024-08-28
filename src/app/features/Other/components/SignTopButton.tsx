@@ -24,8 +24,9 @@ const SignTopButton: React.FC<any> = ({ isModal = false, containerRef, ...props 
           const currentClientHeight = current ? current.clientHeight : 0;
           // console.log(`(currentHeight - 128) + currentClientHeight: ${(currentHeight - 128) + currentClientHeight}`);
           // debugger;
-          if (round(currentHeight) <= 128 && round(currentHeight) >= (128 - currentClientHeight)) {
+          if (round(currentHeight) <= 148 && round(currentHeight) >= (148 - currentClientHeight)) {
             props.setActivePage((index + 1));
+            document.getElementById('pageItem-' + (index + 1))?.classList.add('active');
           }
         }
         if (scrollTop + clientHeight >= (scrollHeight - scrollHeight * 0.2)) {

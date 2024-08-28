@@ -60,12 +60,12 @@ const SignModal: React.FC<{
                     [...Array(props.numPages ?? 0)].map((_, index) => {
                       return (
                         <li
+                          id={'pageItem-' + (index + 1)}
                           onClick={() => {
-                            // setActivePage((index + 1));
                             const element = document.getElementById('pdfCard-' + (index + 1));
                             element?.scrollIntoView({ behavior: 'smooth' });
-                          }} className={'pageItem ' + (activePage === (index + 1) ? 'active' : '')} key={index}
-                        > {index + 1}
+                          }} className={'pageItem ' + (index === 0 ? 'active' : '')} key={index}
+                        > <span className={'pageNum ' + (activePage === (index + 1) ? 'active' : '')}>{index + 1}</span>
                         </li>
                       );
                     })
