@@ -1549,27 +1549,31 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         <div className="container">
           <div className="row justify-content-center align-items-center">
             <div className="col d-flex justify-content-center align-items-center fs-4 p-5">
+              <img
+                className="p-0 m-3 h-25 w-25 exclamation-icon"
+                src={require('assets/img/icons/file-save.svg').default}
+              />
               {hintModalProps?.title}
             </div>
           </div>
 
           {
-            hintModalProps?.action === 'complete' && (
-              <div className="row justify-content-evenly align-items-center p-5">
-                <div className="col d-flex justify-content-center align-items-center">
-                  <button
-                    type="button"
-                    className="fs-4 btn btn-primary me-1 me-lg-0 cus-outline-transparent"
-                    onClick={() => {
-                      setModalVisible(false);
-                      setHintModalVisible(false);
-                    }}
-                  >
-                    確認
-                  </button>
+              hintModalProps?.action === 'complete' && (
+                <div className="row justify-content-evenly align-items-center p-5">
+                  <div className="col d-flex justify-content-center align-items-center">
+                    <button
+                      type="button"
+                      className="fs-4 btn btn-primary me-1 me-lg-0 cus-outline-transparent"
+                      onClick={() => {
+                        setModalVisible(false);
+                        setHintModalVisible(false);
+                      }}
+                    >
+                      確認
+                    </button>
+                  </div>
                 </div>
-              </div>
-            )
+              )
           }
           {
           hintModalProps?.action === 'cancel' && (
