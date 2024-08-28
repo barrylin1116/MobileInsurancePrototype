@@ -11626,12 +11626,20 @@ a {
 }
 
 .checkbox-container {
-  margin-top: 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px; /* 可根據需要調整 */
+}
+
+.checkbox-container label {
+  font-size: 1.5rem; /* 放大文字 */
+  margin-left: 10px; /* 調整 label 與 checkbox 的間距 */
 }
 
 .checkbox-container input[type="checkbox"] {
+  transform: scale(1.5); /* 放大 checkbox */
   margin-right: 10px;
 }
 
