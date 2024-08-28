@@ -73,12 +73,6 @@ const InsureDoc: React.FC<any> = (props) => {
                     }}
                   >完成
                   </div>
-                  <div
-                    className="btn btn-outline-primary" onClick={() => {
-                      setSignatureVisible(true);
-                    }}
-                  >Signature
-                  </div>
                 </>
               }
             >
@@ -107,9 +101,6 @@ const InsureDoc: React.FC<any> = (props) => {
               </div>
             </SignModal>
           )}
-          headerButton={
-        >
-          </div>
     </>
   );
 };
