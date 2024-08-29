@@ -184,7 +184,7 @@ h2 {
   font-weight: 400;
   font-size: 1.875rem;
   line-height: 2.25rem;
-  color: #CC7A00;
+  color: #06974F;
 }
 
 @media (max-width: 1199.98px) {
@@ -316,7 +316,7 @@ h2 {
 }
 
 .menu-bar {
-  background: #CC7A00;
+  background: #06974F;
   position: fixed;
   height: 63px;
   width: 100%;
@@ -381,7 +381,7 @@ h2 {
 }
 
 .mobile-menu-bar {
-  background: #CC7A00;
+  background: #06974F;
   position: fixed;
   height: 58px;
   width: 100%;
@@ -464,7 +464,7 @@ h2 {
 
 .mobile-menu-container .mobile-menu {
   border: 1px solid rgba(74, 46, 25, 0.15);
-  color: #CC7A00;
+  color: #06974F;
   border-radius: 10px;
   background-color: #fafafa;
   height: 48px;
@@ -546,7 +546,7 @@ section {
 section h2 {
   font-size: 2.25rem;
   line-height: 2.6875rem;
-  color: #CC7A00;
+  color: #06974F;
 }
 
 @media (max-width: 575.98px) {
@@ -559,7 +559,7 @@ section h2 {
 section.features-section {
   margin-top: 35px;
   padding-top: 95px;
-  color: #CC7A00;
+  color: #06974F;
 }
 
 section.features-section .features-box {
@@ -736,7 +736,7 @@ section.content-section .card .title {
 }
 
 section.content-section .card .title.green {
-  background-color: #CC7A00;
+  background-color: #06974F;
 }
 
 section.content-section .card .card-body {
@@ -757,7 +757,7 @@ section.content-section .card .with-notes span {
   line-height: 1rem;
   vertical-align: super;
   margin-left: 4px;
-  color: #CC7A00;
+  color: #06974F;
 }
 
 section.content-section .card .item {
@@ -768,7 +768,7 @@ section.content-section .card .item {
 }
 
 section.content-section .card .item-title {
-  color: #D1A060;
+  color: #62CF8A;
   font-size: 1.125rem;
   line-height: 1.75rem;
   display: flex;
@@ -914,7 +914,7 @@ section.cost-section .box-content {
 
 section.cost-section .box-bottom {
   padding: 32px 84px 16px 84px;
-  color: #CC7A00;
+  color: #06974F;
   font-size: 1.25rem;
   line-height: 2rem;
   display: flex;
@@ -1001,7 +1001,7 @@ section.cost-section .toggle .button:hover {
 }
 
 section.cost-section .toggle .button.active {
-  background-color: #CC7A00;
+  background-color: #06974F;
   box-shadow: -2px 0px 10px rgba(132, 132, 132, 0.25);
   color: #fff;
 }
@@ -1170,7 +1170,7 @@ section.recommend-section .card .title {
   font-size: 1.5rem;
   line-height: 2.375rem;
   margin-bottom: 8px;
-  color: #CC7A00;
+  color: #06974F;
 }
 
 section.recommend-section .card .sub-title {
@@ -1190,7 +1190,7 @@ section.recommend-section .card .item:not(:first-child) .name {
 }
 
 section.recommend-section .card .bold {
-  color: #B26800;
+  color: #E07F0A;
   font-size: 1.5rem;
   line-height: 2.375rem;
   padding: 4px 16px;
@@ -1352,7 +1352,7 @@ section.limit-section table.desktop-table th {
 
 section.limit-section table.desktop-table td {
   padding: 12px 0;
-  color: #CC7A00;
+  color: #06974F;
 }
 
 section.limit-section table.desktop-table th,
@@ -1391,7 +1391,7 @@ section.limit-section table.pad-table td:first-child {
 
 section.limit-section table.pad-table td:nth-child(2) {
   text-align: right;
-  color: #CC7A00;
+  color: #06974F;
 }
 
 @media (max-width: 991.98px) {
@@ -1455,7 +1455,7 @@ section.rule-section .item:before {
   height: 100%;
   width: 4px;
   border-radius: 10px;
-  background: #CC7A00;
+  background: #06974F;
   display: block;
   position: absolute;
   left: 0;
@@ -1571,7 +1571,7 @@ section.case-section .case {
 section.case-section .case .title {
   font-size: 1.5rem;
   line-height: 2.375rem;
-  color: #CC7A00;
+  color: #06974F;
   margin-bottom: 24px;
 }
 
@@ -1601,7 +1601,7 @@ section.case-section .case .notes {
   width: 100%;
   text-align: left;
   margin: -8px 0 8px 0;
-  color: #CC7A00;
+  color: #06974F;
 }
 
 section.case-section .case .more {
@@ -1615,7 +1615,7 @@ section.case-section .case .more:before {
   height: 100%;
   width: 4px;
   border-radius: 10px;
-  background: #CC7A00;
+  background: #06974F;
   display: block;
   position: absolute;
   left: 0;
@@ -1625,7 +1625,7 @@ section.case-section .detail {
   border-radius: 16px;
   color: #fff;
   padding: 1rem;
-  background: #CC7A00;
+  background: #06974F;
   width: 100%;
   width: calc((100% - 120px) / 2);
   font-size: 1rem;
@@ -1751,9 +1751,9 @@ section.qa-section .qa-box .inner-box::-webkit-scrollbar-track {
 }
 
 section.qa-section .qa-box .inner-box::-webkit-scrollbar-thumb {
-  background-color: #CC7A00;
+  background-color: #06974F;
   border-radius: 20px;
-  border: 3px solid #CC7A00;
+  border: 3px solid #06974F;
 }
 
 section.qa-section .qa-item {
@@ -1803,7 +1803,7 @@ section.qa-section .qa-number {
   min-width: 32px;
   font-size: 1.5rem;
   line-height: 2.375rem;
-  color: #CC7A00;
+  color: #06974F;
   font-weight: 500;
   margin-right: 10px;
 }
@@ -1830,7 +1830,7 @@ section.qa-section .question .text {
 section.qa-section .answer {
   display: flex;
   align-items: center;
-  color: #CC7A00;
+  color: #06974F;
 }
 
 section.qa-section .btn-margin {
@@ -1861,7 +1861,7 @@ section.qa-section .btn-margin {
     width: 4px;
   }
   section.qa-section .qa-box .inner-box::-webkit-scrollbar-thumb {
-    border: 1px solid #CC7A00;
+    border: 1px solid #06974F;
   }
   section.qa-section .qa-item {
     padding: 12px 16px;
@@ -1961,7 +1961,7 @@ section.more-product-section .box:hover img {
 }
 
 section.more-product-section .box:hover button {
-  background-color: #CC7A00;
+  background-color: #06974F;
   color: #fff;
 }
 
@@ -1970,7 +1970,7 @@ section.more-product-section .box:hover .img {
 }
 
 section.more-product-section .box button:focus {
-  background-color: #865202;
+  background-color: #017E2F;
   color: #fff;
 }
 
@@ -2160,7 +2160,7 @@ section.more-product-section .box button:focus {
 }
 
 .swiper-pagination-bullet-active {
-  background: #CC7A00;
+  background: #06974F;
 }
 
 @media (max-width: 991.98px) {

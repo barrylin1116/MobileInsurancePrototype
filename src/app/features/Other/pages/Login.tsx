@@ -40,7 +40,7 @@ const Login: React.FC<any> = (props) => {
               id="login_section"
             >
               <form id="loginForm" method="POST" action="#">
-                <h2 style={{ color: '#CC7A00' }}>使用者登入</h2>
+                <h2 style={{ color: '#06974F' }}>使用者登入</h2>
                 <p style={{ alignItems: 'center', textAlign: 'center' }}>
                   <img className="login1" src={require('assets/img/pic/icon_friends-green.png')} />
                 </p>

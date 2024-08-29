@@ -84,7 +84,7 @@
 
   .help-icon {
     border-radius: 50%; // 將圖片設為圓形
-    background-color: #DB7F00; // 設置背景顏色
+    background-color: #06974F; // 設置背景顏色
     box-sizing: border-box; // 確保 padding 不影響圖片大小
     margin-inline: .5rem;
     width: 2rem;
@@ -117,7 +117,7 @@
   }
 
   .ant-tabs-tab {
-    color: #DB7F00;
+    color: #06974F;
     width: auto; // 讓寬度自動調整
     justify-content: center;
     padding: 10px 25px !important; // 增加左右的padding確保內容不會緊貼邊界
@@ -126,7 +126,7 @@
 
   .ant-tabs-tab-active {
     color: white !important;
-    background: #DB7F00;
+    background: #06974F;
 
     .ant-tabs-tab-btn {
       color: white !important;

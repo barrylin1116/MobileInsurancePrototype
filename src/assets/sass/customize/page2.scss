@@ -4,7 +4,7 @@
 }
 
 .header-bar {
-  background-color: #DB7F00; /* 藍綠色背景 */
+  background-color: #06974F; /* 藍綠色背景 */
   color: white; /* 白色文字 */
   padding: 10px 20px;
   display: flex;
@@ -26,15 +26,15 @@
 
     button {
       background-color: white;
-      color: #DB7F00;
-      border: 2px solid #DB7F00;
+      color: #E07F0A;
+      border: 2px solid #E07F0A;
       padding: 5px 15px;
       font-size: 1rem;
       cursor: pointer;
       border-radius: 5px;
 
       &:hover {
-        background-color: #DB7F00; /* 應用深一點的顏色 */
+        background-color: #E07F0A; /* 應用深一點的顏色 */
         color: white;
       }
     }
@@ -77,7 +77,7 @@
     padding: 10px 20px;
     font-size: 1.2rem; /* 放大按鈕文字 */
     margin: 0 15px; /* 增加按鈕之間的間距 */
-    background-color: #DB7F00; /* 綠底 */
+    background-color: #E07F0A; /* 綠底 */
     color: white; /* 白字 */
     border: none; /* 移除邊框 */
   }
@@ -87,8 +87,8 @@
     font-size: 1.2rem; /* 放大按鈕文字 */
     margin: 0 15px; /* 增加按鈕之間的間距 */
     background-color: white; /* 白底 */
-    color: #DB7F00; /* 綠字 */
-    border: 2px solid #DB7F00; /* 綠色邊框 */
+    color: #E07F0A; /* 綠字 */
+    border: 2px solid #E07F0A; /* 綠色邊框 */
     cursor: pointer; /* 鼠標懸停變成指針 */
 
     &:hover {
@@ -104,7 +104,7 @@
   }
 
   .ant-table-thead > tr > th {
-    background-color: #DB7F00; /* 將表頭背景設為藍綠色 */
+    background-color: #06974F; /* 將表頭背景設為藍綠色 */
     color: white; /* 表頭文字顏色設為白色 */
     font-size: 1.25rem; /* 放大表頭文字 */
   }
@@ -122,11 +122,11 @@
 
 .ant-btn {
   font-size: 1.25rem; /* 放大“查看”按鈕文字 */
-  background-color: #DB7F00;
+  background-color: #E07F0A;
   color: white;
   border: none;
 
   &:hover {
-    background-color: #DB7F00; /* 按鈕的懸停狀態 */
+    background-color: #E07F0A; /* 按鈕的懸停狀態 */
   }
 }
