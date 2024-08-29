@@ -32,10 +32,10 @@
       transition: all .3s cubic-bezier(.78,.14,.15,.86);
     }
     .itemCard:hover {
-      background-color: #FCE3EB;
+      background-color: #DFF0FB;
     }
     .itemCard:hover .rowItem{
-      background-color: #FCE3EB;
+      background-color: #DFF0FB;
     }
     .rowItem {
       background: #fafafa;
@@ -75,7 +75,7 @@
     line-height: 80px;
     text-align: center;
     color: #FFF;
-    background-color: #9a0036;
+    background-color: #003E63;
     position: fixed;
     right: 15px;
     bottom: 15px;
@@ -86,7 +86,7 @@
 
   .topBtn:active {
     outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.5);
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 139, 0.5);
   }
 
   .labelName {
@@ -115,7 +115,7 @@
       }
 
       .ant-tabs-nav .ant-tabs-tab-active {
-        background: #9a0036;
+        background: #003E63;
       }
 
       .ant-tabs-nav .ant-tabs-tab-active {
@@ -123,7 +123,7 @@
       }
 
       .ant-tabs-nav .ant-tabs-tab-active .tabText {
-        color: #9a0036;
+        color: #003E63;
         font-size: 1.2rem;
         font-weight: 600;
       }
@@ -208,7 +208,7 @@
     .insureName {
       margin-right: 5px;
       font-size: 1.55rem;
-      color: #9a0036;
+      color: #003E63;
       font-weight: 600;
     }
 
@@ -276,7 +276,7 @@
     .contentRow {
       height: 55px !important;
       width: 200% !important;
-      background: #9a0036 !important;
+      background: #003E63 !important;
       padding-top: 10px !important;
       position: relative !important;
       margin-left: -100px !important;
@@ -289,7 +289,7 @@
       top: 12px !important;
       left: 10px !important;
       right: unset !important;
-      background: #9a0036 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
+      background: #003E63 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
       width: 35px;
       height: 25px;
       opacity: 1;
@@ -334,7 +334,7 @@
     .contentRow {
       height: 55px !important;
       width: 200% !important;
-      background: #9a0036 !important;
+      background: #003E63 !important;
       padding-top: 10px !important;
       position: relative !important;
       margin-left: 0px !important;
@@ -364,7 +364,7 @@
       top: 12px !important;
       left: 10px !important;
       right: unset !important;
-      background: #9a0036 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
+      background: #003E63 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
       width: 35px;
       height: 25px;
       opacity: 1;
@@ -420,7 +420,7 @@
   .contentRow {
     height: 65px !important;
     width: 200% !important;
-    background: #9a0036 !important;
+    background: #003E63 !important;
     padding-top: 10px !important;
     position: relative !important;
     margin-left: 0px !important;
@@ -433,7 +433,7 @@
     margin: 0;
   }
   .modal-pane {
-    background: #9a0036 !important;
+    background: #003E63 !important;
   }
   .ant-table-cell {
     font-size: 1.4rem;
@@ -457,7 +457,7 @@
   .btn-close {
     width: 44px;
     height: 22px;
-    background: #9a0036 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
+    background: #003E63 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
     opacity: 1;
   }
 
@@ -533,10 +533,10 @@
     }
 
     .ant-tabs-nav .ant-tabs-tab-active {
-      background: #9a0036 !important;
+      background: #003E63 !important;
     }
     .ant-tabs-nav .ant-tabs-tab-active .tabText {
-      color: #9a0036;
+      color: #003E63;
       background: white;
       font-size: 1.2rem;
       font-weight: 600;

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer style={{ background: '#9a0036' }}>
+    <footer style={{ background: '#003E63' }}>
       <div className="container d-flex">
         <div className="d-flex groups-wrapper" />
         <div className="right">
