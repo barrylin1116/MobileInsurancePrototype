@@ -113,9 +113,6 @@ const Page1: React.FC = () => {
                     經代支援系統
                   </a>
                 </div>
-                <div className="item" title="保單查詢" role="button">
-                  <a href="#">保單查詢</a>
-                </div>
               </div>
             </div>
           </div>
