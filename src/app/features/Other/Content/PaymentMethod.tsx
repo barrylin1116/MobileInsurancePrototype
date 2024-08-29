@@ -30,7 +30,7 @@ const PaymentMethod: React.FC<any> = (props) => {
                       </button>
                       <button
                         type="button"
-                        className="btn ml-1 btn-outline-warning me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                        className="btn ml-1 btn-outline-light me-1 me-lg-0 cus-outline-transparent InsuranceButton"
                         onClick={() => setOnlineAuthApplyVisible(false)}
                       >
                         取消

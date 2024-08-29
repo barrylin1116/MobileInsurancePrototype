@@ -67,12 +67,20 @@ const InsureDoc: React.FC<any> = (props) => {
               numPages={pdf ? pdf.numPages : 0}
               headerButton={
                 <>
-                  <div
-                    className="btn btn-outline-primary" onClick={() => {
-                      props.setVisible(false);
-                    }}
-                  >完成
-                  </div>
+                  <button
+                    type="button"
+                    className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                    onClick={() => props.setVisible(false)}
+                  >
+                    完成
+                  </button>
+                  <button
+                    type="button"
+                    className="btn ml-1 btn-outline-light me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                    onClick={() => props.setVisible(false)}
+                  >
+                    取消
+                  </button>
                 </>
               }
             >
