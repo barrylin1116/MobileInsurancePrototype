@@ -157,7 +157,7 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
 
   return (
     <div id="SupplementaryDocuments">
-      <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
+      <div className="row m-0 p-2" style={{ background: '#FDE6EE' }}>
         <div className="col-12">
           <div className="labelName m-0">
             請選擇要上傳的補充文件
@@ -210,7 +210,7 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
               <Button
                 className="labelName m-0"
                 icon={<UploadOutlined />}
-                style={{ borderRadius: '0 4px 4px 0', backgroundColor: '#CC7A00', color: '#fff', height: '50px' }}
+                style={{ borderRadius: '0 4px 4px 0', backgroundColor: '#C51550', color: '#fff', height: '50px' }}
               >
                 請選擇檔案
               </Button>
@@ -227,7 +227,7 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
       {
         fileUploadSuccessList.length > 0 && (
           <>
-            <div className="row m-0" style={{ background: '#FEF6EB' }}>
+            <div className="row m-0" style={{ background: '#FDE6EE' }}>
               <div className="name labelName">補充文件清單</div>
             </div>
             <div className="row m-0">

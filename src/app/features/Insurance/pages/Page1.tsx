@@ -76,13 +76,13 @@ const Page1: React.FC = () => {
                   onClick={() => {
                     setSearchModalVisible(true);
                   }} className="btn btn-outline-primary me-3 me-lg-0 cus-outline-transparent"
-                  style={{ border: 'none', width: '50px', height: '50px', marginLeft: '5px', background: '#CC7A00' }}
+                  style={{ border: 'none', width: '50px', height: '50px', marginLeft: '5px', background: '#C51550' }}
                   icon={<SearchOutlined style={{ fontSize: '1.5rem', color: 'white' }} />}
                 />
                 <Button
                   ref={functionRef}
                   className="btn btn-outline-primary me-3 me-lg-0 cus-outline-transparent"
-                  style={{ border: 'none', width: '50px', height: '50px', marginLeft: '5px', background: '#CC7A00' }}
+                  style={{ border: 'none', width: '50px', height: '50px', marginLeft: '5px', background: '#C51550' }}
                   icon={<ProductOutlined style={{ fontSize: '1.5rem', color: 'white' }} />}
                   onClick={() => {
                     setFunctionModalVisible(true);

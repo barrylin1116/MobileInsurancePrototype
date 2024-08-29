@@ -34,7 +34,7 @@
     }
   }
   .swal2-title {
-    color: #DB7F00;
+    color: #C51550;
     font-size: 1.5rem;
     line-height: 1.75rem;
   }
@@ -52,8 +52,8 @@
     }
   }
   .swal2-styled.swal2-confirm {
-    background-color: #DB7F00;
-    border-color: #DB7F00;
+    background-color: #C51550;
+    border-color: #C51550;
     border-radius: 10px;
     font-size: 1.125rem;
     font-weight: 400;
@@ -61,8 +61,8 @@
     transition: 0.15s ease-in-out;
     &:hover {
       background-image: none;
-      background-color: #87643A;
-      border-color: #724402;
+      background-color: #823A52;
+      border-color: #780129;
     }
     &:focus {
       box-shadow: 0 0 0 0.25rem rgba(82, 158, 160, .5);
@@ -70,25 +70,25 @@
   }
   .swal2-styled.swal2-cancel {
     background-color: #FFFFFF;
-    border: 1px solid #87643A;
+    border: 1px solid #823A52;
     border-radius: 10px;
-    color: #87643A;
+    color: #823A52;
     font-size: 1.125rem;
     font-weight: 400;
     padding: 12px 44px;
     transition: 0.15s ease-in-out;
     &:hover {
       background-image: none !important;
-      background-color: #E7DBCA;
+      background-color: #FCE3EB;
     }
     &:active {
       background-image: none;
-      background-color: #D8BE96;
-      border-color: #CC7A00;
-      color: #CC7A00;
+      background-color: #D495AA;
+      border-color: #C51550;
+      color: #C51550;
     }
     &:focus {
-      box-shadow: 0px 0px 0px 5px #E7DBCA;
+      box-shadow: 0px 0px 0px 5px #FCE3EB;
     }
   }
 }
