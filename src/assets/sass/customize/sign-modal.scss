@@ -37,7 +37,7 @@
       background-color: #FFFFFF;
       border: 1px solid transparent;
       border-radius: 6px;
-      border-color: #348d8f;
+      border-color: #DB7F00;
       outline: 0;
       cursor: pointer;
       user-select: none;
@@ -61,7 +61,7 @@
       user-select: none;
     }
     span.active.pageNum {
-      background: #348d8f !important;
+      background: #DB7F00 !important;
       color: #FFFFFF !important;
     }
   }
@@ -113,7 +113,7 @@
     align-items: center;
     position: relative;
     padding: 20px;
-    background: #348d8f;
+    background: #DB7F00;
     color: white;
   }
 

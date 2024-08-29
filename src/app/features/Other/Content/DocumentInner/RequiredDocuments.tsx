@@ -97,7 +97,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     return (
 
       <>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             投保內容確認問項 :
           </div>
@@ -141,7 +141,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             利率變動型保險商品時，請填寫本問項 :
           </div>
@@ -162,7 +162,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             外幣收付之非投資型保險商品時，請填寫本問項 :
           </div>
@@ -183,7 +183,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             投資型保險商品時，請填寫以下問項 :
           </div>
@@ -205,7 +205,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             分紅保險商品時，請填寫本問項 :
           </div>
@@ -225,7 +225,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             要保人、被保險人或實際繳費人購買本商品時保險年齡為65歲(含)以上者，請填寫以下問項以再次確認 :
           </div>
@@ -245,7 +245,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             要保人、被保險人或實際繳費人購買本商品時年齡為18足歲以上惟未滿20足歲者，請填寫以下問項以再次確認 :
           </div>
@@ -265,7 +265,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             FATCA問項 :
           </div>
@@ -387,7 +387,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     return (
 
       <>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             被保險人財務/工作狀況 :
           </div>
@@ -445,7 +445,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
           </div>
         </div>
 
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             要保人財務/工作狀況 :
           </div>
@@ -503,7 +503,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
           </div>
         </div>
 
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             經濟負擔者財務/工作狀況 :
           </div>
@@ -561,7 +561,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
           </div>
         </div>
 
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             其他財務狀況 :
           </div>
@@ -668,7 +668,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
     return (
 
       <>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             投保案件分析 :
           </div>
@@ -819,7 +819,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             被保險人姓名/財務狀況/職業/投保經驗 :
           </div>
@@ -956,7 +956,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             要保人姓名/財務狀況/職業/投保經驗 :
           </div>
@@ -1037,7 +1037,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             其他財務狀況/職業/投保經驗 :
           </div>
@@ -1368,7 +1368,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
             <input type="labelName" name="rocId" className="form-control" />
           </div>
         </div>
-        <div className="row m-0 p-2" style={{ background: '#edf5f4' }}>
+        <div className="row m-0 p-2" style={{ background: '#FEF6EB' }}>
           <div className="labelName m-0 label-styling">
             本次投保具有解約金之商品(不包括小額終老保險、團體年金保險及保險期間在三年以下之傷害保險)或投資型保險商品時，如要保人或被保險人或實際繳交保費之利害關係人之保險年齡依保險業招攬及核保理賠辦法需進行錄音者，請填寫下列欄位。
           </div>

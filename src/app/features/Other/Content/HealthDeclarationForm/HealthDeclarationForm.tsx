@@ -64,7 +64,7 @@ const HealthDeclarationForm = React.forwardRef<any, any>((props, ref) => {
         return (
           index % 2 === 0 && (
             <div
-              style={{ border: '1px solid #348d8f', borderTop: 'none' }}
+              style={{ border: '1px solid #CC7A00', borderTop: 'none' }}
               key={`qa-${index}`} className="row form-row m-0 p-2"
             >
               <div className="row m-0">
@@ -119,7 +119,7 @@ const HealthDeclarationForm = React.forwardRef<any, any>((props, ref) => {
 
   return (
     <>
-      <div className="row m-0 p-4" style={{ border: '1px solid #348d8f' }}>
+      <div className="row m-0 p-4" style={{ border: '1px solid #CC7A00' }}>
         <div className="col-6">
           <div className="name labelName">身高(公分)</div>
           <input type="labelName" name="rocId" className="form-control" />
@@ -133,7 +133,7 @@ const HealthDeclarationForm = React.forwardRef<any, any>((props, ref) => {
               getHealthDeclarationFormQA.map((data, index) => {
                 return (
                   <div
-                    style={{ border: '1px solid #348d8f', borderTop: 'none' }}
+                    style={{ border: '1px solid #CC7A00', borderTop: 'none' }}
                     key={`qa-${index}`} className="row form-row m-0 p-2"
                   >
                     <div className="col-12">
@@ -180,7 +180,7 @@ const HealthDeclarationForm = React.forwardRef<any, any>((props, ref) => {
                 <>
                   <div
                     className="row m-0 p-2"
-                    style={{ border: '1px solid #348d8f', background: '#edf5f4', borderTop: 'none' }}
+                    style={{ border: '1px solid #CC7A00', background: '#FEF6EB', borderTop: 'none' }}
                   >
                     <div className="col-12">
                       <div className="name labelName">當健康告知事項有任一題回覆為「是」需加填「疾病問券」</div>
@@ -188,7 +188,7 @@ const HealthDeclarationForm = React.forwardRef<any, any>((props, ref) => {
                   </div>
                   <div
                     className="row m-0 p-2"
-                    style={{ border: '1px solid #348d8f', background: '#edf5f4', borderTop: 'none' }}
+                    style={{ border: '1px solid #CC7A00', background: '#FEF6EB', borderTop: 'none' }}
                   >
                     <div className="col-12">
                       <div className="name labelName">請勾選(可複選，至少要勾選一個)。</div>
@@ -199,7 +199,7 @@ const HealthDeclarationForm = React.forwardRef<any, any>((props, ref) => {
               }
                   <div
                     className="row m-0 p-2"
-                    style={{ border: '1px solid #348d8f', background: '#edf5f4', borderTop: 'none' }}
+                    style={{ border: '1px solid #CC7A00', background: '#FEF6EB', borderTop: 'none' }}
                   >
                     <div className="col-12">
                       <div className="name labelName">健康告知書</div>
@@ -207,7 +207,7 @@ const HealthDeclarationForm = React.forwardRef<any, any>((props, ref) => {
                   </div>
                   <div
                     className="row m-0 p-2"
-                    style={{ border: '1px solid #348d8f', background: '#edf5f4', borderTop: 'none' }}
+                    style={{ border: '1px solid #CC7A00', background: '#FEF6EB', borderTop: 'none' }}
                   >
                     <div className="col-12">
                       <div

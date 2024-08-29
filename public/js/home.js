@@ -251,7 +251,7 @@
 	// 		costData[id].checked = true;
 	// 		// update 保費
 	// 		costDollar.text(`${currentCost} 元`);
-	// 		costDollar.css('color', '#348d8f')
+	// 		costDollar.css('color', '#CC7A00')
 	// 	} else {
 	// 		thisInput.prop("value", null);
 	// 		costData[id].checked = false;

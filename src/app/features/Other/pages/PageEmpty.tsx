@@ -67,7 +67,7 @@ const Page1: React.FC<any> = (props) => {
     <>
       <div id="emptyPage">
         <header>
-          <div style={{ width: '100%', height: '75px', position: 'absolute', background: '#348d8f' }} />
+          <div style={{ width: '100%', height: '75px', position: 'absolute', background: '#CC7A00' }} />
           <nav className="navbar fixed-top navbar-expand" style={{ height: '40px', paddingBottom: '5px' }}>
             <div className="d-flex col-3 h-100">
               <div className="h-100 d-flex flex-column-reverse">
@@ -377,7 +377,7 @@ const Page1: React.FC<any> = (props) => {
                   {/*    alignItems: 'center', */}
                   {/*    position: 'relative', */}
                   {/*    padding: '20px', */}
-                  {/*    background: '#348d8f', */}
+                  {/*    background: '#CC7A00', */}
                   {/*      color: 'white' */}
                   {/*    }} */}
                   {/*  >線核預檢失敗 */}

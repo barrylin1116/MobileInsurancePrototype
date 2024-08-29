@@ -398,7 +398,7 @@
 }
 
 .react-datepicker__day-name{
-  color: #348d8f;
+  color: #DB7F00;
   font-weight: bold;
 }
 
@@ -435,12 +435,12 @@
 
   &:hover {
     border-radius: $datepicker__border-radius;
-    background-color: #348d8f;
+    background-color: #DB7F00;
     color: #fff;
   }
 
   &--today {
-    background-color: #cde3e3;
+    background-color: #E7DBCA;
     color: #000;
   }
 
@@ -458,7 +458,7 @@
     }
 
     &-custom-2 {
-      color: green;
+      color: orange;
     }
   }
 
@@ -480,7 +480,7 @@
     color: #000;
 
     &:hover {
-      background-color: #348d8f;
+      background-color: #DB7F00;
       color: #fff;
     }
   }

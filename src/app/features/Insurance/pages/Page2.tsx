@@ -100,6 +100,13 @@ const Page2: React.FC = () => {
         <Button className="button-primary" type="primary">查詢</Button>
         <Button className="button-reset">清除</Button>
       </div>
+
+      {/* 新增的總比數及顯示訊息 */}
+      <div className="row custom-box">
+        <div className="file-info">
+          <span>查詢結果:總筆數：{dataSource.length}筆</span>
+        </div>
+      </div>
       <div className="table-container">
         <Table
           dataSource={dataSource}
