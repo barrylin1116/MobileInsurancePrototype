@@ -1,11 +1,50 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // @ts-ignore
 import * as pdfjsLib from 'pdfjs-dist/webpack';
 import SignModal from 'app/features/Insurance/pages/Modals/SignModal';
 import { Card } from 'antd';
+import Signature from 'react-signature-canvas';
+import SignatureModal from 'app/features/Insurance/pages/Modals/SignatureModal';
+import { Point } from './types';
+import _ from 'lodash';
 
 const InsureDoc: React.FC<any> = (props) => {
   const [pdf, setPdf] = useState<any>(null);
+  const initSignList = [
+    {
+      name: 'insure',
+      backRect: [172, 340, 100, 30],
+      signImg: null,
+      clickRect: [new Point(285, 560), new Point(285, 600), new Point(440, 560), new Point(440, 600)]
+    },
+    {
+      name: 'applicant',
+      backRect: [308, 340, 100, 30],
+      signImg: null,
+      clickRect: [new Point(505, 560), new Point(505, 600), new Point(660, 560), new Point(660, 600)]
+    },
+    {
+      name: 'agentInsure',
+      backRect: [450, 320, 100, 30],
+      signImg: null,
+      clickRect: [new Point(740, 525), new Point(740, 565), new Point(895, 525), new Point(895, 565)]
+    },
+    {
+      name: 'agentApplicant',
+      backRect: [450, 355, 100, 30],
+      signImg: null,
+      clickRect: [new Point(740, 585), new Point(740, 625), new Point(895, 585), new Point(895, 625)]
+    },
+    {
+      name: 'saleMan',
+      backRect: [172, 485, 100, 30],
+      signImg: null,
+      clickRect: [new Point(285, 795), new Point(285, 835), new Point(440, 795), new Point(440, 835)]
+    }
+  ];
+  const [signList, setSignList] = useState<any[]>(initSignList);
+  const [currentSign, setCurrentSign] = useState<any>();
+
   const loadFile = (url: string) => {
     const loadingTask = pdfjsLib.getDocument(url);
     loadingTask.promise.then((pdf: any) => {
@@ -35,7 +74,6 @@ const InsureDoc: React.FC<any> = (props) => {
             canvasContext: ctx,
             viewport: viewport
           };
-          // debugger;
           page.render(renderContext).promise.then(() => {
             if (pageNum === 3) {
               draw();
@@ -50,12 +88,44 @@ const InsureDoc: React.FC<any> = (props) => {
     const canvas: any = document.getElementById('pdfCanvas-3');
     const ctx = canvas.getContext('2d');
     ctx.fillStyle = '#e0e0e0';
-    ctx.fillRect(172, 340, 100, 30);
-    ctx.fillRect(308, 340, 100, 30);
-    ctx.fillRect(450, 320, 100, 30);
-    ctx.fillRect(450, 355, 100, 30);
-    ctx.fillRect(172, 485, 100, 30);
+    signList.forEach(sign => {
+      ctx.fillRect(sign.backRect[0], sign.backRect[1], sign.backRect[2], sign.backRect[3]);
+    });
   };
+
+  const [signatureVisible, setSignatureVisible] = useState(false);
+  const $svg = useRef<any>(null);
+
+  const isPointInRect = (point: Point, clickRect: Point[]): boolean => {
+    const A = clickRect[1];// 左下顶点
+    const B = clickRect[0];// 左上顶点
+    const C = clickRect[2];// 右上顶点
+    const D = clickRect[3];// 右下顶点
+    const a = (B.x - A.x) * (point.y - A.y) - (B.y - A.y) * (point.x - A.x);
+    const b = (C.x - B.x) * (point.y - B.y) - (C.y - B.y) * (point.x - B.x);
+    const c = (D.x - C.x) * (point.y - C.y) - (D.y - C.y) * (point.x - C.x);
+    const d = (A.x - D.x) * (point.y - D.y) - (A.y - D.y) * (point.x - D.x);
+    if ((a > 0 && b > 0 && c > 0 && d > 0) || (a < 0 && b < 0 && c < 0 && d < 0)) {
+      return true;
+    }
+    return false;
+  };
+
+  useEffect(() => {
+    if (signatureVisible && currentSign.signImg) {
+      const signArea = document.getElementsByClassName('signature');
+      const canvas: any = signArea.item(0)?.getElementsByTagName('canvas');
+      const img = new Image();
+      img.src = currentSign.signImg;
+      const ctx = canvas[0].getContext('2d');
+      img.onload = () => {
+        ctx.drawImage(img, 0, 0, canvas[0].clientWidth, canvas[0].clientHeight);
+      };
+      // ctx.fillStyle = '#000000';
+      // ctx.fillRect(100, 100, 100, 100);
+    }
+  }, [signatureVisible]);
+
   return (
     <>
       {props.visible &&
@@ -98,7 +168,12 @@ const InsureDoc: React.FC<any> = (props) => {
                                   const rect = e.currentTarget.getBoundingClientRect();
                                   x -= rect.left;
                                   y -= rect.top;
-                                  console.log(x, y); // (x, y) 就是鼠标在 canvas 单击时的坐标
+                                  signList.forEach(sign => {
+                                    if (isPointInRect(new Point(x, y), sign.clickRect)) {
+                                      setSignatureVisible(true);
+                                      setCurrentSign(sign);
+                                    }
+                                  });
                                 }} id={'pdfCanvas-' + (index + 1)}
                               />
                             </Card>
@@ -109,6 +184,76 @@ const InsureDoc: React.FC<any> = (props) => {
               </div>
             </SignModal>
           )}
+      {signatureVisible &&
+        <SignatureModal
+          isModalMsg
+          headerButton={
+            <>
+              <button
+                type="button"
+                className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                onClick={() => {
+                  setSignatureVisible(false);
+                  if ($svg.current) {
+                    const trimedCanvas: HTMLCanvasElement = $svg.current.getTrimmedCanvas();
+                    if (trimedCanvas) {
+                      const resizedCanvas: any = document.getElementById('pdfCanvas-3');
+                      const resizedContext = resizedCanvas?.getContext('2d');
+                      // 重置
+                      resizedContext.clearRect(currentSign.backRect[0],
+                        currentSign.backRect[1],
+                        100,
+                        30);
+                      // 添加背景
+                      resizedContext.fillRect(currentSign.backRect[0],
+                        currentSign.backRect[1],
+                        100,
+                        30);
+                      // 添加签名
+                      resizedContext.drawImage(
+                        trimedCanvas,
+                        currentSign.backRect[0],
+                        currentSign.backRect[1],
+                        100,
+                        30
+                      );
+                      const myResizedData = trimedCanvas.toDataURL();
+                      let clone = _.cloneDeep(signList);
+                      clone = clone.map(m => {
+                        if (m.name === currentSign.name) {
+                          currentSign.signImg = myResizedData;
+                          return currentSign;
+                        }
+                        return m;
+                      });
+                      setSignList(clone);
+                    }
+                  }
+                }}
+              >
+                完成
+              </button>
+              <button
+                type="button"
+                className="btn ml-1 btn-outline-light me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                onClick={() => {
+                  if ($svg.current) {
+                    const current: SignaturePad = $svg.current;
+                    current.clear();
+                  }
+                }}
+              >
+                撤销
+              </button>
+            </>
+          } buttonPosition="right" isOpen={signatureVisible}
+        >
+          <div className="signature">
+            <Signature
+              ref={$svg}
+            />
+          </div>
+        </SignatureModal>}
     </>
   );
 };
