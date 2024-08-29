@@ -12,6 +12,7 @@ import CustomTab from '../components/CustomTab';
 import Preview from '../Content/DocumentInner/Preview';
 import PreviewHistory from '../Content/DocumentInner/PreviewHistory';
 import Sign from '../Content/Sign/Sign';
+import SubmitAndCancelButtonGroup from '../components/SubmitAndCancelButtonGroup';
 
 const Page1: React.FC<any> = (props) => {
   const [updateTime, setUpdateTime] = useState('');
@@ -305,7 +306,26 @@ const Page1: React.FC<any> = (props) => {
               </>
             }
             isOpen={submissionModalVisible}
-            bodyClassName="d-flex justify-content-center align-items-center"
+            footerContent={
+              <>
+                {isUpload && loadResult &&
+                  <SubmitAndCancelButtonGroup
+                    showSingleButton
+                    leftButtonOnclick={() => {
+                      setSubmissionModalVisible(false);
+                      setIsUpload(false);
+                    }}
+                  />}
+                {isUpload && !loadResult &&
+                  <SubmitAndCancelButtonGroup
+                    showSingleButton
+                    leftButtonOnclick={() => {
+                      setSubmissionModalVisible(false);
+                      setIsUpload(false);
+                    }}
+                  />}
+              </>
+            }
           >
             <>
               {!isUpload && (
@@ -339,17 +359,6 @@ const Page1: React.FC<any> = (props) => {
                         </div>
                       </div>
                     </div>
-                    <div className="row justify-content-evenly align-items-center py-2">
-                      <div className="col d-flex justify-content-center align-items-center">
-                        <button
-                          className="fs-4 btn btn-primary w-100" onClick={() => {
-                            setSubmissionModalVisible(false);
-                            setIsUpload(false);
-                          }}
-                        >確認
-                        </button>
-                      </div>
-                    </div>
                   </div>
                 </>
               )}
@@ -358,15 +367,6 @@ const Page1: React.FC<any> = (props) => {
                   <div className="container">
                     <div className="row align-items-center fs-4">
                       請至歷程檢視並點閱錯誤訊息，經錯誤修正後重新提交
-                    </div>
-                    <div className="row align-items-center m-5">
-                      <button
-                        className="btn btn-primary" onClick={() => {
-                          setSubmissionModalVisible(false);
-                          setIsUpload(false);
-                        }}
-                      >確認
-                      </button>
                     </div>
                   </div>
                   {/* <div className="container border m-5 fs-3"> */}
@@ -402,44 +402,17 @@ const Page1: React.FC<any> = (props) => {
             isOpen={submissionHintModalVisible}
             buttonPosition="right"
             footerContent={
-              <div className="container">
-                <div className="row justify-content-evenly align-items-center">
-                  <div className="col d-flex justify-content-center align-items-center">
-                    <button
-                      type="button"
-                      className="fs-4 btn btn-primary w-100"
-                      onClick={() => {
-                        setSubmissionHintModalVisible(false);
-                        setSubmissionModalVisible(true);
-                      }}
-                    >
-                      確認提交
-                    </button>
-                  </div>
-                  <div className="col d-flex justify-content-center align-items-center">
-                    <button
-                      type="button"
-                      className="fs-4 btn btn-primary w-100"
-                      onClick={() => setSubmissionHintModalVisible(false)}
-                    >
-                      取消
-                    </button>
-                  </div>
-                </div>
-              </div>
-              // <div className="row w-100">
-              //   <div onClick={() => setSubmissionHintModalVisible(false)} role="button" className="col text-center btn btn-outline-primary">
-              //     取消
-              //   </div>
-              //   <div
-              //     onClick={() => {
-              //       setSubmissionHintModalVisible(false);
-              //       setSubmissionModalVisible(true);
-              //     }} role="button" className="col text-center btn btn-outline-primary"
-              //   >
-              //     確認提交
-              //   </div>
-              // </div>
+              <SubmitAndCancelButtonGroup
+                showSingleButton={false}
+                leftButtonText="確認提交"
+                leftButtonOnclick={() => {
+                  setSubmissionHintModalVisible(false);
+                  setSubmissionModalVisible(true);
+                }}
+                rightButtonOnclick={() => {
+                  setSubmissionHintModalVisible(false);
+                }}
+              />
             }
           >
             <div className="container fs-4">
@@ -455,22 +428,14 @@ const Page1: React.FC<any> = (props) => {
             isModalMsg
             headerTitle="資料已儲存"
             isOpen={dataStorageModalVisible}
-            buttonPosition="right"
             footerContent={
-              <div className="container">
-                <div className="row justify-content-evenly align-items-center">
-                  <div className="col d-flex justify-content-center align-items-center">
-                    <button
-                      onClick={() => {
-                        setDataStorageModalVisible(false);
-                      }} role="button" className="fs-4 btn btn-primary w-100"
-                    >
-                      確認
-                    </button>
-                  </div>
-                </div>
-              </div>
-                }
+              <SubmitAndCancelButtonGroup
+                showSingleButton
+                leftButtonOnclick={() => {
+                  setDataStorageModalVisible(false);
+                }}
+              />
+            }
           >
             <div className="container text-center fs-4">
               <div className="row py-2 border-bottom">

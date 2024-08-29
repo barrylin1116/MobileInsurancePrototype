@@ -10,8 +10,7 @@ const CustomModal: React.FC<{
   footerContent?: any,
   customHeaderButtonOnclick?: () => void
   isModalMsg?: boolean
-  bodyClassName?: string
-}> = ({ bodyClassName, isOpen, headerTitle, headerButton, buttonPosition, children, footerContent, customHeaderButtonOnclick, isModalMsg, ...props }) => {
+}> = ({ isOpen, headerTitle, headerButton, buttonPosition, children, footerContent, customHeaderButtonOnclick, isModalMsg, ...props }) => {
   const divRefs = useRef<(HTMLDivElement)>(null);
 
   const getMaxZIndex = (): number => {

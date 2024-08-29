@@ -8,6 +8,7 @@ import NationforAg from '../../components/NationforAg';
 import ArticleDisplayerFieldNotification from '../ArticleDisplayerFieldNotification';
 import ArticleDisplayerFieldInsurance from '../ArticleDisplayerFieldInsurance';
 import ArticleDisplayerFieldLifeInsurance from '../ArticleDisplayerFieldLifeInsurance';
+import SubmitAndCancelButtonGroup from '../../components/SubmitAndCancelButtonGroup';
 
 const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -1545,6 +1546,20 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
       <CustomModal
         isModalMsg
         isOpen={hintModalVisible}
+        footerContent={
+          <SubmitAndCancelButtonGroup
+            showSingleButton={
+            hintModalProps?.action === 'complete'
+        }
+            leftButtonOnclick={() => {
+              setModalVisible(false);
+              setHintModalVisible(false);
+            }}
+            rightButtonOnclick={() => {
+              setHintModalVisible(false);
+            }}
+          />
+}
       >
         <div className="container">
           <div className="row justify-content-center align-items-center">
@@ -1556,54 +1571,6 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
               {hintModalProps?.title}
             </div>
           </div>
-
-          {
-              hintModalProps?.action === 'complete' && (
-                <div className="row justify-content-evenly align-items-center p-5">
-                  <div className="col d-flex justify-content-center align-items-center">
-                    <button
-                      type="button"
-                      className="fs-4 btn btn-primary me-1 me-lg-0 cus-outline-transparent"
-                      onClick={() => {
-                        setModalVisible(false);
-                        setHintModalVisible(false);
-                      }}
-                    >
-                      確認
-                    </button>
-                  </div>
-                </div>
-              )
-          }
-          {
-          hintModalProps?.action === 'cancel' && (
-            <div className="row justify-content-evenly align-items-center p-5">
-              <div className="col d-flex justify-content-center align-items-center">
-                <button
-                  type="button"
-                  className="fs-4 btn btn-primary me-1 me-lg-0 cus-outline-transparent"
-                  onClick={() => {
-                    setModalVisible(false);
-                    setHintModalVisible(false);
-                  }}
-                >
-                  確認
-                </button>
-              </div>
-              <div className="col d-flex justify-content-center align-items-center">
-                <button
-                  type="button"
-                  className="fs-4 btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent"
-                  onClick={() => {
-                    setHintModalVisible(false);
-                  }}
-                >
-                  取消
-                </button>
-              </div>
-            </div>
-          )
-          }
 
         </div>
       </CustomModal>

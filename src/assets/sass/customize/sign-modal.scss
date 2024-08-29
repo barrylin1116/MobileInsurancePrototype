@@ -12,10 +12,17 @@
       margin: 5px 0 5px 0;
     }
     li.pageItem::before {
+      content: url('../../img/icons/empty.svg');
+      position: relative;
+      left: 7px;
+    }
+
+    li.pageItem.editItem::before {
       content: url('../../img/icons/edit-red.svg');
       position: relative;
       left: 7px;
     }
+
     li.pageItem.active::before {
       position: relative;
       left: 7px;
