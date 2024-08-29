@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   return (
     <header>
       <Page1RecordModal modalVisible={recordModalVisible} setModalVisible={setRecordModalVisible} />
-      <div style={{ width: '100%', height: '137px', position: 'absolute', background: '#C51550' }} />
+      <div style={{ width: '100%', height: '137px', position: 'absolute', background: '#9a0036' }} />
       <nav className="navbar fixed-top navbar-expand">
         <div className="d-flex col-2" />
         <div className="collapse navbar-collapse justify-center col-8">

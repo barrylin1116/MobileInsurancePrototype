@@ -75,7 +75,7 @@
     line-height: 80px;
     text-align: center;
     color: #FFF;
-    background-color: #C51550;
+    background-color: #9a0036;
     position: fixed;
     right: 15px;
     bottom: 15px;
@@ -115,7 +115,7 @@
       }
 
       .ant-tabs-nav .ant-tabs-tab-active {
-        background: #F80B5A;
+        background: #9a0036;
       }
 
       .ant-tabs-nav .ant-tabs-tab-active {
@@ -123,7 +123,7 @@
       }
 
       .ant-tabs-nav .ant-tabs-tab-active .tabText {
-        color: #F80B5A;
+        color: #9a0036;
         font-size: 1.2rem;
         font-weight: 600;
       }
@@ -208,9 +208,10 @@
     .insureName {
       margin-right: 5px;
       font-size: 1.55rem;
-      color: red;
+      color: #9a0036;
       font-weight: 600;
     }
+
 
     .insureId {
       font-size: 1.55rem;
@@ -275,7 +276,7 @@
     .contentRow {
       height: 55px !important;
       width: 200% !important;
-      background: #C51550 !important;
+      background: #9a0036 !important;
       padding-top: 10px !important;
       position: relative !important;
       margin-left: -100px !important;
@@ -288,7 +289,7 @@
       top: 12px !important;
       left: 10px !important;
       right: unset !important;
-      background: #C51550 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
+      background: #9a0036 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
       width: 35px;
       height: 25px;
       opacity: 1;
@@ -333,7 +334,7 @@
     .contentRow {
       height: 55px !important;
       width: 200% !important;
-      background: #C51550 !important;
+      background: #9a0036 !important;
       padding-top: 10px !important;
       position: relative !important;
       margin-left: 0px !important;
@@ -363,7 +364,7 @@
       top: 12px !important;
       left: 10px !important;
       right: unset !important;
-      background: #C51550 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
+      background: #9a0036 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
       width: 35px;
       height: 25px;
       opacity: 1;
@@ -419,7 +420,7 @@
   .contentRow {
     height: 65px !important;
     width: 200% !important;
-    background: #C51550 !important;
+    background: #9a0036 !important;
     padding-top: 10px !important;
     position: relative !important;
     margin-left: 0px !important;
@@ -432,7 +433,7 @@
     margin: 0;
   }
   .modal-pane {
-    background: #C51550 !important;
+    background: #9a0036 !important;
   }
   .ant-table-cell {
     font-size: 1.4rem;
@@ -456,7 +457,7 @@
   .btn-close {
     width: 44px;
     height: 22px;
-    background: #C51550 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
+    background: #9a0036 url(../../img/icons/chevron-left-white.svg) right 1.2rem center no-repeat;
     opacity: 1;
   }
 
@@ -532,10 +533,10 @@
     }
 
     .ant-tabs-nav .ant-tabs-tab-active {
-      background: #C51550 !important;
+      background: #9a0036 !important;
     }
     .ant-tabs-nav .ant-tabs-tab-active .tabText {
-      color: #F80B5A;
+      color: #9a0036;
       background: white;
       font-size: 1.2rem;
       font-weight: 600;

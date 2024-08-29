@@ -19,9 +19,9 @@
     align-items: center;
   }
   .login-inputs-container::-webkit-scrollbar-thumb {
-    background-color: #C51550;
+    background-color: #9a0036;
     border-radius: 20px;
-    border: 3px solid #C51550;
+    border: 3px solid #9a0036;
   }
   .login-inputs-container::-webkit-scrollbar {
     width: 6px;
@@ -48,7 +48,7 @@
     }
   }
   .recreate {
-    color: #C51550;
+    color: #9a0036;
   }
   .form-check {
     display: flex;
@@ -67,7 +67,7 @@
   .register-btn {
     background-color: transparent;
     border: none;
-    color: #C51550;
+    color: #9a0036;
     margin: 1rem 0;
     display: flex;
     flex-direction: row;
@@ -76,7 +76,7 @@
   .return {
     background-color: transparent;
     border: none;
-    color: #C51550;
+    color: #9a0036;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.5rem;

@@ -44,7 +44,7 @@
     //align-items: center;
     //position: relative;
     //padding: 20px;
-    background: #C51550;
+    background: #9a0036;
     color: white;
   }
 
@@ -195,7 +195,7 @@
 
   .help-icon {
     border-radius: 50%; // 將圖片設為圓形
-    background-color: #C51550; // 設置背景顏色
+    background-color: #9a0036; // 設置背景顏色
     box-sizing: border-box; // 確保 padding 不影響圖片大小
     margin-inline: .5rem;
     width: 2rem;
@@ -228,7 +228,7 @@
   }
 
   .ant-tabs-tab {
-    color: #C51550;
+    color: #9a0036;
     width: auto; // 讓寬度自動調整
     justify-content: center;
     padding: 10px 100px !important; // 增加左右的padding確保內容不會緊貼邊界
@@ -237,7 +237,7 @@
 
   .ant-tabs-tab-active {
     color: white !important;
-    background: #C51550;
+    background: #9a0036;
 
     .ant-tabs-tab-btn {
       color: white !important;
