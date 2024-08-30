@@ -243,7 +243,7 @@ const InsureDoc: React.FC<any> = (props) => {
                   }
                 }}
               >
-                撤销
+                撤銷
               </button>
             </>
           } buttonPosition="right" isOpen={signatureVisible}
