@@ -26,15 +26,15 @@
 
     button {
       background-color: white;
-      color: #003E63;
-      border: 2px solid #003E63;
+      color: #078CD8;
+      border: 2px solid #078CD8;
       padding: 5px 15px;
       font-size: 1rem;
       cursor: pointer;
       border-radius: 5px;
 
       &:hover {
-        background-color: #003E63; /* 應用深一點的顏色 */
+        background-color: #078CD8; /* 應用深一點的顏色 */
         color: white;
       }
     }
@@ -77,7 +77,7 @@
     padding: 10px 20px;
     font-size: 1.2rem; /* 放大按鈕文字 */
     margin: 0 15px; /* 增加按鈕之間的間距 */
-    background-color: #003E63; /* 綠底 */
+    background-color: #078CD8; /* 綠底 */
     color: white; /* 白字 */
     border: none; /* 移除邊框 */
   }
@@ -87,8 +87,8 @@
     font-size: 1.2rem; /* 放大按鈕文字 */
     margin: 0 15px; /* 增加按鈕之間的間距 */
     background-color: white; /* 白底 */
-    color: #003E63; /* 綠字 */
-    border: 2px solid #003E63; /* 綠色邊框 */
+    color: #078CD8; /* 綠字 */
+    border: 2px solid #078CD8; /* 綠色邊框 */
     cursor: pointer; /* 鼠標懸停變成指針 */
 
     &:hover {
@@ -122,7 +122,7 @@
 
 .ant-btn {
   font-size: 1.25rem; /* 放大“查看”按鈕文字 */
-  background-color: #003E63;
+  background-color: #078CD8;
   color: white;
   border: none;
 

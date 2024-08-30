@@ -210,7 +210,7 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
               <Button
                 className="labelName m-0"
                 icon={<UploadOutlined />}
-                style={{ borderRadius: '0 4px 4px 0', backgroundColor: '#003E63', color: '#fff', height: '50px' }}
+                style={{ borderRadius: '0 4px 4px 0', backgroundColor: '#078CD8', color: '#fff', height: '50px' }}
               >
                 請選擇檔案
               </Button>
