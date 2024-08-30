@@ -15,35 +15,36 @@ const InsureDoc: React.FC<any> = (props) => {
       name: 'insure',
       backRect: [172, 340, 100, 30],
       signImg: null,
-      clickRect: [new Point(285, 560), new Point(285, 600), new Point(440, 560), new Point(440, 600)]
+      clickRect: [new Point(172, 340), new Point(172, 370), new Point(272, 340), new Point(272, 370)]
     },
     {
       name: 'applicant',
       backRect: [308, 340, 100, 30],
       signImg: null,
-      clickRect: [new Point(505, 560), new Point(505, 600), new Point(660, 560), new Point(660, 600)]
+      clickRect: [new Point(308, 340), new Point(308, 370), new Point(408, 340), new Point(408, 370)]
     },
     {
       name: 'agentInsure',
       backRect: [450, 320, 100, 30],
       signImg: null,
-      clickRect: [new Point(740, 525), new Point(740, 565), new Point(895, 525), new Point(895, 565)]
+      clickRect: [new Point(450, 320), new Point(450, 350), new Point(550, 320), new Point(550, 350)]
     },
     {
       name: 'agentApplicant',
       backRect: [450, 355, 100, 30],
       signImg: null,
-      clickRect: [new Point(740, 585), new Point(740, 625), new Point(895, 585), new Point(895, 625)]
+      clickRect: [new Point(450, 355), new Point(450, 385), new Point(550, 355), new Point(550, 385)]
     },
     {
       name: 'saleMan',
       backRect: [172, 485, 100, 30],
       signImg: null,
-      clickRect: [new Point(285, 795), new Point(285, 835), new Point(440, 795), new Point(440, 835)]
+      clickRect: [new Point(172, 485), new Point(172, 515), new Point(272, 485), new Point(272, 515)]
     }
   ];
   const [signList, setSignList] = useState<any[]>(initSignList);
   const [currentSign, setCurrentSign] = useState<any>();
+  const [bindRelationSet, setBindRelationSet] = useState<Set<string>>(new Set<string>([]));
 
   const loadFile = (url: string) => {
     const loadingTask = pdfjsLib.getDocument(url);
@@ -67,7 +68,7 @@ const InsureDoc: React.FC<any> = (props) => {
           canvas.width = viewport.width * ratio;
           canvas.height = viewport.height * ratio;
           canvas.style.width = '100%';
-          canvas.style.height = '95%';
+          canvas.style.height = '100%';
           ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
           // 将 PDF 页面渲染到 canvas 上下文中
           const renderContext = {
@@ -91,6 +92,23 @@ const InsureDoc: React.FC<any> = (props) => {
     signList.forEach(sign => {
       ctx.fillRect(sign.backRect[0], sign.backRect[1], sign.backRect[2], sign.backRect[3]);
     });
+  };
+
+  const drawRelation = (relation: string) => {
+    const canvas: any = document.getElementById('pdfCanvas-3');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = 'black';
+      ctx.clearRect(530, 385, 35, 15);
+      switch (relation) {
+        case 'agentInsure':
+          ctx.fillText('要保人', 530, 395);
+          break;
+        case 'agentApplicant':
+          ctx.fillText('被保人', 530, 395);
+          break;
+      }
+    }
   };
 
   const [signatureVisible, setSignatureVisible] = useState(false);
@@ -121,10 +139,24 @@ const InsureDoc: React.FC<any> = (props) => {
       img.onload = () => {
         ctx.drawImage(img, 0, 0, canvas[0].clientWidth, canvas[0].clientHeight);
       };
-      // ctx.fillStyle = '#000000';
-      // ctx.fillRect(100, 100, 100, 100);
     }
   }, [signatureVisible]);
+
+  useEffect(() => {
+    const checkEditSuccess = () => {
+      const editSuccess = signList.filter(s => s.signImg === null).length <= 0;
+      if (editSuccess) {
+        document.getElementById('pageItem-3')?.classList.add('active');
+      } else {
+        document.getElementById('pageItem-3')?.classList.remove('active');
+      }
+    };
+    checkEditSuccess();
+  }, [signList]);
+
+  useEffect(() => {
+    drawRelation(bindRelationSet.values().next().value);
+  }, [bindRelationSet]);
 
   return (
     <>
@@ -168,6 +200,9 @@ const InsureDoc: React.FC<any> = (props) => {
                                   const rect = e.currentTarget.getBoundingClientRect();
                                   x -= rect.left;
                                   y -= rect.top;
+                                  x = x / e.currentTarget.clientWidth * e.currentTarget.width / 2;
+                                  y = y / e.currentTarget.clientHeight * e.currentTarget.height / 2;
+                                  // console.log(`x: ${x} y: ${y}`);
                                   signList.forEach(sign => {
                                     if (isPointInRect(new Point(x, y), sign.clickRect)) {
                                       setSignatureVisible(true);
@@ -198,19 +233,20 @@ const InsureDoc: React.FC<any> = (props) => {
                     const trimedCanvas: HTMLCanvasElement = $svg.current.getTrimmedCanvas();
                     if (trimedCanvas) {
                       const resizedCanvas: any = document.getElementById('pdfCanvas-3');
-                      const resizedContext = resizedCanvas?.getContext('2d');
+                      const ctx = resizedCanvas?.getContext('2d');
                       // 重置
-                      resizedContext.clearRect(currentSign.backRect[0],
+                      ctx.clearRect(currentSign.backRect[0],
                         currentSign.backRect[1],
                         100,
                         30);
                       // 添加背景
-                      resizedContext.fillRect(currentSign.backRect[0],
+                      ctx.fillStyle = '#e0e0e0';
+                      ctx.fillRect(currentSign.backRect[0],
                         currentSign.backRect[1],
                         100,
                         30);
                       // 添加签名
-                      resizedContext.drawImage(
+                      ctx.drawImage(
                         trimedCanvas,
                         currentSign.backRect[0],
                         currentSign.backRect[1],
@@ -221,7 +257,21 @@ const InsureDoc: React.FC<any> = (props) => {
                       let clone = _.cloneDeep(signList);
                       clone = clone.map(m => {
                         if (m.name === currentSign.name) {
-                          currentSign.signImg = myResizedData;
+                          if (trimedCanvas.width > 1 && trimedCanvas.height > 1) {
+                            currentSign.signImg = myResizedData;
+                            if (m.name === 'agentInsure' || m.name === 'agentApplicant') {
+                              const clone = _.clone(bindRelationSet);
+                              clone.add(m.name);
+                              setBindRelationSet(clone);
+                            }
+                          } else {
+                            if (m.name === 'agentInsure' || m.name === 'agentApplicant') {
+                              const clone = _.clone(bindRelationSet);
+                              clone.delete(m.name);
+                              setBindRelationSet(clone);
+                            }
+                            currentSign.signImg = null;
+                          }
                           return currentSign;
                         }
                         return m;
