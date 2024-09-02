@@ -342,33 +342,54 @@ const Page1: React.FC<any> = (props) => {
               )}
               {isUpload && loadResult && (
                 <>
-                  <div className="container">
-                    <div className="row align-items-center fs-4">
-                      <div className="container">
-                        <div className="row justify-content-center align-items-center p-2">
-                          <div className="col">行動投保編號</div>
-                          <div className="col">OA11111111</div>
+                  <div className="d-flex align-items-center">
+                    <img
+                      className="col-2 exclamation-icon"
+                      src={require('assets/img/icons/check-green-1.svg').default}
+                    />
+                    <div className="container text-center fs-4">
+                      <div className="row py-2">
+                        <div className="col">
+                          行動投保編號
                         </div>
-                        <div className="row justify-content-center align-items-center p-2">
-                          <div className="col">保單號碼</div>
-                          <div className="col">OB11111111</div>
+                        <div className="col">
+                          OA11111111
                         </div>
-                        <div className="row justify-content-center align-items-center p-2">
-                          <div className="col">按鍵狀態</div>
-                          <div className="col">簽署平台簽署中</div>
+                      </div>
+                      <div className="row py-2">
+                        <div className="col">
+                          保單號碼
+                        </div>
+                        <div className="col">
+                          OB11111111
+                        </div>
+                      </div>
+                      <div className="row py-2">
+                        <div className="col">
+                          案件狀態
+                        </div>
+                        <div className="col">
+                          簽署平台簽署中
                         </div>
                       </div>
                     </div>
                   </div>
+
                 </>
               )}
               {isUpload && !loadResult && (
                 <>
-                  <div className="container">
-                    <div className="row align-items-center fs-4">
+                  <div className="container d-flex align-items-center">
+                    <img
+                      className="exclamation-icon"
+                      src={require('assets/img/icons/error-red.svg').default}
+                      style={{ marginRight: '10px', width: '80px', height: '80px' }}
+                    />
+                    <div className="fs-4">
                       請至歷程檢視並點閱錯誤訊息，經錯誤修正後重新提交
                     </div>
                   </div>
+
                 </>
               )}
             </>
@@ -391,7 +412,7 @@ const Page1: React.FC<any> = (props) => {
                   setSubmissionHintModalVisible(false);
                 }}
               />
-            }
+              }
           >
             <div className="container fs-4">
               {
@@ -413,34 +434,41 @@ const Page1: React.FC<any> = (props) => {
                   setDataStorageModalVisible(false);
                 }}
               />
-            }
+              }
           >
-            <div className="container text-center fs-4">
-              <div className="row py-2 border-bottom">
-                <div className="col">
-                  行動投保編號
+            <div className="d-flex align-items-center">
+              <img
+                className="col-2 exclamation-icon"
+                src={require('assets/img/icons/file-save.svg').default}
+              />
+              <div className="container text-center fs-4">
+                <div className="row py-2">
+                  <div className="col">
+                    行動投保編號
+                  </div>
+                  <div className="col">
+                    OA11111111
+                  </div>
                 </div>
-                <div className="col">
-                  OA11111111
+                <div className="row py-2">
+                  <div className="col">
+                    保單號碼
+                  </div>
+                  <div className="col">
+                    OB11111111
+                  </div>
                 </div>
-              </div>
-              <div className="row py-2 border-bottom">
-                <div className="col">
-                  保單號碼
-                </div>
-                <div className="col">
-                  OB11111111
-                </div>
-              </div>
-              <div className="row py-2">
-                <div className="col">
-                  按鍵狀態
-                </div>
-                <div className="col">
-                  簽署平台簽署中
+                <div className="row py-2">
+                  <div className="col">
+                    案件狀態
+                  </div>
+                  <div className="col">
+                    簽署平台簽署中
+                  </div>
                 </div>
               </div>
             </div>
+
           </CustomModal>
         </main>
       </div>
