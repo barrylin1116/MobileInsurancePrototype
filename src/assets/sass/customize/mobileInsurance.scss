@@ -65,7 +65,6 @@
 
   .contentHeader {
     border-bottom: 1px solid #f0f0f0 !important;
-    padding-bottom: 8px !important;
     display: flex !important;
   }
 
@@ -80,6 +79,7 @@
     right: 15px;
     bottom: 15px;
     z-index: 9999;
+    border: 1px solid #FFF;
     border-radius: 40px;
     cursor: pointer;
   }
@@ -228,6 +228,27 @@
     border: #006666 2px solid;
     padding: 5px 10px 8px 2px;
     border-radius: 5px;
+  }
+
+  .nav-item {
+    padding: 0;
+  }
+
+  .pl-40x {
+    padding-left: 40px !important;
+  }
+
+  .refreshInfo {
+    border: #006666 2px solid;
+    padding: 5px 10px 8px 2px;
+    border-radius: 5px;
+  }
+
+  .refresh {
+    width: 20px;
+    height: 22px;
+    background-size: cover;
+    background-image: url(../../img/icons/refresh.svg);
   }
 
   .pd-0 {
@@ -617,7 +638,11 @@
 
     .userInfo {
       padding: 3px 0 3px 0 !important;
-      border: none !important;
+      display: none !important;
+    }
+
+    .refreshInfo {
+      display: none !important;
     }
   }
   .navbar-nav {

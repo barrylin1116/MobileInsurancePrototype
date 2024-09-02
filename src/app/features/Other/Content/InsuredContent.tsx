@@ -7,7 +7,7 @@ const InsuredContent: React.FC<any> = (props) => {
   return (
     <>
       <Card id="insuredContent" style={{ minHeight: '450px', width: '95%' }}>
-        <div className="row contentHeader justify-between">
+        <div className="row contentHeader justify-between p-2" style={{ background: '#edf5f4' }}>
           <div className="col-5">
             <span className="labelName">被保險人： TangX（30歲）</span>
           </div>
