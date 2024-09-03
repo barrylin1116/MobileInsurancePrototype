@@ -87,7 +87,7 @@ const Beneficiary: React.FC<any> = (props) => {
                 <div className="name labelName">受益人列表</div>
                 <div className="box mb-2">
                   <div className="head">
-                    <div className="labelName">生存保险金受益人（一）</div>
+                    <div className="labelName">生存保險金受益人（一）</div>
                     <div className="d-flex align-items-center">
                       <div className="arrow up" />
                       <div className="arrow down" />
