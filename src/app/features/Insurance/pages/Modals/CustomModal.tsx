@@ -58,7 +58,7 @@ const CustomModal: React.FC<{
                 )
               }
 
-              <div ref={divRefs} className="row justify-content-center align-items-center modal-body mh-100 m-0">
+              <div ref={divRefs} className="row justify-content-center modal-body mh-100 m-0">
                 <div className="container mh-100">
                   {children}
                 </div>
