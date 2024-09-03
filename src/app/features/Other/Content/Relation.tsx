@@ -4,6 +4,7 @@ import Card from 'antd/es/card/Card';
 import Insured from './Inner/Insured';
 import Applicant from './Inner/Applicant';
 import Beneficiary from './Inner/Beneficiary';
+import Agent from './Inner/Agent';
 
 const Relation: React.FC<any> = (props) => {
   const [activeKey, setActiveKey] = useState('1');
@@ -14,6 +15,7 @@ const Relation: React.FC<any> = (props) => {
         <Tabs.TabPane tab="要保人" key="2" />
         <Tabs.TabPane tab="受益人" key="3" />
         <Tabs.TabPane tab="眷屬" key="4" />
+        <Tabs.TabPane tab="法定代理人" key="5" />
       </Tabs>
       <div className="content">
         {
@@ -25,6 +27,10 @@ const Relation: React.FC<any> = (props) => {
         }
         {
             activeKey === '3' ? <Beneficiary /> : null
+
+        }
+        {
+          activeKey === '5' ? <Agent /> : null
 
         }
       </div>

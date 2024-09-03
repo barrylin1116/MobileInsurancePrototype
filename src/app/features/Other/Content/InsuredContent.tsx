@@ -9,7 +9,7 @@ const InsuredContent: React.FC<any> = (props) => {
       <Card id="insuredContent" style={{ minHeight: '450px', width: '95%' }}>
         <div className="row contentHeader justify-between p-2" style={{ background: '#edf5f4' }}>
           <div className="col-5">
-            <span className="labelName">被保險人： TangX（30歲）</span>
+            <span className="labelName">被保險人： TangX（保險年齡 30歲）</span>
           </div>
           <div className="col-5">
             <span className="labelName">主約商品： 定期壽險（5年期）</span>
@@ -109,7 +109,7 @@ const InsuredContent: React.FC<any> = (props) => {
               </SelectField>
             </div>
             <div className="col-5">
-              <div className="name labelName"><br />保險費：500元</div>
+              <div className="name labelName"><br />表計保險費：500元</div>
             </div>
           </div>
           <div className="row justify-between">
@@ -134,7 +134,7 @@ const InsuredContent: React.FC<any> = (props) => {
               </SelectField>
             </div>
             <div className="col-5">
-              <div className="name labelName"><br />保險費：50元</div>
+              <div className="name labelName"><br />表計保險費：50元</div>
             </div>
           </div>
           <div className="row justify-between">
@@ -159,13 +159,13 @@ const InsuredContent: React.FC<any> = (props) => {
               </SelectField>
             </div>
             <div className="col-5">
-              <div className="name labelName"><br />保險費：30元</div>
+              <div className="name labelName"><br />表計保險費：30元</div>
             </div>
           </div>
           <div className="row justify-center d-flex">
             <div className="col-4" style={{ margin: 'auto' }}>
               <button className="btn btn-outline-danger button-with-add-icon mt-3 mb-3">
-                總保費 共 580 元
+                表計總保費 共 580 元
               </button>
             </div>
           </div>

@@ -8,6 +8,7 @@ import OnlineAuthApply from './Inner/onlineAuthApply/OnlineAuthApply';
 const PaymentMethod: React.FC<any> = (props) => {
   const [onlineAuthApplyVisible, setOnlineAuthApplyVisible] = useState(false);
   const [activeContent, setActiveContent] = useState(1);
+  const [payMode, setPayMode] = useState('');
   return (
     <>
       {
@@ -84,12 +85,8 @@ const PaymentMethod: React.FC<any> = (props) => {
             </div>
             <div className="col-5">
               <div className="name labelName">續期保費繳費方式</div>
-              <SelectField
-                label=""
-                className="selectpicker w-100 relation"
-                name="payMode"
-              >
-                <>
+              <div className="d-flex flex-row">
+                <SelectField label="" className="selectpicker w-100 relation" name="payMode" onChange={(e) => setPayMode(e.target.value)}>
                   <SelectField.Option value="1" key="1">
                     自行繳費
                   </SelectField.Option>
@@ -99,8 +96,9 @@ const PaymentMethod: React.FC<any> = (props) => {
                   <SelectField.Option value="3" key="3">
                     其他
                   </SelectField.Option>
-                </>
-              </SelectField>
+                </SelectField>
+                <input style={{ width: '45%', marginLeft: '10px', display: `${payMode === '3' ? 'block' : 'none'} ` }} type="text" name="name" className="form-control" />
+              </div>
             </div>
           </div>
           <div className="row">
