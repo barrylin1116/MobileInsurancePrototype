@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'antd';
 import DatePickerTW from '../../../../common/components/Elements/DatePickerTW';
+import Checkbox from 'app/common/components/Checkbox';
 
 const Agent: React.FC<any> = (props) => {
   return (
@@ -39,7 +40,17 @@ const Agent: React.FC<any> = (props) => {
         </div>
       </Card>
 
-      <Card title="要保人法定代理人" className="mt-3" style={{ marginLeft: '10px', marginRight: '10px', padding: '1rem' }}>
+      <Card
+        title={
+          <div className="d-flex flex-row">
+            <div>要保人法定代理人</div>
+            <div className="ml-3 d-flex flex-row">
+              <Checkbox name="sync" className="labelName" />
+              <label style={{ color: '#0f7b7d' }} className="ant-card-head-title">同被保人法定代理人</label>
+            </div>
+          </div>
+        } className="mt-3" style={{ marginLeft: '10px', marginRight: '10px', padding: '1rem' }}
+      >
         <div className="beneficiary mt-3">
           <div className="form-content w-100">
             <div className="form-row">
