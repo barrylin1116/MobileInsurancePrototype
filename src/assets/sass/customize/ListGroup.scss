@@ -1,0 +1,27 @@
+.arrow {
+  width: 32px;
+  height: 32px;
+  &.up {
+    background-image: url(../../img/icons/circle-arrow-up.svg);
+    &.active {
+      background-image: url(../../img/icons/circle-arrow-up-green.svg);
+    }
+  }
+
+  &.down {
+    background-image: url(../../img/icons/circle-arrow-down.svg);
+    &.active {
+      background-image: url(../../img/icons/circle-arrow-down-green.svg);
+    }
+  }
+}
+
+.delete {
+  padding: 4px 12px;
+  border: 1px solid #a9a9a9;
+  border-radius: 16px;
+  color: #a9a9a9;
+  font-size: 1.0625rem;
+  line-height: 1.125rem;
+  margin-left: 12px;
+}

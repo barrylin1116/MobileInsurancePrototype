@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SelectField from '../../../common/components/Elements/SelectField';
 import _ from 'lodash';
 
-const Job: React.FC = () => {
+const Job: React.FC<any> = (props) => {
   const [partimeJobs, setPartimeJobs] = useState<any>([]);
   return (
     <div className="row m-0">
@@ -13,7 +13,7 @@ const Job: React.FC = () => {
             <SelectField
               label=""
               className="w-100"
-              name="insurance.tradeType"
+              name={`${props.name}.insurance.tradeType`}
               placeholder="請選擇行業類別"
             >
               <>
@@ -57,7 +57,7 @@ const Job: React.FC = () => {
             <SelectField
               label=""
               className="w-100"
-              name="insurance.trade"
+              name={`${props.name}.insurance.trade`}
               placeholder="請選擇行業類別"
             >
               <>
@@ -101,7 +101,7 @@ const Job: React.FC = () => {
             <SelectField
               label=""
               className="w-100"
-              name="insurance.job"
+              name={`${props.name}.insurance.job`}
               placeholder="請選擇職務"
             >
               <>
@@ -288,26 +288,34 @@ const Job: React.FC = () => {
           );
         })
       }
-      <div className="row justify-center d-flex">
-        <div className="col-4" style={{ margin: 'auto' }}>
-          <button
-            type="button" className="btn btn-outline-primary button-with-add-icon mt-5 mb-5" value="我有兼職工作"
-            aria-label="我有兼職工作"
-            onClick={() => {
-              const _clone = _.clone(partimeJobs);
-              _clone.push({
-                key: new Date()
-              });
-              setPartimeJobs(_clone);
-            }}
-          >
-            我有兼職工作
-            <div className="add-icon" />
-          </button>
-        </div>
-      </div>
+      {
+        props.showPartimeJobsButton && (
+          <div className="row justify-center d-flex">
+            <div className="col-4" style={{ margin: 'auto' }}>
+              <button
+                type="button" className="btn btn-outline-primary button-with-add-icon mt-5 mb-5" value="我有兼職工作"
+                aria-label="我有兼職工作"
+                onClick={() => {
+                  const _clone = _.clone(partimeJobs);
+                  _clone.push({
+                    key: new Date()
+                  });
+                  setPartimeJobs(_clone);
+                }}
+              >
+                我有兼職工作
+                <div className="add-icon" />
+              </button>
+            </div>
+          </div>
+        )
+      }
     </div>
   );
+};
+
+Job.defaultProps = {
+  showPartimeJobsButton: true
 };
 
 export default React.memo(Job);
