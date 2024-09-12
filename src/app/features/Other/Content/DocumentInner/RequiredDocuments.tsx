@@ -37,7 +37,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
 
   const generateTimeOptions = () => {
     const options = [];
-    for (let hour = 9; hour <= 18; hour++) {
+    for (let hour = 0; hour <= 24; hour++) {
       const timeString = hour.toString().padStart(2, '0') + ':00';
       options.push(
         <option key={timeString} value={timeString}>
@@ -273,7 +273,7 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row custom-box">
           <label className="labelName me-2">
-            要保人聲明國外稅務居民身分(以下(1)(2)(3)由要保人擇一勾選)：
+            要保人聲明國外稅務居民身分(以下(1)(2)(3)(4)由要保人擇一勾選)：
           </label>
           <div className="d-flex flex-column">
             <div className="form-check mb-3">
@@ -286,19 +286,25 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
               <input type="radio" className="form-check-input" name="foreignTaxDeclaration" value="option2" />
               <label className="form-check-label button-spacing">
                 <div>本人具有國外公民或稅務居民身分</div>
-                <div>1. 具有美國公民或稅務居民身分</div>
                 <div className="details">
                   【美國公民或稅務居民係指具有美國國籍者(持有美國護照)、持有綠卡者，或當年度入境美國並停留超過183天，
                   或者當年度入境並在美國待超過31天，同時滿足所謂的『前3年審核期』的計算超過183天。『前3年審核期』
                   係以報稅年度及前二年在美居留天數「加權」計算，當年度在美國實際居留天數 x 1 + 前一年度在美國實際居留
                   天數 x 1/2 + 前二年度在美國實際居留天數 x 1/3，若總天數大於（或等於）183天，該客戶即為美國稅務居民。】
                 </div>
-                <div>2. 具有美國以外其他國家公民或稅務居民身分</div>
               </label>
             </div>
 
             <div className="form-check mb-3">
               <input type="radio" className="form-check-input" name="foreignTaxDeclaration" value="option3" />
+              <label className="form-check-label button-spacing">
+                本人具有美國以外其他國家公民或稅務居民身分
+                <span style={{ color: 'red' }}>(需檢附檢附「自我證明表」)</span>
+              </label>
+            </div>
+
+            <div className="form-check mb-3">
+              <input type="radio" className="form-check-input" name="foreignTaxDeclaration" value="option4" />
               <label className="form-check-label button-spacing">
                 <div>本人不具有美國公民或稅務居民身分，但具備以下任一美國指標：(綠卡)</div>
                 <div>1. 曾被註記具美國公民身分或擁有永久居留權(綠卡)</div>
@@ -1045,7 +1051,10 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row custom-box">
           <div className="col-12">
-            <div className="name labelName">本件身故受益人是否指定為配偶、直系親屬或法定繼承人，且其順位及應得比本次投保具有解約金之商品(不包括小額終老保險、團體年金保險及保險期間在三年以下之傷害保險)或投資型保險商品時，如要保人或被保險人或實際繳交保費之利害關係人之保險年齡依保險業招攬及核保理賠辦法需進行錄音者，請填寫下列欄位 :
+            <div
+              className="name labelName"
+            >本件身故受益人是否指定為配偶、直系親屬或法定繼承人，且其順位及應得比本次投保具有解約金之商品(不包括小額終老保險、團體年金保險及保險期間在三年以下之傷害保險)或投資型保險商品時，如要保人或被保險人或實際繳交保費之利害關係人之保險年齡依保險業招攬及核保理賠辦法需進行錄音者，請填寫下列欄位
+              :
               例適用民法繼承編相關規定？
             </div>
             <div className="form-check d-flex align-items-center">
@@ -1350,19 +1359,22 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
         </div>
         <div className="row custom-box">
           <div className="col-12">
-            <div className="name labelName">配合相關法令規範，確認要保人瞭解商品內容及投保意願或高齡關懷提問，臺銀人壽將視需要電話訪問本保單之要保人、被保險人
-              或實際繳交保費之利害關係人，請轉知客戶知悉，對於電訪時段另有特殊需求者請註明時間:
+            <div className="name labelName">
+              配合相關法令規範，確認要保人瞭解商品內容及投保意願或高齡關懷提問，臺銀人壽將視需要電話訪問本保單之要保人、被保險人或實際繳交保費之利害關係人，請轉知客戶知悉，對於電訪時段另有特殊需求者請註明時間:
             </div>
             <label className="form-check-label button-spacing me-2">電訪區間</label>
             <select id="start-time" name="start-time">
+              <option value="">--選擇開始時間--</option>
               {generateTimeOptions()}
             </select>
             <label className="form-check-label button-spacing me-2">~</label>
             <select id="end-time" name="end-time">
+              <option value="">--選擇結束時間--</option>
               {generateTimeOptions()}
             </select>
           </div>
         </div>
+
         <div className="row custom-box">
           <div className="col-6">
             <div className="name labelName">其他有利於核保之資訊：</div>
@@ -1396,6 +1408,12 @@ const RequiredDocuments: React.FC<RequiredDocumentsProps> = (props) => {
           <div className="col-6">
             <div className="name labelName">督導主管登錄字號</div>
             <input type="labelName" name="SupervisorRegistrationNumber" className="form-control" />
+          </div>
+        </div>
+        <div className="row custom-box">
+          <div className="col-6">
+            <div className="name labelName">送件編號</div>
+            <input type="labelName" name="SubmissionID" className="form-control" />
           </div>
         </div>
 
