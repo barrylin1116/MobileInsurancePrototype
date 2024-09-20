@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Table, TableColumnsType } from 'antd';
-import CustomModal from '../../../Insurance/pages/Modals/CustomModal';
+// import CustomModal from '../../../Insurance/pages/Modals/CustomModal';
+import modalService from '../../../../core/services/modalService';
+import { ModalNamesEnum } from '../../../../core/enums/ui/modals';
 
 const PreviewHistory: React.FC<any> = () => {
   const columns: TableColumnsType = [
@@ -39,7 +41,12 @@ const PreviewHistory: React.FC<any> = () => {
                       src={require('assets/img/icons/exclamation.svg').default}
                     />
                     <div
-                      onClick={() => openErrMsgModal(r)}
+                      onClick={() =>
+                      // openErrMsgModal(r)
+                        modalService.trigger(ModalNamesEnum.PreviewMsgModal, true, {
+                          title: r.title,
+                          content: r.msg
+                        })}
                       className="col ps-2 border-0 text-start btn-outline-primary"
                     >
                       {
@@ -61,8 +68,8 @@ const PreviewHistory: React.FC<any> = () => {
 
   const [datasource, setDatasource] = useState<any[]>([]); // Store the selected files
 
-  const [errMsgModalVisible, setErrMsgModalVisible] = useState(false);
-  const [modalProps, setModalProps] = useState<any>(null);
+  // const [errMsgModalVisible, setErrMsgModalVisible] = useState(false);
+  // const [modalProps, setModalProps] = useState<any>(null);
 
   useEffect(() => {
     setDatasource([
@@ -86,33 +93,45 @@ const PreviewHistory: React.FC<any> = () => {
     ]);
   }, []);
 
-  const openErrMsgModal = (data: any) => {
-    setErrMsgModalVisible(true);
-    setModalProps(data);
+  // const openErrMsgModal = (data: any) => {
+  //   setErrMsgModalVisible(true);
+  //   setModalProps(data);
+  // };
+
+  const CustomHeader = (props: any) => (
+    <th {...props} className="fw-semibold" style={{ backgroundColor: 'var(--elife-green-3)', fontSize: '1.4rem' }}>
+      {props.children}
+    </th>
+  );
+
+  const components = {
+    header: {
+      cell: CustomHeader
+    }
   };
 
   return (
     <>
-      <Table id="PreviewHistory" pagination={false} columns={columns} dataSource={datasource} />
-      {
-          errMsgModalVisible && (
-            <>
-              <CustomModal
-                isModalMsg
-                headerTitle={modalProps.title}
-                isOpen={errMsgModalVisible}
-                buttonPosition="right"
-                headerButton={<div onClick={() => setErrMsgModalVisible(false)}>關閉</div>}
-              >
-                <div className="row">
-                  <div className="col">
-                    {modalProps.msg}
-                  </div>
-                </div>
-              </CustomModal>
-            </>
-          )
-      }
+      <Table id="PreviewHistory" components={components} pagination={false} columns={columns} dataSource={datasource} rowClassName="fw-normal lh-lg fs-5" />
+      {/* { */}
+      {/*    errMsgModalVisible && ( */}
+      {/*      <> */}
+      {/*        <CustomModal */}
+      {/*          isModalMsg */}
+      {/*          headerTitle={modalProps.title} */}
+      {/*          isOpen={errMsgModalVisible} */}
+      {/*          buttonPosition="right" */}
+      {/*          headerButton={<div onClick={() => setErrMsgModalVisible(false)}>關閉</div>} */}
+      {/*        > */}
+      {/*          <div className="row"> */}
+      {/*            <div className="col"> */}
+      {/*              {modalProps.msg} */}
+      {/*            </div> */}
+      {/*          </div> */}
+      {/*        </CustomModal> */}
+      {/*      </> */}
+      {/*    ) */}
+      {/* } */}
     </>
   );
 };

@@ -35,7 +35,7 @@ const CustomModal: React.FC<{
         isOpen && (
           <div
             id="CustomModal" className={`modal-overlay start-0 top-0 position-fixed justify-content-center align-items-center d-flex w-100 h-100 ${isOpen ? 'visible' : ''} ${isModalMsg ? 'modal-message' : ''}`} style={{
-              zIndex: `${isOpen ? getMaxZIndex() + 10 : 0}`
+              zIndex: `${isOpen ? getMaxZIndex() + 2 : 0}`
             }}
           >
             <div className={`modal-container container bg-white p-0 position-relative mh-100 mw-100 d-flex flex-column ${isModalMsg ? 'w-50 h-50 rounded' : 'vw-100 vh-100'}`}>

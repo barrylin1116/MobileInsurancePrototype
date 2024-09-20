@@ -20,6 +20,18 @@ const Preview: React.FC<any> = () => {
     }
   ];
 
+  const CustomHeader = (props: any) => (
+    <th {...props} className="fw-semibold" style={{ backgroundColor: 'var(--elife-green-3)', fontSize: '1.4rem' }}>
+      {props.children}
+    </th>
+  );
+
+  const components = {
+    header: {
+      cell: CustomHeader
+    }
+  };
+
   useEffect(() => {
     setDatasource([
       {
@@ -52,7 +64,7 @@ const Preview: React.FC<any> = () => {
   }, []);
 
   return (
-    <Table id="Preview" pagination={false} columns={columns} dataSource={datasource} />
+    <Table id="Preview" components={components} pagination={false} columns={columns} dataSource={datasource} rowClassName="fw-normal lh-lg fs-5" />
   );
 };
 

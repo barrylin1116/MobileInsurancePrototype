@@ -5,12 +5,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'app';
 import reportWebVitals from './reportWebVitals';
-import TopButton from './app/features/Other/components/TopButton';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <TopButton />
   </React.StrictMode>,
   document.getElementById('mobileInsurance')
 );

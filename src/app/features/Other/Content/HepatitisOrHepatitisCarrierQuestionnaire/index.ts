@@ -1,0 +1,3 @@
+import HepatitisOrHepatitisCarrierQuestionnaire from './HepatitisOrHepatitisCarrierQuestionnaire';
+
+export default HepatitisOrHepatitisCarrierQuestionnaire;

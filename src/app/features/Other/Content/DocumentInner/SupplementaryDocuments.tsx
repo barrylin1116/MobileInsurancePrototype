@@ -140,12 +140,12 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
       render: (text, record, index) => (
         <>
           <div className="p-2">
-            <button type="button" className="btn btn-outline-primary" onClick={() => handlePreview(record.file)}>
+            <button type="button" className="btn btn-custom btn-elife-outline-green" onClick={() => handlePreview(record.file)}>
               查看
             </button>
           </div>
           <div className="p-2">
-            <button type="button" className="btn btn-outline-primary" onClick={() => handleRemove(index)}>
+            <button type="button" className="btn btn-custom btn-elife-outline-green" onClick={() => handleRemove(index)}>
               移除
             </button>
           </div>
@@ -154,6 +154,18 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
     }
   ]
   ;
+
+  const CustomHeader = (props: any) => (
+    <th {...props} className="fw-semibold" style={{ backgroundColor: 'var(--elife-green-3)', fontSize: '1.4rem' }}>
+      {props.children}
+    </th>
+  );
+
+  const components = {
+    header: {
+      cell: CustomHeader
+    }
+  };
 
   return (
     <div id="SupplementaryDocuments">
@@ -218,7 +230,7 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
           </div>
         </div>
         <div className="col-5 align-content-end">
-          <button type="button" className="btn btn-primary" onClick={handleUpload}>
+          <button type="button" className="btn btn-custom btn-elife-green" onClick={handleUpload}>
             確認上傳
             <div className="add-icon" />
           </button>
@@ -231,7 +243,7 @@ const SupplementaryDocuments: React.FC<any> = (props) => {
               <div className="name labelName">補充文件清單</div>
             </div>
             <div className="row m-0">
-              <Table pagination={false} columns={columns} dataSource={fileUploadSuccessList} />
+              <Table pagination={false} columns={columns} components={components} dataSource={fileUploadSuccessList} rowClassName="fs-5" />
             </div>
           </>
         )

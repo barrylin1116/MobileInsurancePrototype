@@ -1,0 +1,45 @@
+#AllocPercentage {
+  .ratio-btn {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+  }
+
+  .ratio-btn:hover {
+    cursor: pointer;
+  }
+
+  .ratio-btn.ratio-minus.enabled {
+    background-image: url(../../img/icons/minus-green.svg);
+  }
+
+  .ratio-btn.ratio-minus.disabled {
+    background-image: url(../../img/icons/minus-grey.svg);
+  }
+
+  .ratio-btn.ratio-minus.disabled:hover {
+    pointer-events: none;
+  }
+
+  .ratio-btn.ratio-add.enabled {
+    background-image: url(../../img/icons/plus-green.svg);
+  }
+
+  .ratio-btn.ratio-add.disabled {
+    background-image: url(../../img/icons/plus-grey.svg);
+  }
+
+  .ratio-btn.ratio-add.disabled:hover {
+    pointer-events: none;
+  }
+
+  .ratio-minus {
+    left: 12px;
+  }
+
+  .ratio-add {
+    right: 12px;
+  }
+}

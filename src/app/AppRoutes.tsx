@@ -18,18 +18,10 @@ const AppRoutes: React.FC = () => (
         component={React.lazy(() => import('app/features/500'))}
       />
       <RouterRoute
-        path={ROUTES.INSURANCE}
-        component={React.lazy(() => import('app/features/Insurance'))}
+        path={ROUTES.HOME} // 新增這一行來處理 Page2 路由
+        component={React.lazy(() => import('app/features/Home'))}
       />
-      <RouterRoute
-        path={ROUTES.PAGE}
-        component={React.lazy(() => import('app/features/Other'))}
-      />
-      <RouterRoute
-        path={ROUTES.PAGE2} // 新增這一行來處理 Page2 路由
-        component={React.lazy(() => import('app/features/Insurance/pages/Page2'))}
-      />
-      <Redirect to={ROUTES.PAGE_LOGIN} />
+      <Redirect to={ROUTES.HOME} />
     </Switch>
   </React.Suspense>
 );

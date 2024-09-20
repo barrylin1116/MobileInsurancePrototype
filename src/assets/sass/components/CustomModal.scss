@@ -1,0 +1,63 @@
+#customModal2 {
+
+  :root {
+    --cust-modal-bg: #fff;
+    --bs-btn-padding-x: 0.75rem;
+    --bs-btn-padding-y: 0.375rem;
+    --bs-btn-font-size: 1rem;
+    --bs-border-radius: 0.375rem;
+    --bs-btn-color: #212529;
+    --bs-border-width: 1px;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0b5ed7;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-btn-border-color: transparent;
+  }
+
+  .header {
+    background: var(--cust-modal-bg);
+    color: var(--cust-modal-color);
+  }
+
+  .hover-link {
+    transition: background-color 0.3s ease;
+  }
+
+  .hover-link:hover {
+    background-color: #cde3e3; /* 當滑鼠懸停時背景顏色變化 */
+  }
+
+  .right {
+    right: 2rem;
+  }
+
+  .modal-title {
+    font-size: 1.875rem;
+    font-weight: 400;
+    line-height: 2.25rem;
+  }
+
+
+  ////////// 以上為預設 //////////
+  ////////// 以下為自訂 //////////
+
+  .modal-custom-color-green {
+    --cust-modal-color: #fff;
+    --cust-modal-bg: rgb(52, 141, 143);
+
+  }
+
+  .btn-elife-modal-outline-green {
+    --bs-btn-color: var(--elife-green-1);
+    --bs-btn-border-color: #fff;
+    --bs-btn-bg: #fff;
+    color: var(--elife-green-1);
+    border-color: #fff;
+    background-color: #fff;
+  }
+
+  .modal-title {
+    color: var(--elife-green-1);
+  }
+
+}

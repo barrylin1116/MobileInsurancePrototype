@@ -1,0 +1,34 @@
+#MainLayoutHeader {
+  .nav-item-wrapper:hover > * {
+    cursor: pointer;
+    color: #ffbb38;
+    font-weight: 400;
+
+    .question {
+      background-color: #ffbb38;
+    }
+
+    .sub-items {
+      display: flex;
+    }
+  }
+
+  .sub-items {
+    top: 63px;
+    left: 30px;
+    background: #fafafa;
+    border-radius: 8px;
+    color: var(--elife-green-1);
+    font-weight: 300;
+    display: none;
+    box-shadow: 0px 0px 12px rgba(72, 72, 72, 0.25);
+
+    > * {
+      &:hover {
+        background: var(--elife-green-3);
+        cursor: pointer;
+        font-weight: 400;
+      }
+    }
+  }
+}

@@ -21,7 +21,7 @@ const SubmitAndCancelButtonGroup: React.FC<{
             props.showSingleButton
               ? (
                 <div className="col-auto m-2">
-                  <button className="w-100 btn btn-primary" onClick={() => handleLeftOnclick()}>
+                  <button className="w-100 btn btn-custom btn-elife-green" onClick={() => handleLeftOnclick()}>
                     {props.leftButtonText ?? '確認'}
                   </button>
                 </div>
@@ -29,12 +29,12 @@ const SubmitAndCancelButtonGroup: React.FC<{
               : (
                 <>
                   <div className="col-auto m-2">
-                    <button className="w-100 btn btn-primary" onClick={() => handleLeftOnclick()}>
+                    <button className="w-100 btn btn-custom btn-elife-green" onClick={() => handleLeftOnclick()}>
                       {props.leftButtonText ?? '確認'}
                     </button>
                   </div>
                   <div className="col-auto m-2">
-                    <button className="w-100 btn btn-outline-primary" onClick={() => handRightOnclick()}>
+                    <button className="w-100 btn btn-custom btn-elife-outline-green" onClick={() => handRightOnclick()}>
                       {props.rightButtonText ?? '取消'}
                     </button>
                   </div>

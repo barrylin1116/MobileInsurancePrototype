@@ -1,0 +1,145 @@
+#Page1 {
+  .InsuranceButton {
+    width: 125px;
+    height: 75px;
+    font-size: 1.15rem;
+    padding: 0;
+    font-weight: 500;
+  }
+
+  .header {
+    background: var(--elife-green-1);
+  }
+
+  .ant-tabs-nav {
+    margin: 0;
+  }
+
+  .ant-tabs-nav .ant-tabs-tab-active {
+    background: #056608;
+    background: white;
+  }
+
+  .tabText {
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .ant-tabs-tab-active .tabText {
+    color: #056608;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .noticeText {
+    color: #CCCC00;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-left: 2px;
+  }
+
+  .searchTagClose {
+    display: inline-block;
+    transform: scale(0.83333333) rotate(0deg);
+    color: rgba(0, 0, 0, 0.45);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  }
+
+  .searchTag {
+    box-sizing: border-box;
+    margin: 0;
+    font-feature-settings: "tnum";
+    font-variant: tabular-nums;
+    list-style: none;
+    -webkit-font-feature-settings: "tnum";
+    display: inline-block;
+    height: auto;
+    padding: 8px 8px;
+    line-height: 20px;
+    white-space: nowrap;
+    background: #fafafa;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    cursor: default;
+    opacity: 1;
+    transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  }
+
+  .itemCard {
+    margin-bottom: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    height: 100% !important;
+
+    .ant-card-body {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      padding-top: 12px !important;
+      padding-bottom: 12px !important;
+    }
+
+    .cardTitle {
+      font-size: 1rem;
+      font-weight: 500;
+      color: grey;
+      margin-right: 5px;
+    }
+
+    .cardValue {
+      margin-left: 5px;
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: black;
+    }
+
+    .title {
+      color: darkgrey;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .name {
+      font-size: 1.55rem;
+      font-weight: 600;
+    }
+
+    .insureName {
+      margin-right: 5px;
+      font-size: 1.55rem;
+      color: green;
+      font-weight: 600;
+    }
+
+    .insureId {
+      font-size: 1.55rem;
+      margin-left: 5px;
+      font-weight: 600;
+    }
+  }
+
+  .rowItem {
+    background: #fafafa;
+  }
+
+  .sub-items {
+    box-shadow: 0 0 12px rgba(72, 72, 72, .25);
+    color: var(--elife-green-1);
+
+    .item:hover {
+        background-color: var(--elife-green-3)
+    }
+
+    a {
+      color: var(--elife-green-1);
+    }
+  }
+
+  .functionItem {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+}

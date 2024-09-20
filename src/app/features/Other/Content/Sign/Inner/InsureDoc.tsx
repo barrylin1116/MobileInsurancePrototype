@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 // @ts-ignore
 import * as pdfjsLib from 'pdfjs-dist/webpack';
-import SignModal from 'app/features/Insurance/pages/Modals/SignModal';
+// import SignModal from 'app/features/Insurance/pages/Modals/SignModal';
 import { Card } from 'antd';
 import Signature from 'react-signature-canvas';
-import SignatureModal from 'app/features/Insurance/pages/Modals/SignatureModal';
+// import SignatureModal from 'app/features/Insurance/pages/Modals/SignatureModal';
 import { Point } from './types';
-import _ from 'lodash';
+import _, { round } from 'lodash';
+import CustomModal2 from '../../../../Insurance/pages/Modals/CustomModal2';
 
 const InsureDoc: React.FC<any> = (props) => {
   const [pdf, setPdf] = useState<any>(null);
@@ -158,152 +159,381 @@ const InsureDoc: React.FC<any> = (props) => {
     drawRelation(bindRelationSet.values().next().value);
   }, [bindRelationSet]);
 
+  const [activePage, setActivePage] = useState(1);
+  const pageItem = [
+    {
+      pageNum: 1,
+      edit: false
+    },
+    {
+      pageNum: 2,
+      edit: false
+    },
+    {
+      pageNum: 3,
+      edit: true
+    }
+  ];
+
   return (
     <>
-      {props.visible &&
-          (
-            <SignModal
-              headerTitle="要保書"
-              isOpen={props.visible}
-              buttonPosition="right"
-              numPages={pdf ? pdf.numPages : 0}
-              headerButton={
-                <>
+      <CustomModal2
+        visible={props.visible}
+        header={(
+          <div className="row position-relative justify-content-center w-100 align-items-center">
+            <div className="col d-flex justify-content-center align-items-center">要保書</div>
+            <div className="col-auto d-flex flex-column position-absolute end-0">
+              <div className="row flex-column flex-lg-row align-items-center">
+                <div className="col-auto d-flex align-items-center">
                   <button
-                    type="button"
-                    className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                    className="btn btn-custom btn-elife-outline-green"
                     onClick={() => props.setVisible(false)}
-                  >
-                    完成
+                  >完成
                   </button>
+                </div>
+                <div className="col-auto d-flex align-items-center">
                   <button
-                    type="button"
-                    className="btn ml-1 btn-outline-light me-1 me-lg-0 cus-outline-transparent InsuranceButton"
+                    className="btn btn-custom btn-elife-green border-white"
                     onClick={() => props.setVisible(false)}
-                  >
-                    取消
+                  >取消
                   </button>
-                </>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        )}
+        fullscreen
+        headerContainerClassName="modal-custom-color-green"
+        showFooter={false}
+        handleModalScroll={() => {
+          const pdfCards = document.getElementsByClassName('pdfCard');
+          for (let index = 0; index < pdfCards.length; index++) {
+            // const next = pdfCards.item(index + 1);
+            const current = pdfCards.item(index);
+            // const nextHeight = next ? next.getBoundingClientRect().y : scrollHeight;
+            const currentHeight = current ? current.getBoundingClientRect().y : 0;
+            const currentClientHeight = current ? current.clientHeight : 0;
+            // console.log(`(currentHeight - 128) + currentClientHeight: ${(currentHeight - 128) + currentClientHeight}`);
+            // debugger;
+            if (round(currentHeight) <= 148 && round(currentHeight) >= (148 - currentClientHeight)) {
+              setActivePage((index + 1));
+              const ele = document.getElementById('pageItem-' + (index + 1));
+              if (!ele?.classList.contains('editItem')) {
+                ele?.classList.add('active');
               }
-            >
-              <div className="justify-center d-flex">
-                <div>
-                  {pdf !== null &&
-                      [...Array(pdf.numPages ?? 0)].map((_, index) => {
-                        return (
-                          <div key={index} className="pdfCard pb-3">
-                            <Card id={'pdfCard-' + (index + 1)}>
-                              <canvas
-                                onClick={(e) => {
-                                  let x = e.clientX;
-                                  let y = e.clientY;
-                                  const rect = e.currentTarget.getBoundingClientRect();
-                                  x -= rect.left;
-                                  y -= rect.top;
-                                  x = x / e.currentTarget.clientWidth * e.currentTarget.width / 2;
-                                  y = y / e.currentTarget.clientHeight * e.currentTarget.height / 2;
-                                  // console.log(`x: ${x} y: ${y}`);
-                                  signList.forEach(sign => {
-                                    if (isPointInRect(new Point(x, y), sign.clickRect)) {
-                                      setSignatureVisible(true);
-                                      setCurrentSign(sign);
-                                    }
-                                  });
-                                }} id={'pdfCanvas-' + (index + 1)}
-                              />
-                            </Card>
-                          </div>
-                        );
-                      })}
+            }
+          }
+          console.log('嗨嗨嗨');
+        }}
+        contentTopBlock={(
+          <>
+            <div className="col position-sticky">
+              <div className="row flex-row align-items-center justify-content-center">
+                <div className="col-auto d-flex align-items-center justify-content-center">
+                  頁面快速索引：
+                </div>
+                <div className="col-auto">
+                  <ul className="pdfPage d-flex">
+                    {
+                        pageItem.map((p, index) => {
+                          return (
+                            <li
+                              id={'pageItem-' + (p.pageNum)}
+                              onClick={() => {
+                                const element = document.getElementById('pdfCard-' + (p.pageNum));
+                                element?.scrollIntoView({ behavior: 'smooth' });
+                              }}
+                              className={'pageItem' + (index === 0 ? ' active' : '') + (p.edit ? ' editItem' : '')}
+                              key={index}
+                            >
+                              <span
+                                className={'pageNum ' + (activePage === (p.pageNum) ? 'active' : '')}
+                              >
+                                {p.pageNum}
+                              </span>
+                            </li>
+                          );
+                        })
+                      }
+                  </ul>
                 </div>
               </div>
-            </SignModal>
-          )}
-      {signatureVisible &&
-        <SignatureModal
-          isModalMsg
-          headerButton={
-            <>
-              <button
-                type="button"
-                className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton"
-                onClick={() => {
-                  setSignatureVisible(false);
-                  if ($svg.current) {
-                    const trimedCanvas: HTMLCanvasElement = $svg.current.getTrimmedCanvas();
-                    if (trimedCanvas) {
-                      const resizedCanvas: any = document.getElementById('pdfCanvas-3');
-                      const ctx = resizedCanvas?.getContext('2d');
-                      // 重置
-                      ctx.clearRect(currentSign.backRect[0],
-                        currentSign.backRect[1],
-                        100,
-                        30);
-                      // 添加背景
-                      ctx.fillStyle = '#e0e0e0';
-                      ctx.fillRect(currentSign.backRect[0],
-                        currentSign.backRect[1],
-                        100,
-                        30);
-                      // 添加签名
-                      ctx.drawImage(
-                        trimedCanvas,
-                        currentSign.backRect[0],
-                        currentSign.backRect[1],
-                        100,
-                        30
-                      );
-                      const myResizedData = trimedCanvas.toDataURL();
-                      let clone = _.cloneDeep(signList);
-                      clone = clone.map(m => {
-                        if (m.name === currentSign.name) {
-                          if (trimedCanvas.width > 1 && trimedCanvas.height > 1) {
-                            currentSign.signImg = myResizedData;
-                            if (m.name === 'agentInsure' || m.name === 'agentApplicant') {
-                              const clone = _.clone(bindRelationSet);
-                              clone.add(m.name);
-                              setBindRelationSet(clone);
-                            }
-                          } else {
-                            if (m.name === 'agentInsure' || m.name === 'agentApplicant') {
-                              const clone = _.clone(bindRelationSet);
-                              clone.delete(m.name);
-                              setBindRelationSet(clone);
-                            }
-                            currentSign.signImg = null;
-                          }
-                          return currentSign;
-                        }
-                        return m;
-                      });
-                      setSignList(clone);
-                    }
-                  }
-                }}
-              >
-                完成
-              </button>
-              <button
-                type="button"
-                className="btn ml-1 btn-outline-light me-1 me-lg-0 cus-outline-transparent InsuranceButton"
-                onClick={() => {
-                  if ($svg.current) {
-                    const current: SignaturePad = $svg.current;
-                    current.clear();
-                  }
-                }}
-              >
-                撤銷
-              </button>
-            </>
-          } buttonPosition="right" isOpen={signatureVisible}
-        >
-          <div className="signature">
-            <Signature
-              ref={$svg}
-            />
+            </div>
+          </>
+        )}
+      >
+        <div className="row flex-column ">
+          <div className="col d-flex justify-content-center">
+            <div>
+              {pdf !== null &&
+                  [...Array(pdf.numPages ?? 0)].map((_, index) => {
+                    return (
+                      <div key={index} className="pdfCard pb-3">
+                        <Card id={'pdfCard-' + (index + 1)}>
+                          <canvas
+                            onClick={(e) => {
+                              let x = e.clientX;
+                              let y = e.clientY;
+                              const rect = e.currentTarget.getBoundingClientRect();
+                              x -= rect.left;
+                              y -= rect.top;
+                              x = x / e.currentTarget.clientWidth * e.currentTarget.width / 2;
+                              y = y / e.currentTarget.clientHeight * e.currentTarget.height / 2;
+                              // console.log(`x: ${x} y: ${y}`);
+                              signList.forEach(sign => {
+                                if (isPointInRect(new Point(x, y), sign.clickRect)) {
+                                  setSignatureVisible(true);
+                                  setCurrentSign(sign);
+                                }
+                              });
+                            }} id={'pdfCanvas-' + (index + 1)}
+                          />
+                        </Card>
+                      </div>
+                    );
+                  })}
+            </div>
           </div>
-        </SignatureModal>}
+        </div>
+      </CustomModal2>
+
+      <CustomModal2
+        headerContainerClassName="modal-custom-color-green"
+        visible={signatureVisible}
+        fullscreen={false}
+        showFooter={false}
+        header={(
+          <div className="row position-relative justify-content-center w-100 align-items-center">
+            <div className="col d-flex justify-content-center align-items-center">請簽名於下方框内：王小明</div>
+            <div className="col-auto d-flex flex-column position-absolute end-0">
+              <div className="row flex-column flex-lg-row align-items-center">
+                <div className="col-auto d-flex align-items-center">
+                  <button
+                    className="btn btn-custom btn-elife-outline-green"
+                    onClick={() => {
+                      setSignatureVisible(false);
+                      if ($svg.current) {
+                        const trimedCanvas: HTMLCanvasElement = $svg.current.getTrimmedCanvas();
+                        if (trimedCanvas) {
+                          const resizedCanvas: any = document.getElementById('pdfCanvas-3');
+                          const ctx = resizedCanvas?.getContext('2d');
+                          // 重置
+                          ctx.clearRect(currentSign.backRect[0],
+                            currentSign.backRect[1],
+                            100,
+                            30);
+                          // 添加背景
+                          ctx.fillStyle = '#e0e0e0';
+                          ctx.fillRect(currentSign.backRect[0],
+                            currentSign.backRect[1],
+                            100,
+                            30);
+                          // 添加签名
+                          ctx.drawImage(
+                            trimedCanvas,
+                            currentSign.backRect[0],
+                            currentSign.backRect[1],
+                            100,
+                            30
+                          );
+                          const myResizedData = trimedCanvas.toDataURL();
+                          let clone = _.cloneDeep(signList);
+                          clone = clone.map(m => {
+                            if (m.name === currentSign.name) {
+                              if (trimedCanvas.width > 1 && trimedCanvas.height > 1) {
+                                currentSign.signImg = myResizedData;
+                                if (m.name === 'agentInsure' || m.name === 'agentApplicant') {
+                                  const clone = _.clone(bindRelationSet);
+                                  clone.add(m.name);
+                                  setBindRelationSet(clone);
+                                }
+                              } else {
+                                if (m.name === 'agentInsure' || m.name === 'agentApplicant') {
+                                  const clone = _.clone(bindRelationSet);
+                                  clone.delete(m.name);
+                                  setBindRelationSet(clone);
+                                }
+                                currentSign.signImg = null;
+                              }
+                              return currentSign;
+                            }
+                            return m;
+                          });
+                          setSignList(clone);
+                        }
+                      }
+                    }}
+                  >完成
+                  </button>
+                </div>
+                <div className="col-auto d-flex align-items-center">
+                  <button
+                    className="btn btn-custom btn-elife-green border-white"
+                    onClick={() => {
+                      if ($svg.current) {
+                        const current: SignaturePad = $svg.current;
+                        current.clear();
+                      }
+                    }}
+                  >撤銷
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        )}
+      >
+        <Signature
+          ref={$svg}
+        />
+      </CustomModal2>
+
+      {/* {props.visible && */}
+      {/*    ( */}
+      {/*        <SignModal */}
+      {/*            headerTitle="要保書" */}
+      {/*            isOpen={props.visible} */}
+      {/*            buttonPosition="right" */}
+      {/*            numPages={pdf ? pdf.numPages : 0} */}
+      {/*            headerButton={ */}
+      {/*              <> */}
+      {/*                <button */}
+      {/*                    type="button" */}
+      {/*                    className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton" */}
+      {/*                    onClick={() => props.setVisible(false)} */}
+      {/*                > */}
+      {/*                  完成 */}
+      {/*                </button> */}
+      {/*                <button */}
+      {/*                    type="button" */}
+      {/*                    className="btn ml-1 btn-outline-light me-1 me-lg-0 cus-outline-transparent InsuranceButton" */}
+      {/*                    onClick={() => props.setVisible(false)} */}
+      {/*                > */}
+      {/*                  取消 */}
+      {/*                </button> */}
+      {/*              </> */}
+      {/*            } */}
+      {/*        > */}
+      {/*          <div className="justify-center d-flex"> */}
+      {/*            <div> */}
+      {/*              {pdf !== null && */}
+      {/*                  [...Array(pdf.numPages ?? 0)].map((_, index) => { */}
+      {/*                    return ( */}
+      {/*                        <div key={index} className="pdfCard pb-3"> */}
+      {/*                          <Card id={'pdfCard-' + (index + 1)}> */}
+      {/*                            <canvas */}
+      {/*                                onClick={(e) => { */}
+      {/*                                  let x = e.clientX; */}
+      {/*                                  let y = e.clientY; */}
+      {/*                                  const rect = e.currentTarget.getBoundingClientRect(); */}
+      {/*                                  x -= rect.left; */}
+      {/*                                  y -= rect.top; */}
+      {/*                                  x = x / e.currentTarget.clientWidth * e.currentTarget.width / 2; */}
+      {/*                                  y = y / e.currentTarget.clientHeight * e.currentTarget.height / 2; */}
+      {/*                                  // console.log(`x: ${x} y: ${y}`); */}
+      {/*                                  signList.forEach(sign => { */}
+      {/*                                    if (isPointInRect(new Point(x, y), sign.clickRect)) { */}
+      {/*                                      setSignatureVisible(true); */}
+      {/*                                      setCurrentSign(sign); */}
+      {/*                                    } */}
+      {/*                                  }); */}
+      {/*                                }} id={'pdfCanvas-' + (index + 1)} */}
+      {/*                            /> */}
+      {/*                          </Card> */}
+      {/*                        </div> */}
+      {/*                    ); */}
+      {/*                  })} */}
+      {/*            </div> */}
+      {/*          </div> */}
+      {/*        </SignModal> */}
+      {/*    )} */}
+      {/* {signatureVisible && */}
+      {/*  <SignatureModal */}
+      {/*    isModalMsg */}
+      {/*    headerButton={ */}
+      {/*      <> */}
+      {/*        <button */}
+      {/*          type="button" */}
+      {/*          className="btn btn-outline-primary me-1 me-lg-0 cus-outline-transparent InsuranceButton" */}
+      {/*          onClick={() => { */}
+      {/*            setSignatureVisible(false); */}
+      {/*            if ($svg.current) { */}
+      {/*              const trimedCanvas: HTMLCanvasElement = $svg.current.getTrimmedCanvas(); */}
+      {/*              if (trimedCanvas) { */}
+      {/*                const resizedCanvas: any = document.getElementById('pdfCanvas-3'); */}
+      {/*                const ctx = resizedCanvas?.getContext('2d'); */}
+      {/*                // 重置 */}
+      {/*                ctx.clearRect(currentSign.backRect[0], */}
+      {/*                  currentSign.backRect[1], */}
+      {/*                  100, */}
+      {/*                  30); */}
+      {/*                // 添加背景 */}
+      {/*                ctx.fillStyle = '#e0e0e0'; */}
+      {/*                ctx.fillRect(currentSign.backRect[0], */}
+      {/*                  currentSign.backRect[1], */}
+      {/*                  100, */}
+      {/*                  30); */}
+      {/*                // 添加签名 */}
+      {/*                ctx.drawImage( */}
+      {/*                  trimedCanvas, */}
+      {/*                  currentSign.backRect[0], */}
+      {/*                  currentSign.backRect[1], */}
+      {/*                  100, */}
+      {/*                  30 */}
+      {/*                ); */}
+      {/*                const myResizedData = trimedCanvas.toDataURL(); */}
+      {/*                let clone = _.cloneDeep(signList); */}
+      {/*                clone = clone.map(m => { */}
+      {/*                  if (m.name === currentSign.name) { */}
+      {/*                    if (trimedCanvas.width > 1 && trimedCanvas.height > 1) { */}
+      {/*                      currentSign.signImg = myResizedData; */}
+      {/*                      if (m.name === 'agentInsure' || m.name === 'agentApplicant') { */}
+      {/*                        const clone = _.clone(bindRelationSet); */}
+      {/*                        clone.add(m.name); */}
+      {/*                        setBindRelationSet(clone); */}
+      {/*                      } */}
+      {/*                    } else { */}
+      {/*                      if (m.name === 'agentInsure' || m.name === 'agentApplicant') { */}
+      {/*                        const clone = _.clone(bindRelationSet); */}
+      {/*                        clone.delete(m.name); */}
+      {/*                        setBindRelationSet(clone); */}
+      {/*                      } */}
+      {/*                      currentSign.signImg = null; */}
+      {/*                    } */}
+      {/*                    return currentSign; */}
+      {/*                  } */}
+      {/*                  return m; */}
+      {/*                }); */}
+      {/*                setSignList(clone); */}
+      {/*              } */}
+      {/*            } */}
+      {/*          }} */}
+      {/*        > */}
+      {/*          完成 */}
+      {/*        </button> */}
+      {/*        <button */}
+      {/*          type="button" */}
+      {/*          className="btn ml-1 btn-outline-light me-1 me-lg-0 cus-outline-transparent InsuranceButton" */}
+      {/*          onClick={() => { */}
+      {/*            if ($svg.current) { */}
+      {/*              const current: SignaturePad = $svg.current; */}
+      {/*              current.clear(); */}
+      {/*            } */}
+      {/*          }} */}
+      {/*        > */}
+      {/*          撤銷 */}
+      {/*        </button> */}
+      {/*      </> */}
+      {/*    } buttonPosition="right" isOpen={signatureVisible} */}
+      {/*  > */}
+      {/*    <div className="signature"> */}
+      {/*      <Signature */}
+      {/*        ref={$svg} */}
+      {/*      /> */}
+      {/*    </div> */}
+      {/*  </SignatureModal>} */}
     </>
   );
 };

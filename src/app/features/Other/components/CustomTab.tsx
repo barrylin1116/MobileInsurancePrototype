@@ -4,15 +4,15 @@ import React from 'react';
 const CustomTab: React.FC<{
     tabs: {
         tabElement?: any;
-        key: string | number
+        key: string
     }[],
     tabContents?: {
-        activeKey: string | number,
+        activeKey: string,
         body: any
     }[],
-    activeKey: string | number,
+    activeKey: string,
     contentClass?: string,
-    onChange: (e: any) => void
+    onChange: (e: string) => void
 }> = ({ tabs, tabContents, activeKey, contentClass, onChange, ...props }) => {
   return (
     <>
@@ -21,7 +21,7 @@ const CustomTab: React.FC<{
 
           {
               tabs.map((tab, index) => (
-                <Tabs.TabPane key={tab.key} tab={tab.tabElement} />
+                <Tabs.TabPane key={tab.key} tab={tab.tabElement} className="asdasdasdfaasdf" />
               ))
           }
         </Tabs>

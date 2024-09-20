@@ -1,0 +1,2 @@
+import ReviewPeriodConfirmationContent from './ReviewPeriodConfirmationContent';
+export default ReviewPeriodConfirmationContent;

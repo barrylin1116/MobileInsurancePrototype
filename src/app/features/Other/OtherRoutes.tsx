@@ -9,7 +9,7 @@ const OtherRoutes: React.FC = () => (
     <Switch>
       <RouterRoute
         path={ROUTES.PAGE_EMPTY}
-        component={React.lazy(() => import('../Other/pages/PageEmpty'))}
+        component={React.lazy(() => import('./pages/PageEmpty'))}
       />
       <RouterRoute
         path={ROUTES.PAGE_LOGIN}
